@@ -1,0 +1,7 @@
+node_modules
+dist
+.DS_Store
+*.local
+data/raw/friendly-food/*.csv
+data/raw/friendly-food/*.json
+.omx
