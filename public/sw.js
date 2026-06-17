@@ -1,10 +1,12 @@
-const CACHE_NAME = 'taipei-friendly-food-map-v1';
+const CACHE_NAME = 'taipei-friendly-food-map-v2';
+const BASE_PATH = new URL(self.registration.scope).pathname;
+const withBase = (path) => `${BASE_PATH}${path}`;
 const APP_SHELL = [
-  '/',
-  '/manifest.webmanifest',
-  '/data/friendly-stores.json',
-  '/data/restaurant-businesses.json',
-  '/data/friendly-food-summary.json',
+  BASE_PATH,
+  withBase('manifest.webmanifest'),
+  withBase('data/friendly-stores.json'),
+  withBase('data/restaurant-businesses.json'),
+  withBase('data/friendly-food-summary.json'),
 ];
 
 self.addEventListener('install', (event) => {
@@ -22,7 +24,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   const requestUrl = new URL(event.request.url);
-  if (requestUrl.origin === self.location.origin && requestUrl.pathname.startsWith('/data/')) {
+  if (requestUrl.origin === self.location.origin && requestUrl.pathname.startsWith(withBase('data/'))) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {

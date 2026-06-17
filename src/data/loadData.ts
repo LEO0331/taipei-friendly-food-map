@@ -17,11 +17,13 @@ const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
   }
 };
 
+const dataPath = (fileName: string) => `${import.meta.env.BASE_URL}data/${fileName}`;
+
 export const loadFriendlyFoodData = async (): Promise<AppData> => {
   const [friendlyStores, restaurants, summaryFromFile] = await Promise.all([
-    loadJson<FriendlyStore[]>('/data/friendly-stores.json', []),
-    loadJson<RestaurantBusiness[]>('/data/restaurant-businesses.json', []),
-    loadJson<FriendlyFoodSummary | undefined>('/data/friendly-food-summary.json', undefined),
+    loadJson<FriendlyStore[]>(dataPath('friendly-stores.json'), []),
+    loadJson<RestaurantBusiness[]>(dataPath('restaurant-businesses.json'), []),
+    loadJson<FriendlyFoodSummary | undefined>(dataPath('friendly-food-summary.json'), undefined),
   ]);
   return {
     friendlyStores,
