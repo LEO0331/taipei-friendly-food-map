@@ -3,7 +3,7 @@ import L from 'leaflet';
 import 'leaflet.markercluster';
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import type { TranslationKey } from '../data/translations';
-import { googleMapsUrl, tagLabel } from '../lib/friendlyFood';
+import { googleMapsUrl, sanitizeExternalUrl, tagLabel } from '../lib/friendlyFood';
 import type { FriendlyStore, Language, RestaurantBusiness } from '../types';
 import { DisclaimerNotice } from './DisclaimerNotice';
 
@@ -29,6 +29,12 @@ const restaurantIcon = createEmojiIcon('🍽️', 'restaurant-marker');
 const matchedIcon = createEmojiIcon('⭐', 'matched-marker');
 const userIcon = createEmojiIcon('●', 'user-marker');
 
+type MarkerClusterFactory = {
+  markerClusterGroup: (options: { showCoverageOnHover: boolean; maxClusterRadius: number }) => L.LayerGroup;
+};
+
+const markerCluster = L as typeof L & MarkerClusterFactory;
+
 function ClusteredMarkers({
   items,
   language,
@@ -45,7 +51,7 @@ function ClusteredMarkers({
   );
 
   useEffect(() => {
-    const cluster = L.markerClusterGroup({
+    const cluster = markerCluster.markerClusterGroup({
       showCoverageOnHover: false,
       maxClusterRadius: 44,
     });
@@ -88,6 +94,7 @@ function renderPopupHtml(
     const address = language === 'en' && item.addressEn ? item.addressEn : item.addressZh;
     const description = language === 'en' && item.descriptionEn ? item.descriptionEn : item.descriptionZh;
     const tags = item.serviceTags.map((tag) => `<span>${escapeHtml(tagLabel(tag, language))}</span>`).join('');
+    const websiteUrl = sanitizeExternalUrl(item.websiteUrl);
     return `
       <div class="popup-content">
         <strong>${escapeHtml(t('friendlyStores'))}</strong>
@@ -97,7 +104,7 @@ function renderPopupHtml(
         ${description ? `<p>${escapeHtml(description)}</p>` : ''}
         <div class="popup-tags">${tags}</div>
         <p>${escapeHtml(t('totalFriendlyItems'))}: ${item.totalFriendlyItems}</p>
-        ${item.websiteUrl ? `<a href="${escapeHtml(item.websiteUrl)}" target="_blank" rel="noreferrer">${escapeHtml(t('officialIntroduction'))}</a>` : ''}
+        ${websiteUrl ? `<a href="${escapeHtml(websiteUrl)}" target="_blank" rel="noreferrer">${escapeHtml(t('officialIntroduction'))}</a>` : ''}
         <a href="${googleMapsUrl({ latitude: item.latitude, longitude: item.longitude, address })}" target="_blank" rel="noreferrer">${escapeHtml(t('openGoogleMaps'))}</a>
       </div>
     `;

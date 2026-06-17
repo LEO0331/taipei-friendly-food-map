@@ -4,8 +4,8 @@ import path from 'node:path';
 import type { ConversionReport, FriendlyStore, RestaurantBusiness } from '../src/types';
 import {
   extractDistrictFromAddress,
+  createRestaurantFriendlyStoreMatcher,
   matchEnglishFriendlyStore,
-  matchRestaurantToFriendlyStore,
   normalizeColumnName,
   parseCoordinate,
   parseFriendlyServiceCounts,
@@ -129,8 +129,9 @@ export const convertFriendlyStoresFromRows = (
 export const convertRestaurantBusinessesFromRows = (
   rows: Record<string, string>[],
   friendlyStores: FriendlyStore[],
-): RestaurantBusiness[] =>
-  rows.map((row) => {
+): RestaurantBusiness[] => {
+  const matchRestaurant = createRestaurantFriendlyStoreMatcher(friendlyStores);
+  return rows.map((row) => {
     const longitude = parseCoordinate(row.Longitude);
     const latitude = parseCoordinate(row.Latitude);
     const base: RestaurantBusiness = {
@@ -145,5 +146,6 @@ export const convertRestaurantBusinessesFromRows = (
       coordinateStatus: validateTaipeiCoordinate(longitude, latitude),
       source: '設址臺北市所營事業含餐館業清冊',
     };
-    return { ...base, ...matchRestaurantToFriendlyStore(base, friendlyStores) };
+    return { ...base, ...matchRestaurant(base) };
   });
+};

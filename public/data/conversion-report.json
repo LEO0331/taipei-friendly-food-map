@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-06-17T00:34:56.677Z",
+  "notes": [
+    "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
+    "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
+    "Chinese friendly-store records are preserved even when no English match is found.",
+    "Restaurant matching is best effort and avoids labeling unmatched businesses as not friendly."
+  ],
+  "downloads": [
+    {
+      "sourceUrl": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=5a5b36e0-f870-4b7f-8378-c91ac5f57941",
+      "downloadedAt": "2026-06-17T00:28:33.813Z",
+      "filePath": "data/raw/friendly-food/friendly-stores-zh.csv",
+      "fileSize": 616940,
+      "notes": "Downloaded CSV resource directly from Taipei Open Data resource.download endpoint."
+    },
+    {
+      "sourceUrl": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=ea1dba51-513d-4b43-bb1a-78cc02363177",
+      "downloadedAt": "2026-06-17T00:28:34.600Z",
+      "filePath": "data/raw/friendly-food/friendly-stores-en.csv",
+      "fileSize": 869049,
+      "notes": "Downloaded CSV resource directly from Taipei Open Data resource.download endpoint."
+    },
+    {
+      "sourceUrl": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=e94a712a-be5b-4d8b-89c9-30a5ee21f25d",
+      "downloadedAt": "2026-06-17T00:28:36.289Z",
+      "filePath": "data/raw/friendly-food/restaurant-businesses.csv",
+      "fileSize": 1946966,
+      "notes": "Downloaded CSV resource directly from Taipei Open Data resource.download endpoint."
+    }
+  ],
+  "friendlyStores": {
+    "totalRows": 1058,
+    "converted": 1058,
+    "missingCoordinates": 0,
+    "outlierCoordinates": 30,
+    "englishMatches": 1058
+  },
+  "restaurantBusinesses": {
+    "totalRows": 20182,
+    "converted": 20182,
+    "missingCoordinates": 0,
+    "outlierCoordinates": 0,
+    "matchedFriendlyStores": 3404
+  }
+}

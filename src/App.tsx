@@ -75,9 +75,7 @@ export default function App() {
         if (item.totalFriendlyItems < filters.minFriendlyItems) return false;
         if (!filters.serviceTags.every((tag) => item.serviceTags.includes(tag))) return false;
       } else {
-        if (filters.serviceTags.length > 0 || item.layer === 'registered_restaurant_business') {
-          if (filters.serviceTags.length > 0) return false;
-        }
+        if (filters.serviceTags.length > 0) return false;
         if (filters.minFriendlyItems > 0) return false;
         if (filters.matchedOnly && !item.matchedFriendlyStoreId) return false;
       }

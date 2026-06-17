@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-label="Taipei Friendly Food Map icon">
+  <rect width="192" height="192" rx="42" fill="#15803d"/>
+  <circle cx="96" cy="84" r="42" fill="#fffdf8"/>
+  <path d="M72 84c0-14 10-24 24-24s24 10 24 24c0 21-24 48-24 48S72 105 72 84Z" fill="#143d2b"/>
+  <circle cx="96" cy="84" r="10" fill="#fffdf8"/>
+  <path d="M54 142h84" stroke="#fffdf8" stroke-width="12" stroke-linecap="round"/>
+</svg>

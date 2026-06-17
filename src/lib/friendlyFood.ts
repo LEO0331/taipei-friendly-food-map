@@ -66,24 +66,6 @@ export const FRIENDLY_TAG_FIELD_MAP_ZH: Record<FriendlyServiceTag, string> = {
   period_friendly: '月經友善（count）',
 };
 
-export const FRIENDLY_TAG_FIELD_MAP_EN: Record<FriendlyServiceTag, string> = {
-  english_friendly: 'English-friendly（count）',
-  japanese_friendly: 'Japanese-friendly（count）',
-  korean_friendly: 'Korean-friendly（count）',
-  mobile_charging: 'Mobile device recharging station（count）',
-  accessibility_friendly: 'Friendly accessibility（count）',
-  gender_friendly: 'Gender friendly（count）',
-  convenient_payment: 'Convenient payment (Credit Card / EasyCard / 3rd Party payment)（count）',
-  vegetarian_friendly: 'Vegetarian friendly（count）',
-  friendly_bathroom: 'Friendly bathroom（count）',
-  fair_trade_friendly: 'Fair Trade friendly（count）',
-  free_wifi: 'Free WiFi（count）',
-  bicycle_friendly: 'Bicycle Friendly（count）',
-  parent_child_friendly: 'Breastfeeding (lactation) room（count）',
-  muslim_friendly: 'Muslim-friendly（count）',
-  period_friendly: 'Period Friendly（count）',
-};
-
 export const tagLabel = (tag: FriendlyServiceTag, language: Language): string => {
   const zh: Record<FriendlyServiceTag, string> = {
     english_friendly: '英文友善',
@@ -219,6 +201,16 @@ export const googleMapsUrl = (item: { latitude?: number; longitude?: number; add
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.address ?? '')}`;
 };
 
+export const sanitizeExternalUrl = (rawUrl: string | undefined): string | undefined => {
+  if (!rawUrl) return undefined;
+  try {
+    const url = new URL(rawUrl);
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.toString() : undefined;
+  } catch {
+    return undefined;
+  }
+};
+
 export const matchEnglishFriendlyStore = (
   zhStore: FriendlyStore,
   enRows: Record<string, string>[],
@@ -279,6 +271,52 @@ export const matchRestaurantToFriendlyStore = (
     }
   }
   return { matchConfidence: 'none' };
+};
+
+const coordinateBucketKey = (latitude: number, longitude: number) =>
+  `${Math.floor(latitude * 1000)}:${Math.floor(longitude * 1000)}`;
+
+export const createRestaurantFriendlyStoreMatcher = (friendlyStores: FriendlyStore[]) => {
+  const storesByAddress = new Map<string, FriendlyStore[]>();
+  const storesByCoordinateBucket = new Map<string, FriendlyStore[]>();
+  const addToIndex = (index: Map<string, FriendlyStore[]>, key: string, store: FriendlyStore) => {
+    const stores = index.get(key);
+    if (stores) {
+      stores.push(store);
+    } else {
+      index.set(key, [store]);
+    }
+  };
+
+  friendlyStores.forEach((store) => {
+    const addressKey = normalizeText(store.addressZh);
+    if (addressKey) {
+      addToIndex(storesByAddress, addressKey, store);
+    }
+    if (store.latitude !== undefined && store.longitude !== undefined) {
+      const bucketKey = coordinateBucketKey(store.latitude, store.longitude);
+      addToIndex(storesByCoordinateBucket, bucketKey, store);
+    }
+  });
+
+  return (restaurant: RestaurantBusiness) => {
+    const candidates = new Map<string, FriendlyStore>();
+    const addressKey = normalizeText(restaurant.address);
+    storesByAddress.get(addressKey)?.forEach((store) => candidates.set(store.id, store));
+
+    if (restaurant.latitude !== undefined && restaurant.longitude !== undefined) {
+      const latBucket = Math.floor(restaurant.latitude * 1000);
+      const lngBucket = Math.floor(restaurant.longitude * 1000);
+      for (let latOffset = -1; latOffset <= 1; latOffset += 1) {
+        for (let lngOffset = -1; lngOffset <= 1; lngOffset += 1) {
+          const bucketKey = `${latBucket + latOffset}:${lngBucket + lngOffset}`;
+          storesByCoordinateBucket.get(bucketKey)?.forEach((store) => candidates.set(store.id, store));
+        }
+      }
+    }
+
+    return matchRestaurantToFriendlyStore(restaurant, [...candidates.values()]);
+  };
 };
 
 export const itemSearchText = (item: FriendlyStore | RestaurantBusiness, language: Language): string => {

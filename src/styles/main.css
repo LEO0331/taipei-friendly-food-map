@@ -396,6 +396,22 @@ a {
   text-align: center;
 }
 
+.result-count {
+  margin: 0;
+  color: #66716c;
+  font-size: 0.9rem;
+}
+
+.load-more-button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: #143d2b;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+}
+
 .dashboard {
   display: grid;
   gap: 14px;
