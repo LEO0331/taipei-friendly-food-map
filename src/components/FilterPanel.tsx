@@ -54,7 +54,7 @@ export function FilterPanel({ filters, language, t, onChange }: Props) {
             </label>
           ))}
         </fieldset>
-        <label>
+        <label className="district-field">
           <span>{t('district')}</span>
           <select
             value={filters.district}
@@ -68,7 +68,7 @@ export function FilterPanel({ filters, language, t, onChange }: Props) {
             ))}
           </select>
         </label>
-        <label>
+        <label className="minimum-field">
           <span>{t('minimumFriendlyItems')}</span>
           <input
             type="number"
