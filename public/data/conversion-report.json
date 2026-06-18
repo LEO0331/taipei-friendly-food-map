@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-06-17T00:34:56.677Z",
+  "generatedAt": "2026-06-18T00:38:46.880Z",
   "notes": [
     "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
     "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
     "Chinese friendly-store records are preserved even when no English match is found.",
-    "Restaurant matching is best effort and avoids labeling unmatched businesses as not friendly."
+    "Restaurant matching is best effort and avoids labeling unmatched businesses as not friendly.",
+    "Water refill availability and operation should be verified on site."
   ],
   "downloads": [
     {
@@ -27,6 +28,13 @@
       "filePath": "data/raw/friendly-food/restaurant-businesses.csv",
       "fileSize": 1946966,
       "notes": "Downloaded CSV resource directly from Taipei Open Data resource.download endpoint."
+    },
+    {
+      "sourceUrl": "local-file:臺北市提供飲水店家_20251205.csv",
+      "downloadedAt": "2026-06-18T00:38:46.873Z",
+      "filePath": "data/raw/water-refill-stores/water-refill-stores.csv",
+      "fileSize": 237622,
+      "notes": "Copied local CSV 臺北市提供飲水店家_20251205.csv."
     }
   ],
   "friendlyStores": {
@@ -42,5 +50,13 @@
     "missingCoordinates": 0,
     "outlierCoordinates": 0,
     "matchedFriendlyStores": 3404
+  },
+  "waterRefillStores": {
+    "totalRows": 518,
+    "converted": 518,
+    "missingCoordinates": 0,
+    "outlierCoordinates": 0,
+    "matchedFriendlyStores": 518,
+    "matchedRestaurantBusinesses": 458
   }
 }

@@ -1,11 +1,18 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
-import type { ConversionReport, FriendlyStore, RestaurantBusiness } from '../src/types';
+import type {
+  ConversionReport,
+  FriendlyStore,
+  RestaurantBusiness,
+  WaterRefillStore,
+} from '../src/types';
 import {
   extractDistrictFromAddress,
   createRestaurantFriendlyStoreMatcher,
   matchEnglishFriendlyStore,
+  matchWaterRefillToFriendlyStore,
+  matchWaterRefillToRestaurantBusiness,
   normalizeColumnName,
   parseCoordinate,
   parseFriendlyServiceCounts,
@@ -18,6 +25,8 @@ export const PUBLIC_DATA_DIR = 'public/data';
 export const FRIENDLY_ZH_RAW = path.join(RAW_DIR, 'friendly-stores-zh.csv');
 export const FRIENDLY_EN_RAW = path.join(RAW_DIR, 'friendly-stores-en.csv');
 export const RESTAURANTS_RAW = path.join(RAW_DIR, 'restaurant-businesses.csv');
+export const WATER_REFILL_RAW_DIR = 'data/raw/water-refill-stores';
+export const WATER_REFILL_RAW = path.join(WATER_REFILL_RAW_DIR, 'water-refill-stores.csv');
 export const REPORT_PATH = path.join(PUBLIC_DATA_DIR, 'conversion-report.json');
 
 export const DATA_SOURCES = {
@@ -32,6 +41,7 @@ export const DATA_SOURCES = {
 export const ensureDataDirs = async () => {
   await mkdir(RAW_DIR, { recursive: true });
   await mkdir(PUBLIC_DATA_DIR, { recursive: true });
+  await mkdir(WATER_REFILL_RAW_DIR, { recursive: true });
 };
 
 export const parseCsv = (text: string): Record<string, string>[] => {
@@ -149,3 +159,36 @@ export const convertRestaurantBusinessesFromRows = (
     return { ...base, ...matchRestaurant(base) };
   });
 };
+
+export const convertWaterRefillStoresFromRows = (
+  rows: Record<string, string>[],
+  friendlyStores: FriendlyStore[],
+  restaurants: RestaurantBusiness[],
+): WaterRefillStore[] =>
+  rows.map((row) => {
+    const longitude = parseCoordinate(row['經度']);
+    const latitude = parseCoordinate(row['緯度']);
+    const district = extractDistrictFromAddress(row['區域'] || row['地址'] || '');
+    const base: WaterRefillStore = {
+      id: stableId('water', [row['友善店家名稱'], row['地址'], row['經度'], row['緯度']]),
+      layer: 'water_refill_store',
+      nameZh: row['友善店家名稱'] || '未命名提供飲水店家',
+      addressZh: row['地址'] || '',
+      descriptionZh: row['簡介'] || undefined,
+      district,
+      longitude,
+      latitude,
+      coordinateStatus: validateTaipeiCoordinate(longitude, latitude),
+      phone: row['電話'] || undefined,
+      source: '臺北市提供飲水店家清冊',
+    };
+    const friendlyMatch = matchWaterRefillToFriendlyStore(base, friendlyStores);
+    const restaurantMatch = matchWaterRefillToRestaurantBusiness(base, restaurants);
+    return {
+      ...base,
+      matchedFriendlyStoreId: friendlyMatch.matchedId,
+      matchedRestaurantBusinessId: restaurantMatch.matchedId,
+      matchConfidence:
+        friendlyMatch.confidence !== 'none' ? friendlyMatch.confidence : restaurantMatch.confidence,
+    };
+  });

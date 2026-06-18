@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import type { TranslationKey } from '../data/translations';
-import type { FriendlyStore, Language, RestaurantBusiness } from '../types';
+import type { FriendlyStore, Language, RestaurantBusiness, WaterRefillStore } from '../types';
 import { StoreCard } from './StoreCard';
 
 type Props = {
-  items: Array<FriendlyStore | RestaurantBusiness>;
+  items: Array<FriendlyStore | WaterRefillStore | RestaurantBusiness>;
   distances: Map<string, number>;
   language: Language;
   t: (key: TranslationKey) => string;
-  onFocusMap: (item: FriendlyStore | RestaurantBusiness) => void;
+  onFocusMap: (item: FriendlyStore | WaterRefillStore | RestaurantBusiness) => void;
 };
 
 export function StoreDirectory({ items, distances, language, t, onFocusMap }: Props) {

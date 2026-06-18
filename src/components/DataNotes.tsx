@@ -26,6 +26,10 @@ export function DataNotes({ language, t }: Props) {
           <p>{t('restaurantRegistryDisclaimer')}</p>
         </article>
         <article>
+          <h3>{t('waterRefillStores')}</h3>
+          <p>{t('waterRefillDatasetNotice')}</p>
+        </article>
+        <article>
           <h3>{language === 'zh' ? '資料筆數比較' : 'Dataset comparison'}</h3>
           <p>{t('coverageComparisonNotice')}</p>
         </article>

@@ -4,8 +4,10 @@ import type {
   FriendlyServiceTag,
   FriendlyStore,
   Language,
+  MatchConfidence,
   RestaurantBusiness,
   StoreLayer,
+  WaterRefillStore,
 } from '../types';
 
 export const TAIPEI_BOUNDS = {
@@ -46,6 +48,7 @@ export const FRIENDLY_TAGS: FriendlyServiceTag[] = [
   'parent_child_friendly',
   'muslim_friendly',
   'period_friendly',
+  'water_refill_available',
 ];
 
 export const FRIENDLY_TAG_FIELD_MAP_ZH: Record<FriendlyServiceTag, string> = {
@@ -64,6 +67,7 @@ export const FRIENDLY_TAG_FIELD_MAP_ZH: Record<FriendlyServiceTag, string> = {
   parent_child_friendly: '親子友善（count）',
   muslim_friendly: '穆斯林友善（count）',
   period_friendly: '月經友善（count）',
+  water_refill_available: '提供飲水（count）',
 };
 
 export const tagLabel = (tag: FriendlyServiceTag, language: Language): string => {
@@ -83,6 +87,7 @@ export const tagLabel = (tag: FriendlyServiceTag, language: Language): string =>
     parent_child_friendly: '親子友善',
     muslim_friendly: '穆斯林友善',
     period_friendly: '月經友善',
+    water_refill_available: '提供飲水',
   };
   const en: Record<FriendlyServiceTag, string> = {
     english_friendly: 'English-friendly',
@@ -100,6 +105,7 @@ export const tagLabel = (tag: FriendlyServiceTag, language: Language): string =>
     parent_child_friendly: 'Parent-child-friendly',
     muslim_friendly: 'Muslim-friendly',
     period_friendly: 'Period-friendly',
+    water_refill_available: 'Water Refill Available',
   };
   return language === 'zh' ? zh[tag] : en[tag];
 };
@@ -111,6 +117,9 @@ export const normalizeText = (raw: string | undefined): string =>
     .toLowerCase()
     .replace(/[()\[\]（）【】\s,，。.-]/g, '')
     .trim();
+
+export const normalizeStoreName = normalizeText;
+export const normalizeAddress = (raw: string): string => normalizeText(raw.replaceAll('臺', '台'));
 
 export const parseCoordinate = (raw: unknown): number | undefined => {
   if (raw === null || raw === undefined) return undefined;
@@ -241,11 +250,62 @@ export const matchEnglishFriendlyStore = (
 };
 
 const similarName = (a: string, b: string): boolean => {
-  const left = normalizeText(a);
-  const right = normalizeText(b);
+  const left = normalizeStoreName(a);
+  const right = normalizeStoreName(b);
   if (!left || !right) return false;
   return left.includes(right) || right.includes(left);
 };
+
+export type MatchResult = { matchedId?: string; confidence: MatchConfidence };
+
+const matchWaterRefillStore = (
+  store: WaterRefillStore,
+  candidates: Array<{
+    id: string;
+    nameZh?: string;
+    name?: string;
+    addressZh?: string;
+    address?: string;
+    district?: string;
+    longitude?: number;
+    latitude?: number;
+  }>,
+): MatchResult => {
+  let lowMatch: MatchResult | undefined;
+  for (const candidate of candidates) {
+    const candidateName = candidate.nameZh ?? candidate.name ?? '';
+    const candidateAddress = candidate.addressZh ?? candidate.address ?? '';
+    const namesSimilar = similarName(store.nameZh, candidateName);
+    const sameAddress = normalizeAddress(store.addressZh) === normalizeAddress(candidateAddress);
+    const closeCoordinates =
+      store.longitude !== undefined &&
+      store.latitude !== undefined &&
+      candidate.longitude !== undefined &&
+      candidate.latitude !== undefined &&
+      calculateDistanceMeters(store.latitude, store.longitude, candidate.latitude, candidate.longitude) < 40;
+
+    if ((closeCoordinates || sameAddress) && namesSimilar) {
+      return { matchedId: candidate.id, confidence: 'high' };
+    }
+    if (sameAddress || (closeCoordinates && store.district === candidate.district)) {
+      return { matchedId: candidate.id, confidence: 'medium' };
+    }
+    if (!lowMatch && namesSimilar) {
+      lowMatch = { matchedId: candidate.id, confidence: 'low' };
+    }
+  }
+  return lowMatch ?? { confidence: 'none' };
+};
+
+export const matchWaterRefillToFriendlyStore = (
+  store: WaterRefillStore,
+  friendlyStores: FriendlyStore[],
+): MatchResult => matchWaterRefillStore(store, friendlyStores);
+
+export const matchWaterRefillToRestaurantBusiness = (
+  store: WaterRefillStore,
+  restaurants: RestaurantBusiness[],
+): MatchResult => matchWaterRefillStore(store, restaurants);
 
 export const matchRestaurantToFriendlyStore = (
   restaurant: RestaurantBusiness,
@@ -319,7 +379,10 @@ export const createRestaurantFriendlyStoreMatcher = (friendlyStores: FriendlySto
   };
 };
 
-export const itemSearchText = (item: FriendlyStore | RestaurantBusiness, language: Language): string => {
+export const itemSearchText = (
+  item: FriendlyStore | WaterRefillStore | RestaurantBusiness,
+  language: Language,
+): string => {
   if (item.layer === 'friendly_store') {
     return [
       item.nameZh,
@@ -335,12 +398,26 @@ export const itemSearchText = (item: FriendlyStore | RestaurantBusiness, languag
       .join(' ')
       .toLowerCase();
   }
+  if (item.layer === 'water_refill_store') {
+    return [
+      item.nameZh,
+      item.addressZh,
+      item.descriptionZh,
+      item.district,
+      item.phone,
+      tagLabel('water_refill_available', language),
+    ]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase();
+  }
   return [item.name, item.address, item.district].filter(Boolean).join(' ').toLowerCase();
 };
 
 export const buildFriendlyFoodSummary = (
   friendlyStores: FriendlyStore[],
   restaurants: RestaurantBusiness[],
+  waterRefillStores: WaterRefillStore[] = [],
 ): FriendlyFoodSummary => {
   const countByDistrict = <T extends { district?: string }>(items: T[]) =>
     items.reduce<Record<string, number>>((counts, item) => {
@@ -349,6 +426,7 @@ export const buildFriendlyFoodSummary = (
     }, {});
   const friendlyStoresByDistrict = countByDistrict(friendlyStores);
   const restaurantBusinessesByDistrict = countByDistrict(restaurants);
+  const waterRefillStoresByDistrict = countByDistrict(waterRefillStores);
   const friendlyServiceTagDistribution = FRIENDLY_TAGS.reduce(
     (counts, tag) => {
       counts[tag] = friendlyStores.filter((store) => store.serviceTags.includes(tag)).length;
@@ -361,10 +439,14 @@ export const buildFriendlyFoodSummary = (
     counts[bucket] = (counts[bucket] ?? 0) + 1;
     return counts;
   }, {});
+  friendlyServiceTagDistribution.water_refill_available = waterRefillStores.length;
   const topDistrictByFriendlyStores = Object.entries(friendlyStoresByDistrict).sort((a, b) => b[1] - a[1])[0]?.[0];
   const topFriendlyServiceTag = Object.entries(friendlyServiceTagDistribution).sort((a, b) => b[1] - a[1])[0]?.[0] as
     | FriendlyServiceTag
     | undefined;
+  const topDistrictByWaterRefillStores = Object.entries(waterRefillStoresByDistrict).sort(
+    (a, b) => b[1] - a[1],
+  )[0]?.[0];
   return {
     generatedAt: new Date().toISOString(),
     friendlyStoreCount: friendlyStores.length,
@@ -378,8 +460,16 @@ export const buildFriendlyFoodSummary = (
     muslimFriendlyCount: friendlyServiceTagDistribution.muslim_friendly,
     freeWifiCount: friendlyServiceTagDistribution.free_wifi,
     matchedFriendlyRestaurantCount: restaurants.filter((restaurant) => restaurant.matchedFriendlyStoreId).length,
+    waterRefillStoreCount: waterRefillStores.length,
+    waterRefillStoresWithCoordinates: waterRefillStores.filter((store) => store.coordinateStatus === 'valid').length,
+    topDistrictByWaterRefillStores,
+    matchedFriendlyWaterRefillStores: waterRefillStores.filter((store) => store.matchedFriendlyStoreId).length,
+    unmatchedWaterRefillOnlyRecords: waterRefillStores.filter(
+      (store) => !store.matchedFriendlyStoreId && !store.matchedRestaurantBusinessId,
+    ).length,
     friendlyStoresByDistrict,
     restaurantBusinessesByDistrict,
+    waterRefillStoresByDistrict,
     friendlyServiceTagDistribution,
     totalFriendlyItemsDistribution,
   };

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T00:34:57.576Z",
+  "generatedAt": "2026-06-18T00:37:49.250Z",
   "friendlyStoreCount": 1058,
   "restaurantBusinessCount": 20182,
   "friendlyStoresWithCoordinates": 1028,
@@ -11,6 +11,11 @@
   "muslimFriendlyCount": 47,
   "freeWifiCount": 687,
   "matchedFriendlyRestaurantCount": 3404,
+  "waterRefillStoreCount": 518,
+  "waterRefillStoresWithCoordinates": 518,
+  "topDistrictByWaterRefillStores": "大安區",
+  "matchedFriendlyWaterRefillStores": 518,
+  "unmatchedWaterRefillOnlyRecords": 0,
   "friendlyStoresByDistrict": {
     "信義區": 67,
     "松山區": 67,
@@ -39,6 +44,20 @@
     "文山區": 840,
     "萬華區": 1165
   },
+  "waterRefillStoresByDistrict": {
+    "信義區": 23,
+    "松山區": 36,
+    "中山區": 56,
+    "南港區": 21,
+    "北投區": 49,
+    "內湖區": 23,
+    "萬華區": 65,
+    "中正區": 48,
+    "士林區": 35,
+    "大安區": 88,
+    "大同區": 55,
+    "文山區": 19
+  },
   "friendlyServiceTagDistribution": {
     "english_friendly": 720,
     "japanese_friendly": 277,
@@ -54,7 +73,8 @@
     "bicycle_friendly": 226,
     "parent_child_friendly": 155,
     "muslim_friendly": 47,
-    "period_friendly": 161
+    "period_friendly": 161,
+    "water_refill_available": 518
   },
   "totalFriendlyItemsDistribution": {
     "1": 36,

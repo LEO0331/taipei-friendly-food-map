@@ -151,6 +151,10 @@ a {
   font-weight: 700;
 }
 
+.nearby-button.secondary {
+  background: #0e7490;
+}
+
 .nearby-label,
 .error-copy,
 .notice,
@@ -194,6 +198,28 @@ a {
 .filter-grid {
   display: grid;
   gap: 10px;
+}
+
+.layer-fieldset {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.layer-fieldset legend {
+  margin-bottom: 6px;
+  color: #59615d;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.layer-fieldset label {
+  display: flex;
+  grid-template-columns: none;
+  align-items: center;
+  gap: 6px;
 }
 
 .checkbox-row {
@@ -260,6 +286,10 @@ a {
 
 .restaurant-marker {
   background: #a16207;
+}
+
+.water-marker {
+  background: #0e7490;
 }
 
 .matched-marker {
@@ -346,6 +376,11 @@ a {
 .layer-badge.restaurant {
   background: #fff2d6;
   color: #8a4f05;
+}
+
+.layer-badge.water {
+  background: #dff4f8;
+  color: #0e5d6f;
 }
 
 .distance {

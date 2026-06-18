@@ -5,6 +5,7 @@ const APP_SHELL = [
   BASE_PATH,
   withBase('manifest.webmanifest'),
   withBase('data/friendly-stores.json'),
+  withBase('data/water-refill-stores.json'),
   withBase('data/restaurant-businesses.json'),
   withBase('data/friendly-food-summary.json'),
 ];

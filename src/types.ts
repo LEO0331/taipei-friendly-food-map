@@ -1,6 +1,6 @@
 export type CoordinateStatus = 'valid' | 'missing' | 'outlier';
 
-export type StoreLayer = 'friendly_store' | 'registered_restaurant_business';
+export type StoreLayer = 'friendly_store' | 'water_refill_store' | 'registered_restaurant_business';
 
 export type Language = 'zh' | 'en';
 
@@ -19,7 +19,8 @@ export type FriendlyServiceTag =
   | 'bicycle_friendly'
   | 'parent_child_friendly'
   | 'muslim_friendly'
-  | 'period_friendly';
+  | 'period_friendly'
+  | 'water_refill_available';
 
 export type FriendlyStore = {
   id: string;
@@ -57,6 +58,25 @@ export type RestaurantBusiness = {
   source: string;
 };
 
+export type MatchConfidence = 'high' | 'medium' | 'low' | 'none';
+
+export type WaterRefillStore = {
+  id: string;
+  layer: 'water_refill_store';
+  nameZh: string;
+  addressZh: string;
+  descriptionZh?: string;
+  district?: string;
+  longitude?: number;
+  latitude?: number;
+  coordinateStatus: CoordinateStatus;
+  phone?: string;
+  matchedFriendlyStoreId?: string;
+  matchedRestaurantBusinessId?: string;
+  matchConfidence?: MatchConfidence;
+  source: string;
+};
+
 export type FriendlyFoodSummary = {
   generatedAt: string;
   friendlyStoreCount: number;
@@ -70,8 +90,14 @@ export type FriendlyFoodSummary = {
   muslimFriendlyCount: number;
   freeWifiCount: number;
   matchedFriendlyRestaurantCount: number;
+  waterRefillStoreCount: number;
+  waterRefillStoresWithCoordinates: number;
+  topDistrictByWaterRefillStores?: string;
+  matchedFriendlyWaterRefillStores: number;
+  unmatchedWaterRefillOnlyRecords: number;
   friendlyStoresByDistrict: Record<string, number>;
   restaurantBusinessesByDistrict: Record<string, number>;
+  waterRefillStoresByDistrict: Record<string, number>;
   friendlyServiceTagDistribution: Record<FriendlyServiceTag, number>;
   totalFriendlyItemsDistribution: Record<string, number>;
 };
@@ -98,6 +124,14 @@ export type ConversionReport = {
     missingCoordinates: number;
     outlierCoordinates: number;
     matchedFriendlyStores: number;
+  };
+  waterRefillStores?: {
+    totalRows: number;
+    converted: number;
+    missingCoordinates: number;
+    outlierCoordinates: number;
+    matchedFriendlyStores: number;
+    matchedRestaurantBusinesses: number;
   };
   notes: string[];
 };

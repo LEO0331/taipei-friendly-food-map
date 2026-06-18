@@ -11,16 +11,6 @@ type Props = {
 };
 
 export function FilterPanel({ filters, language, t, onChange }: Props) {
-  const setLayerMode = (mode: 'both' | StoreLayer) => {
-    onChange({
-      ...filters,
-      layers: {
-        friendly_store: mode === 'both' || mode === 'friendly_store',
-        registered_restaurant_business: mode === 'both' || mode === 'registered_restaurant_business',
-      },
-    });
-  };
-
   const toggleTag = (tag: FriendlyServiceTag) => {
     const serviceTags = filters.serviceTags.includes(tag)
       ? filters.serviceTags.filter((item) => item !== tag)
@@ -40,23 +30,30 @@ export function FilterPanel({ filters, language, t, onChange }: Props) {
       </label>
 
       <div className="filter-grid">
-        <label>
-          <span>{language === 'zh' ? '資料圖層' : 'Layer'}</span>
-          <select
-            value={
-              filters.layers.friendly_store && filters.layers.registered_restaurant_business
-                ? 'both'
-                : filters.layers.friendly_store
-                  ? 'friendly_store'
-                  : 'registered_restaurant_business'
-            }
-            onChange={(event) => setLayerMode(event.target.value as 'both' | StoreLayer)}
-          >
-            <option value="both">{t('bothLayers')}</option>
-            <option value="friendly_store">{t('friendlyOnly')}</option>
-            <option value="registered_restaurant_business">{t('restaurantsOnly')}</option>
-          </select>
-        </label>
+        <fieldset className="layer-fieldset">
+          <legend>{language === 'zh' ? '資料圖層' : 'Layers'}</legend>
+          {(
+            [
+              ['friendly_store', t('friendlyStores')],
+              ['water_refill_store', t('waterRefillStores')],
+              ['registered_restaurant_business', t('registeredRestaurantBusinesses')],
+            ] as Array<[StoreLayer, string]>
+          ).map(([layer, label]) => (
+            <label key={layer}>
+              <input
+                type="checkbox"
+                checked={filters.layers[layer]}
+                onChange={(event) =>
+                  onChange({
+                    ...filters,
+                    layers: { ...filters.layers, [layer]: event.target.checked },
+                  })
+                }
+              />
+              {label}
+            </label>
+          ))}
+        </fieldset>
         <label>
           <span>{t('district')}</span>
           <select

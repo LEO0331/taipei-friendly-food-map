@@ -1,29 +1,44 @@
 import type { TranslationKey } from '../data/translations';
 import { formatDistance, googleMapsUrl, tagLabel } from '../lib/friendlyFood';
-import type { FriendlyStore, Language, RestaurantBusiness } from '../types';
+import type { FriendlyStore, Language, RestaurantBusiness, WaterRefillStore } from '../types';
 
 type Props = {
-  item: FriendlyStore | RestaurantBusiness;
+  item: FriendlyStore | WaterRefillStore | RestaurantBusiness;
   distance?: number;
   language: Language;
   t: (key: TranslationKey) => string;
-  onFocusMap?: (item: FriendlyStore | RestaurantBusiness) => void;
+  onFocusMap?: (item: FriendlyStore | WaterRefillStore | RestaurantBusiness) => void;
 };
 
 export function StoreCard({ item, distance, language, t, onFocusMap }: Props) {
   const isFriendly = item.layer === 'friendly_store';
-  const title = isFriendly ? (language === 'en' && item.nameEn ? item.nameEn : item.nameZh) : item.name;
+  const isWaterRefill = item.layer === 'water_refill_store';
+  const title = isFriendly
+    ? language === 'en' && item.nameEn
+      ? item.nameEn
+      : item.nameZh
+    : isWaterRefill
+      ? item.nameZh
+      : item.name;
   const address = isFriendly
     ? language === 'en' && item.addressEn
       ? item.addressEn
       : item.addressZh
-    : item.address;
+    : isWaterRefill
+      ? item.addressZh
+      : item.address;
 
   return (
     <article className="store-card">
       <div className="card-heading">
-        <span className={`layer-badge ${isFriendly ? 'friendly' : 'restaurant'}`}>
-          {isFriendly ? t('friendlyStores') : t('registeredRestaurantBusinesses')}
+        <span
+          className={`layer-badge ${isFriendly ? 'friendly' : isWaterRefill ? 'water' : 'restaurant'}`}
+        >
+          {isFriendly
+            ? t('friendlyStores')
+            : isWaterRefill
+              ? t('waterRefillAvailable')
+              : t('registeredRestaurantBusinesses')}
         </span>
         {distance !== undefined && <span className="distance">{formatDistance(distance, language)}</span>}
       </div>
@@ -32,7 +47,9 @@ export function StoreCard({ item, distance, language, t, onFocusMap }: Props) {
       <div className="meta-row">
         {item.district && <span>{item.district}</span>}
         {isFriendly && item.phone && <span>{item.phone}</span>}
-        {!isFriendly && item.matchedFriendlyStoreId && <span>{t('matchedFriendlyRestaurant')}</span>}
+        {!isFriendly && item.matchedFriendlyStoreId && (
+          <span>{isWaterRefill ? t('matchedFriendlyWaterRefillStore') : t('matchedFriendlyRestaurant')}</span>
+        )}
       </div>
       {isFriendly ? (
         <>
@@ -46,6 +63,17 @@ export function StoreCard({ item, distance, language, t, onFocusMap }: Props) {
               <span key={tag}>{tagLabel(tag, language)}</span>
             ))}
           </div>
+        </>
+      ) : isWaterRefill ? (
+        <>
+          {item.descriptionZh && <p className="description">{item.descriptionZh}</p>}
+          <div className="tag-list">
+            <span>{t('waterRefillAvailable')}</span>
+            {item.matchedRestaurantBusinessId && (
+              <span>{t('appearsInRestaurantBusinessRegistry')}</span>
+            )}
+          </div>
+          <p className="description">{t('waterRefillAvailabilityNotice')}</p>
         </>
       ) : (
         <p className="description">{t('restaurantRegistryDisclaimer')}</p>

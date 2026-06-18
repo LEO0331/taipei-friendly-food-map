@@ -16,11 +16,17 @@ import {
   itemSearchText,
   type FilterState,
 } from './lib/friendlyFood';
-import type { FriendlyStore, Language, RestaurantBusiness } from './types';
+import type {
+  FriendlyStore,
+  Language,
+  RestaurantBusiness,
+  WaterRefillStore,
+} from './types';
 
 const initialFilters: FilterState = {
   layers: {
     friendly_store: true,
+    water_refill_store: true,
     registered_restaurant_business: false,
   },
   district: '',
@@ -38,16 +44,36 @@ export default function App() {
   const [filters, setFilters] = useState<FilterState>(initialFilters);
   const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>();
   const [locationError, setLocationError] = useState('');
-  const [focusedItem, setFocusedItem] = useState<FriendlyStore | RestaurantBusiness | undefined>();
+  const [focusedItem, setFocusedItem] = useState<
+    FriendlyStore | WaterRefillStore | RestaurantBusiness | undefined
+  >();
   const t = (key: TranslationKey) => translations[language][key];
 
   useEffect(() => {
     loadFriendlyFoodData().then(setData);
   }, []);
 
-  const allItems = useMemo<Array<FriendlyStore | RestaurantBusiness>>(
-    () => [...(data?.friendlyStores ?? []), ...(data?.restaurants ?? [])],
+  const friendlyWithWaterRefillIds = useMemo(
+    () =>
+      new Set(
+        data?.waterRefillStores
+          .map((store) => store.matchedFriendlyStoreId)
+          .filter((id): id is string => Boolean(id)) ?? [],
+      ),
     [data],
+  );
+  const allItems = useMemo<Array<FriendlyStore | WaterRefillStore | RestaurantBusiness>>(
+    () => [
+      ...(data?.friendlyStores ?? []).map((store) =>
+        friendlyWithWaterRefillIds.has(store.id) &&
+        !store.serviceTags.includes('water_refill_available')
+          ? { ...store, serviceTags: ['water_refill_available' as const, ...store.serviceTags] }
+          : store,
+      ),
+      ...(data?.waterRefillStores ?? []),
+      ...(data?.restaurants ?? []),
+    ],
+    [data, friendlyWithWaterRefillIds],
   );
 
   const distances = useMemo(() => {
@@ -73,7 +99,19 @@ export default function App() {
       if (search && !itemSearchText(item, language).includes(search)) return false;
       if (item.layer === 'friendly_store') {
         if (item.totalFriendlyItems < filters.minFriendlyItems) return false;
-        if (!filters.serviceTags.every((tag) => item.serviceTags.includes(tag))) return false;
+        if (
+          !filters.serviceTags.every((tag) =>
+            tag === 'water_refill_available'
+              ? item.serviceTags.includes(tag) || friendlyWithWaterRefillIds.has(item.id)
+              : item.serviceTags.includes(tag),
+          )
+        ) {
+          return false;
+        }
+      } else if (item.layer === 'water_refill_store') {
+        if (filters.minFriendlyItems > 0) return false;
+        if (filters.serviceTags.some((tag) => tag !== 'water_refill_available')) return false;
+        if (filters.matchedOnly && !item.matchedFriendlyStoreId) return false;
       } else {
         if (filters.serviceTags.length > 0) return false;
         if (filters.minFriendlyItems > 0) return false;
@@ -81,17 +119,25 @@ export default function App() {
       }
       return true;
     });
+    const deduplicated = items.filter(
+      (item) =>
+        !(
+          item.layer === 'water_refill_store' &&
+          item.matchedFriendlyStoreId &&
+          filters.layers.friendly_store
+        ),
+    );
     if (userLocation) {
-      return [...items].sort((a, b) => {
+      return [...deduplicated].sort((a, b) => {
         const left = distances.get(`${a.layer}-${a.id}`) ?? Number.POSITIVE_INFINITY;
         const right = distances.get(`${b.layer}-${b.id}`) ?? Number.POSITIVE_INFINITY;
         return left - right;
       });
     }
-    return items;
-  }, [allItems, distances, filters, language, userLocation]);
+    return deduplicated;
+  }, [allItems, distances, filters, friendlyWithWaterRefillIds, language, userLocation]);
 
-  const showNearby = () => {
+  const showNearby = (waterRefillOnly = false) => {
     if (!navigator.geolocation) {
       setLocationError(t('locationError'));
       return;
@@ -103,7 +149,17 @@ export default function App() {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         });
-        setFilters((current) => ({ ...current, validCoordinatesOnly: true }));
+        setFilters((current) => ({
+          ...current,
+          validCoordinatesOnly: true,
+          layers: waterRefillOnly
+            ? {
+                friendly_store: false,
+                water_refill_store: true,
+                registered_restaurant_business: false,
+              }
+            : current.layers,
+        }));
       },
       () => setLocationError(t('locationError')),
       { enableHighAccuracy: true, timeout: 12000 },
@@ -133,8 +189,11 @@ export default function App() {
       <section className="workspace">
         {activeTab !== 'notes' && (
           <aside className="controls">
-            <button className="nearby-button" onClick={showNearby}>
+            <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
+            </button>
+            <button className="nearby-button secondary" onClick={() => showNearby(true)}>
+              {t('showNearbyWaterRefillStores')}
             </button>
             {locationError && <p className="error-copy">{locationError}</p>}
             {userLocation && <p className="nearby-label">{t('nearbyStores')}</p>}

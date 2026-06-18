@@ -1,6 +1,6 @@
 # Taipei Friendly Food Map / 台北友善餐飲地圖
 
-Mobile-first bilingual web app for exploring Taipei friendly stores and registered restaurant-business records. The app uses Vite, React, TypeScript, Leaflet, OpenStreetMap tiles, and static JSON files served from `public/data`.
+Mobile-first bilingual web app for exploring Taipei friendly stores, water refill locations, and registered restaurant-business records. The app uses Vite, React, TypeScript, Leaflet, OpenStreetMap tiles, and static JSON files served from `public/data`.
 
 ## Purpose
 
@@ -16,6 +16,8 @@ Traditional Chinese is the default UI language. English is available through the
   Same dataset page, English resource.
 - Registered restaurant-business list / 設址臺北市所營事業含餐館業清冊  
   <https://data.taipei/dataset/detail?id=178abc4e-fe32-4fc9-af3a-7baf1c15082c>
+- Water refill stores / 臺北市提供飲水店家清冊  
+  <https://data.taipei/dataset/detail?id=3e5d3f27-90f1-45e7-8c04-73ac593922a4>
 
 The frontend does not call Taipei Open Data directly. Raw CSV downloads and conversion happen through local scripts, and the app reads static JSON from `public/data`.
 
@@ -26,6 +28,8 @@ Friendly-store records describe stores listed in Taipei's friendly-store dataset
 Registered restaurant-business records describe businesses in Taipei whose registered business items include restaurant industry. This does not guarantee the business is currently operating as a restaurant.
 
 Actual operation, service availability, and friendly facilities should be verified with the store, on site, or through official notices.
+
+Water-refill records identify stores listed as providing drinking water. They are separate from the general friendly-store list. Water availability, opening hours, and current operation should be verified on site.
 
 ## Data Workflow
 
@@ -39,6 +43,18 @@ Fetch raw CSV files:
 
 ```sh
 npm run fetch:data
+```
+
+Fetch the official water-refill CSV:
+
+```sh
+npm run data:fetch:water-refill
+```
+
+Use a local water-refill CSV:
+
+```sh
+npm run data:fetch:water-refill -- --local /path/to/water-refill.csv
 ```
 
 Re-download even if files already exist:
@@ -57,6 +73,7 @@ Generated files:
 
 - `public/data/friendly-stores.json`
 - `public/data/restaurant-businesses.json`
+- `public/data/water-refill-stores.json`
 - `public/data/friendly-food-summary.json`
 - `public/data/conversion-report.json`
 
@@ -67,6 +84,10 @@ Raw files are stored under `data/raw/friendly-food/` and are ignored by git.
 The Traditional Chinese friendly-store file is the primary data source. The English file enriches English names, addresses, and descriptions when records can be matched reliably by close coordinates, normalized address, or normalized name. Chinese records are kept even when no English match exists.
 
 Restaurant-business records are optionally matched to friendly stores using close coordinates plus similar name, or normalized address plus similar name. Unmatched restaurant-business records are described as `friendly-store listing not found`; the app does not label them as not friendly.
+
+Water-refill records are matched conservatively to friendly stores and restaurant-business records using normalized names, addresses, districts, and close coordinates. Matches are candidates, not verification that two records represent the same operating business.
+
+The nearby controls support all selected layers and include a water-refill-only shortcut.
 
 ## Local Development
 
@@ -106,4 +127,4 @@ The app includes a web app manifest, SVG icon placeholders, mobile viewport meta
 
 ## Disclaimer
 
-This site presents public data from Taipei Open Data. Dataset coverage comparisons show record counts from two public datasets only and do not represent all restaurants, market share, or actual friendly-service coverage.
+This site presents public data from Taipei Open Data. Dataset coverage comparisons do not represent all restaurants, market share, real-time water availability, or actual friendly-service coverage.

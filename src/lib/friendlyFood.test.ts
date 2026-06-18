@@ -35,6 +35,7 @@ const baseStore: FriendlyStore = {
     parent_child_friendly: 0,
     muslim_friendly: 0,
     period_friendly: 0,
+    water_refill_available: 0,
   },
   totalFriendlyItems: 0,
   source: 'test',

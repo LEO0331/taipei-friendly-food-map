@@ -4,15 +4,15 @@ import 'leaflet.markercluster';
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import type { TranslationKey } from '../data/translations';
 import { googleMapsUrl, sanitizeExternalUrl, tagLabel } from '../lib/friendlyFood';
-import type { FriendlyStore, Language, RestaurantBusiness } from '../types';
+import type { FriendlyStore, Language, RestaurantBusiness, WaterRefillStore } from '../types';
 import { DisclaimerNotice } from './DisclaimerNotice';
 
 type Props = {
-  items: Array<FriendlyStore | RestaurantBusiness>;
+  items: Array<FriendlyStore | WaterRefillStore | RestaurantBusiness>;
   language: Language;
   t: (key: TranslationKey) => string;
   userLocation?: { latitude: number; longitude: number };
-  focusedItem?: FriendlyStore | RestaurantBusiness;
+  focusedItem?: FriendlyStore | WaterRefillStore | RestaurantBusiness;
 };
 
 const createEmojiIcon = (emoji: string, className: string) =>
@@ -26,6 +26,7 @@ const createEmojiIcon = (emoji: string, className: string) =>
 
 const friendlyIcon = createEmojiIcon('🤝', 'friendly-marker');
 const restaurantIcon = createEmojiIcon('🍽️', 'restaurant-marker');
+const waterIcon = createEmojiIcon('💧', 'water-marker');
 const matchedIcon = createEmojiIcon('⭐', 'matched-marker');
 const userIcon = createEmojiIcon('●', 'user-marker');
 
@@ -40,7 +41,7 @@ function ClusteredMarkers({
   language,
   t,
 }: {
-  items: Array<FriendlyStore | RestaurantBusiness>;
+  items: Array<FriendlyStore | WaterRefillStore | RestaurantBusiness>;
   language: Language;
   t: (key: TranslationKey) => string;
 }) {
@@ -57,7 +58,17 @@ function ClusteredMarkers({
     });
     validItems.forEach((item) => {
       const isFriendly = item.layer === 'friendly_store';
-      const icon = isFriendly ? friendlyIcon : item.matchedFriendlyStoreId ? matchedIcon : restaurantIcon;
+      const icon = isFriendly
+        ? item.serviceTags.includes('water_refill_available')
+          ? matchedIcon
+          : friendlyIcon
+        : item.layer === 'water_refill_store'
+          ? item.matchedFriendlyStoreId
+            ? matchedIcon
+            : waterIcon
+          : item.matchedFriendlyStoreId
+            ? matchedIcon
+            : restaurantIcon;
       const marker = L.marker([item.latitude as number, item.longitude as number], { icon });
       marker.bindPopup(renderPopupHtml(item, language, t));
       cluster.addLayer(marker);
@@ -71,7 +82,7 @@ function ClusteredMarkers({
   return null;
 }
 
-function FocusMap({ item }: { item?: FriendlyStore | RestaurantBusiness }) {
+function FocusMap({ item }: { item?: FriendlyStore | WaterRefillStore | RestaurantBusiness }) {
   const map = useMap();
   useEffect(() => {
     if (item?.latitude !== undefined && item.longitude !== undefined) {
@@ -85,7 +96,7 @@ const escapeHtml = (value: string | undefined) =>
   (value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 
 function renderPopupHtml(
-  item: FriendlyStore | RestaurantBusiness,
+  item: FriendlyStore | WaterRefillStore | RestaurantBusiness,
   language: Language,
   t: (key: TranslationKey) => string,
 ) {
@@ -106,6 +117,22 @@ function renderPopupHtml(
         <p>${escapeHtml(t('totalFriendlyItems'))}: ${item.totalFriendlyItems}</p>
         ${websiteUrl ? `<a href="${escapeHtml(websiteUrl)}" target="_blank" rel="noreferrer">${escapeHtml(t('officialIntroduction'))}</a>` : ''}
         <a href="${googleMapsUrl({ latitude: item.latitude, longitude: item.longitude, address })}" target="_blank" rel="noreferrer">${escapeHtml(t('openGoogleMaps'))}</a>
+      </div>
+    `;
+  }
+  if (item.layer === 'water_refill_store') {
+    return `
+      <div class="popup-content">
+        <strong>${escapeHtml(t('waterRefillStore'))}</strong>
+        <h3>${escapeHtml(item.nameZh)}</h3>
+        ${item.district ? `<p>${escapeHtml(t('district'))}: ${escapeHtml(item.district)}</p>` : ''}
+        <p>${escapeHtml(item.addressZh)}</p>
+        ${item.phone ? `<p>${escapeHtml(t('phone'))}: ${escapeHtml(item.phone)}</p>` : ''}
+        ${item.descriptionZh ? `<p>${escapeHtml(item.descriptionZh)}</p>` : ''}
+        <p>${escapeHtml(t('listedAsFriendlyStore'))}: ${item.matchedFriendlyStoreId ? escapeHtml(t('matchedFriendlyRestaurant')) : language === 'zh' ? '未找到匹配' : 'No matched listing'}</p>
+        <p>${escapeHtml(t('appearsInRestaurantBusinessRegistry'))}: ${item.matchedRestaurantBusinessId ? language === 'zh' ? '匹配候選' : 'Matched candidate' : language === 'zh' ? '未找到匹配' : 'No matched listing'}</p>
+        <p>${escapeHtml(t('waterRefillAvailabilityNotice'))}</p>
+        <a href="${googleMapsUrl({ latitude: item.latitude, longitude: item.longitude, address: item.addressZh })}" target="_blank" rel="noreferrer">${escapeHtml(t('openGoogleMaps'))}</a>
       </div>
     `;
   }

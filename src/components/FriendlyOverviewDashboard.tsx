@@ -38,6 +38,11 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
     [language === 'zh' ? '穆斯林友善數' : 'Muslim-friendly count', summary.muslimFriendlyCount],
     ['Free Wi-Fi', summary.freeWifiCount],
     [language === 'zh' ? '友善餐館匹配數' : 'Matched friendly restaurant count', summary.matchedFriendlyRestaurantCount],
+    [t('waterRefillStoreCount'), summary.waterRefillStoreCount],
+    [t('waterRefillStoresWithCoordinates'), summary.waterRefillStoresWithCoordinates],
+    [t('topDistrictByWaterRefillStores'), summary.topDistrictByWaterRefillStores ?? '-'],
+    [t('matchedFriendlyWaterRefillStores'), summary.matchedFriendlyWaterRefillStores],
+    [t('unmatchedWaterRefillOnlyRecords'), summary.unmatchedWaterRefillOnlyRecords],
   ];
   const friendlyByDistrict = TAIPEI_DISTRICTS.map((district) => ({
     label: district,
@@ -46,6 +51,10 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
   const restaurantsByDistrict = TAIPEI_DISTRICTS.map((district) => ({
     label: district,
     value: summary.restaurantBusinessesByDistrict[district] ?? 0,
+  }));
+  const waterRefillByDistrict = TAIPEI_DISTRICTS.map((district) => ({
+    label: district,
+    value: summary.waterRefillStoresByDistrict[district] ?? 0,
   }));
   const serviceDistribution = FRIENDLY_TAGS.map((tag) => ({
     label: tagLabel(tag, language),
@@ -82,6 +91,33 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
         <article>
           <h3>{t('restaurantBusinessesByDistrict')}</h3>
           <BarChart data={restaurantsByDistrict} />
+        </article>
+        <article>
+          <h3>{t('waterRefillStoresByDistrict')}</h3>
+          <DisclaimerNotice>{t('waterRefillDatasetNotice')}</DisclaimerNotice>
+          <BarChart data={waterRefillByDistrict} />
+        </article>
+        <article>
+          <h3>{t('friendlyStoresVsWaterRefillStoresByDistrict')}</h3>
+          <h4>{t('friendlyStores')}</h4>
+          <BarChart data={friendlyByDistrict} />
+          <h4>{t('waterRefillStores')}</h4>
+          <BarChart data={waterRefillByDistrict} />
+        </article>
+        <article>
+          <h3>{t('waterRefillMatchedVsUnmatched')}</h3>
+          <BarChart
+            data={[
+              {
+                label: t('matchedFriendlyWaterRefillStores'),
+                value: summary.matchedFriendlyWaterRefillStores,
+              },
+              {
+                label: t('unmatchedWaterRefillOnlyRecords'),
+                value: summary.unmatchedWaterRefillOnlyRecords,
+              },
+            ]}
+          />
         </article>
         <article>
           <h3>{t('friendlyServiceTagDistribution')}</h3>
