@@ -50,9 +50,9 @@ a {
 
 .app-header h1 {
   margin: 0;
-  max-width: 760px;
-  font-size: clamp(2rem, 7vw, 4.8rem);
-  line-height: 0.98;
+  max-width: 1000px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
@@ -124,6 +124,10 @@ a {
   display: grid;
   gap: 14px;
   margin-top: 14px;
+}
+
+.workspace.full-width {
+  display: block;
 }
 
 .controls,
@@ -297,7 +301,7 @@ a {
   border: 1px solid #d7d1c5;
   border-radius: 8px;
   overflow: hidden;
-  background: #dce8dd;
+  background: #eef2eb;
 }
 
 .emoji-marker {
@@ -549,6 +553,11 @@ a {
 .data-notes {
   display: grid;
   gap: 14px;
+  max-width: none;
+}
+
+.data-notes > .notice,
+.data-notes > p {
   max-width: 860px;
 }
 
@@ -575,8 +584,9 @@ a {
 }
 
 .module-header h2 {
-  font-size: clamp(1.7rem, 5vw, 3rem);
-  line-height: 1;
+  max-width: 900px;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1.08;
 }
 
 .module-header span {
@@ -649,6 +659,10 @@ a {
     align-items: start;
   }
 
+  .workspace.full-width {
+    grid-template-columns: 1fr;
+  }
+
   .controls {
     position: sticky;
     top: 14px;
@@ -662,6 +676,10 @@ a {
   }
 
   .chart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .data-notes .notes-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -682,6 +700,10 @@ a {
 @media (min-width: 1100px) {
   .workspace {
     grid-template-columns: 360px minmax(0, 1fr);
+  }
+
+  .workspace.full-width {
+    grid-template-columns: 1fr;
   }
 
   .leaflet-map {

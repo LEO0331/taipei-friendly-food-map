@@ -187,7 +187,7 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className="workspace">
+      <section className={activeTab === 'notes' || activeTab === 'traceability' ? 'workspace full-width' : 'workspace'}>
         {activeTab !== 'notes' && activeTab !== 'traceability' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
