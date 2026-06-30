@@ -1,4 +1,4 @@
-const CACHE_NAME = 'taipei-friendly-food-map-v2';
+const CACHE_NAME = 'taipei-friendly-food-map-v3';
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const withBase = (path) => `${BASE_PATH}${path}`;
 const APP_SHELL = [
@@ -8,6 +8,13 @@ const APP_SHELL = [
   withBase('data/water-refill-stores.json'),
   withBase('data/restaurant-businesses.json'),
   withBase('data/friendly-food-summary.json'),
+  withBase('data/food-traceability/summary.json'),
+  withBase('data/food-traceability/companies.json'),
+  withBase('data/food-traceability/brands.json'),
+  withBase('data/food-traceability/products-index.json'),
+  withBase('data/food-traceability/ingredients-index.json'),
+  withBase('data/food-traceability/search-index.json'),
+  withBase('data/food-traceability/chunk-manifest.json'),
 ];
 
 self.addEventListener('install', (event) => {

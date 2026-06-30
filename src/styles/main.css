@@ -359,7 +359,8 @@ a {
   font-size: 0.78rem;
 }
 
-.directory {
+.directory,
+.traceability-module {
   display: grid;
   gap: 12px;
 }
@@ -557,6 +558,87 @@ a {
   line-height: 1.6;
 }
 
+.module-header {
+  display: grid;
+  gap: 6px;
+}
+
+.module-header p,
+.module-header h2,
+.module-header span {
+  margin: 0;
+}
+
+.module-header p {
+  color: #15803d;
+  font-weight: 800;
+}
+
+.module-header h2 {
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  line-height: 1;
+}
+
+.module-header span {
+  max-width: 840px;
+  color: #4e5b55;
+  line-height: 1.55;
+}
+
+.traceability-filters {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #ded9cc;
+  border-radius: 8px;
+  background: #fffdf8;
+}
+
+.traceability-filters label {
+  display: grid;
+  gap: 6px;
+  color: #59615d;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.traceability-filters input {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #d5d1c5;
+  border-radius: 8px;
+  background: white;
+  color: #15231c;
+  padding: 0 12px;
+}
+
+.traceability-results,
+.ingredient-list {
+  display: grid;
+  gap: 10px;
+}
+
+.product-detail {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #ded9cc;
+  border-radius: 8px;
+  background: #fffdf8;
+}
+
+.product-detail h2,
+.product-detail h3,
+.ingredient-list p {
+  margin: 0;
+}
+
+.ingredient-list {
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
 @media (min-width: 760px) {
   .app {
     padding: 22px;
@@ -580,6 +662,19 @@ a {
   }
 
   .chart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .traceability-filters {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .traceability-filters .search-field,
+  .traceability-filters .checkbox-row {
+    grid-column: 1 / -1;
+  }
+
+  .traceability-results {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

@@ -6,6 +6,7 @@ import { DataNotes } from './components/DataNotes';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
 import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
+import { FoodTraceabilityModule } from './components/FoodTraceabilityModule';
 import { LanguageToggle } from './components/LanguageToggle';
 import { MainTabs, type TabKey } from './components/MainTabs';
 import { StoreDirectory } from './components/StoreDirectory';
@@ -187,7 +188,7 @@ export default function App() {
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
       <section className="workspace">
-        {activeTab !== 'notes' && (
+        {activeTab !== 'notes' && activeTab !== 'traceability' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -224,6 +225,9 @@ export default function App() {
             />
           )}
           {activeTab === 'overview' && <FriendlyOverviewDashboard summary={data.summary} language={language} t={t} />}
+          {activeTab === 'traceability' && (
+            <FoodTraceabilityModule summary={data.foodTraceabilitySummary} language={language} t={t} />
+          )}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
         </div>
       </section>

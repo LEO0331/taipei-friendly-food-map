@@ -9,14 +9,16 @@
     "preview": "vite preview",
     "fetch:data": "tsx scripts/fetchFriendlyFoodData.ts",
     "data:fetch:water-refill": "tsx scripts/fetchWaterRefillStores.ts",
+    "data:fetch:food-traceability": "tsx scripts/fetchTaipeiFoodTraceabilityProducts.ts",
     "convert:friendly": "tsx scripts/convertFriendlyStores.ts",
     "convert:restaurants": "tsx scripts/convertRestaurantBusinesses.ts",
     "data:convert:water-refill": "tsx scripts/convertWaterRefillStores.ts",
+    "data:convert:food-traceability": "tsx scripts/convertTaipeiFoodTraceabilityProducts.ts",
     "build:summaries": "tsx scripts/buildFriendlyFoodSummaries.ts",
-    "data:fetch": "npm run fetch:data && npm run data:fetch:water-refill",
-    "convert:data": "npm run convert:friendly && npm run convert:restaurants && npm run data:convert:water-refill && npm run build:summaries",
+    "data:fetch": "npm run fetch:data && npm run data:fetch:water-refill && npm run data:fetch:food-traceability",
+    "convert:data": "npm run convert:friendly && npm run convert:restaurants && npm run data:convert:water-refill && npm run build:summaries && npm run data:convert:food-traceability",
     "lint": "tsc --noEmit",
-    "test": "node --import tsx --test"
+    "test": "node --loader tsx --test src/**/*.test.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

@@ -87,5 +87,262 @@
     "8": 92,
     "9": 53,
     "10+": 64
+  },
+  "foodTraceability": {
+    "totalRows": 42947,
+    "companyCount": 258,
+    "brandCount": 279,
+    "productCount": 7044,
+    "ingredientCount": 4281,
+    "ingredientBrandCount": 2441,
+    "recordsWithServingSize": 42947,
+    "recordsWithCalories": 41578,
+    "recordsWithTraceabilityUrl": 42947,
+    "administrativeAreaCodes": [
+      {
+        "administrativeAreaCode": "63000000",
+        "count": 42947
+      }
+    ],
+    "topCompaniesByRowCount": [
+      {
+        "companyName": "拾汣茶屋股份有限公司",
+        "count": 4083
+      },
+      {
+        "companyName": "美食達人股份有限公司",
+        "count": 1749
+      },
+      {
+        "companyName": "悠旅生活事業股份有限公司",
+        "count": 1694
+      },
+      {
+        "companyName": "安心食品服務股份有限公司",
+        "count": 1582
+      },
+      {
+        "companyName": "天仁茶業股份有限公司",
+        "count": 1244
+      },
+      {
+        "companyName": "統一超商股份有限公司",
+        "count": 944
+      },
+      {
+        "companyName": "咖順有限公司",
+        "count": 903
+      },
+      {
+        "companyName": "鐵觀音李記優飲有限公司",
+        "count": 720
+      },
+      {
+        "companyName": "億可國際飲食股份有限公司",
+        "count": 712
+      },
+      {
+        "companyName": "馥餘實業股份有限公司",
+        "count": 705
+      }
+    ],
+    "topBrandsByRowCount": [
+      {
+        "brandName": "拾汣茶屋",
+        "companyName": "拾汣茶屋股份有限公司",
+        "count": 4083
+      },
+      {
+        "brandName": "85度C",
+        "companyName": "美食達人股份有限公司",
+        "count": 1749
+      },
+      {
+        "brandName": "STARBUCKS COFFEE",
+        "companyName": "悠旅生活事業股份有限公司",
+        "count": 1694
+      },
+      {
+        "brandName": "摩斯漢堡",
+        "companyName": "安心食品服務股份有限公司",
+        "count": 1582
+      },
+      {
+        "brandName": "統一超商股份有限公司",
+        "companyName": "統一超商股份有限公司",
+        "count": 944
+      },
+      {
+        "brandName": "彼得好咖啡",
+        "companyName": "咖順有限公司",
+        "count": 903
+      },
+      {
+        "brandName": "李記紅茶冰",
+        "companyName": "鐵觀音李記優飲有限公司",
+        "count": 720
+      },
+      {
+        "brandName": "CoCo都可",
+        "companyName": "億可國際飲食股份有限公司",
+        "count": 712
+      },
+      {
+        "brandName": "西雅圖極品咖啡",
+        "companyName": "馥餘實業股份有限公司",
+        "count": 705
+      },
+      {
+        "brandName": "喫茶趣ToGo",
+        "companyName": "天仁茶業股份有限公司",
+        "count": 688
+      }
+    ],
+    "topProductsByIngredientCount": [
+      {
+        "productName": "招牌拿破崙",
+        "brandName": "85度C",
+        "companyName": "美食達人股份有限公司",
+        "ingredientCount": 29
+      },
+      {
+        "productName": "味噌拉麵",
+        "brandName": "嗎哪天然之味餐廳",
+        "companyName": "基督復臨安息日會醫療財團法人臺安醫院",
+        "ingredientCount": 28
+      },
+      {
+        "productName": "麻辣豚骨",
+        "brandName": "豚人拉麵",
+        "companyName": "焱焱國際有限公司",
+        "ingredientCount": 28
+      },
+      {
+        "productName": "1號特製午餐",
+        "brandName": "嗎哪天然之味餐廳",
+        "companyName": "基督復臨安息日會醫療財團法人臺安醫院",
+        "ingredientCount": 27
+      },
+      {
+        "productName": "北海道紅茶拿鐵蛋糕",
+        "brandName": "85度C",
+        "companyName": "美食達人股份有限公司",
+        "ingredientCount": 26
+      },
+      {
+        "productName": "2號特製午餐",
+        "brandName": "嗎哪天然之味餐廳",
+        "companyName": "基督復臨安息日會醫療財團法人臺安醫院",
+        "ingredientCount": 24
+      },
+      {
+        "productName": "北海道生乳蛋糕",
+        "brandName": "85度C",
+        "companyName": "美食達人股份有限公司",
+        "ingredientCount": 24
+      },
+      {
+        "productName": "3號特製午餐",
+        "brandName": "嗎哪天然之味餐廳",
+        "companyName": "基督復臨安息日會醫療財團法人臺安醫院",
+        "ingredientCount": 23
+      },
+      {
+        "productName": "法式草莓捲",
+        "brandName": "85度C",
+        "companyName": "美食達人股份有限公司",
+        "ingredientCount": 22
+      },
+      {
+        "productName": "香酥腰內肉定食",
+        "brandName": "福勝亭",
+        "companyName": "三商餐飲股份有限公司",
+        "ingredientCount": 22
+      }
+    ],
+    "topIngredientsByProductCount": [
+      {
+        "ingredientName": "甘蔗液糖",
+        "productCount": 610
+      },
+      {
+        "ingredientName": "鮮奶",
+        "productCount": 425
+      },
+      {
+        "ingredientName": "蔗糖",
+        "productCount": 420
+      },
+      {
+        "ingredientName": "蔗糖液",
+        "productCount": 363
+      },
+      {
+        "ingredientName": "冰塊",
+        "productCount": 330
+      },
+      {
+        "ingredientName": "牛奶",
+        "productCount": 297
+      },
+      {
+        "ingredientName": "果糖",
+        "productCount": 250
+      },
+      {
+        "ingredientName": "鮮乳",
+        "productCount": 242
+      },
+      {
+        "ingredientName": "紅茶",
+        "productCount": 242
+      },
+      {
+        "ingredientName": "雞蛋",
+        "productCount": 230
+      }
+    ],
+    "topIngredientBrandsByRowCount": [
+      {
+        "ingredientBrand": "拾汣茶屋",
+        "count": 3553
+      },
+      {
+        "ingredientBrand": "台糖",
+        "count": 1890
+      },
+      {
+        "ingredientBrand": "85度C",
+        "count": 813
+      },
+      {
+        "ingredientBrand": "STARBUCKS®",
+        "count": 653
+      },
+      {
+        "ingredientBrand": "光泉",
+        "count": 642
+      },
+      {
+        "ingredientBrand": "千明茶業有限公司",
+        "count": 509
+      },
+      {
+        "ingredientBrand": "開元",
+        "count": 505
+      },
+      {
+        "ingredientBrand": "億可國際飲食股份有限公司",
+        "count": 496
+      },
+      {
+        "ingredientBrand": "咖順",
+        "count": 463
+      },
+      {
+        "ingredientBrand": "天仁茗茶",
+        "count": 424
+      }
+    ]
   }
 }

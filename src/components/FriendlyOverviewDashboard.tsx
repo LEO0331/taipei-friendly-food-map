@@ -43,6 +43,21 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
     [t('topDistrictByWaterRefillStores'), summary.topDistrictByWaterRefillStores ?? '-'],
     [t('matchedFriendlyWaterRefillStores'), summary.matchedFriendlyWaterRefillStores],
     [t('unmatchedWaterRefillOnlyRecords'), summary.unmatchedWaterRefillOnlyRecords],
+    ...(summary.foodTraceability
+      ? [
+          [t('traceabilityRecordCount'), summary.foodTraceability.totalRows],
+          [t('companyCount'), summary.foodTraceability.companyCount],
+          [t('brandCount'), summary.foodTraceability.brandCount],
+          [t('productCount'), summary.foodTraceability.productCount],
+          [t('ingredientCount'), summary.foodTraceability.ingredientCount],
+          [t('ingredientBrandCount'), summary.foodTraceability.ingredientBrandCount],
+          [t('recordsWithServingSize'), summary.foodTraceability.recordsWithServingSize],
+          [t('recordsWithCalories'), summary.foodTraceability.recordsWithCalories],
+          [t('recordsWithSourceLink'), summary.foodTraceability.recordsWithTraceabilityUrl],
+          [t('topBrandByRecords'), summary.foodTraceability.topBrandsByRowCount[0]?.brandName ?? '-'],
+          [t('topCompanyByRecords'), summary.foodTraceability.topCompaniesByRowCount[0]?.companyName ?? '-'],
+        ]
+      : []),
   ];
   const friendlyByDistrict = TAIPEI_DISTRICTS.map((district) => ({
     label: district,
@@ -147,6 +162,43 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
           <h3>{t('friendlyItemsDistribution')}</h3>
           <BarChart data={friendlyItemsDistribution} />
         </article>
+        {summary.foodTraceability && (
+          <>
+            <article>
+              <h3>{t('topCompaniesByRecordCount')}</h3>
+              <DisclaimerNotice>{t('foodTraceabilityChartNotice')}</DisclaimerNotice>
+              <BarChart
+                data={summary.foodTraceability.topCompaniesByRowCount
+                  .slice(0, 10)
+                  .map((item) => ({ label: item.companyName, value: item.count }))}
+              />
+            </article>
+            <article>
+              <h3>{t('topBrandsByRecordCount')}</h3>
+              <BarChart
+                data={summary.foodTraceability.topBrandsByRowCount
+                  .slice(0, 10)
+                  .map((item) => ({ label: item.brandName, value: item.count }))}
+              />
+            </article>
+            <article>
+              <h3>{t('topProductsByIngredientCount')}</h3>
+              <BarChart
+                data={summary.foodTraceability.topProductsByIngredientCount
+                  .slice(0, 10)
+                  .map((item) => ({ label: item.productName, value: item.ingredientCount }))}
+              />
+            </article>
+            <article>
+              <h3>{t('topIngredientsByProductCount')}</h3>
+              <BarChart
+                data={summary.foodTraceability.topIngredientsByProductCount
+                  .slice(0, 10)
+                  .map((item) => ({ label: item.ingredientName, value: item.productCount }))}
+              />
+            </article>
+          </>
+        )}
       </div>
     </section>
   );
