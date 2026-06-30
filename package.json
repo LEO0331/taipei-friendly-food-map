@@ -18,7 +18,7 @@
     "data:fetch": "npm run fetch:data && npm run data:fetch:water-refill && npm run data:fetch:food-traceability",
     "convert:data": "npm run convert:friendly && npm run convert:restaurants && npm run data:convert:water-refill && npm run build:summaries && npm run data:convert:food-traceability",
     "lint": "tsc --noEmit",
-    "test": "node --loader tsx --test src/**/*.test.ts"
+    "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

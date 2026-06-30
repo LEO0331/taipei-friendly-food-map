@@ -92,6 +92,25 @@ function FocusMap({ item }: { item?: FriendlyStore | WaterRefillStore | Restaura
   return null;
 }
 
+function ResizeMap() {
+  const map = useMap();
+  useEffect(() => {
+    const container = map.getContainer();
+    const resize = () => map.invalidateSize();
+    resize();
+    const timeout = window.setTimeout(resize, 150);
+    const observer = new ResizeObserver(resize);
+    observer.observe(container);
+    window.addEventListener('resize', resize);
+    return () => {
+      window.clearTimeout(timeout);
+      observer.disconnect();
+      window.removeEventListener('resize', resize);
+    };
+  }, [map]);
+  return null;
+}
+
 const escapeHtml = (value: string | undefined) =>
   (value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 
@@ -163,6 +182,7 @@ export function FriendlyMap({ items, language, t, userLocation, focusedItem }: P
           </Marker>
         )}
         <FocusMap item={focusedItem} />
+        <ResizeMap />
       </MapContainer>
       <DisclaimerNotice>{t('dataDisclaimer')}</DisclaimerNotice>
     </section>
