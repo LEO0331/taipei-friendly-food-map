@@ -5,6 +5,7 @@ export type FriendlyFoodModule =
   | 'friendly_food_shops'
   | 'drinking_water_friendly_stores'
   | 'taipei_food_traceability_products'
+  | 'commercial_district_introductions'
   | 'data_table'
   | 'data_notes';
 
@@ -107,6 +108,117 @@ export type FriendlyFoodSummary = {
   friendlyServiceTagDistribution: Record<FriendlyServiceTag, number>;
   totalFriendlyItemsDistribution: Record<string, number>;
   foodTraceability?: TaipeiFoodTraceabilitySummary;
+  commercialDistricts?: CommercialDistrictIntroductionSummary;
+};
+
+export type CommercialDistrictTagCategory = 'food' | 'shopping' | 'leisure' | 'unknown';
+export type CommercialDistrictTypeCategory =
+  | 'food'
+  | 'night_market'
+  | 'traditional_market'
+  | 'shopping'
+  | 'department_store'
+  | 'hot_spring'
+  | 'cultural_creative'
+  | 'hospitality'
+  | 'electronics'
+  | 'pet'
+  | 'automotive'
+  | 'home_living'
+  | 'education'
+  | 'medical_lifestyle'
+  | 'mixed'
+  | 'other'
+  | 'unknown';
+
+export type CommercialDistrictIntroductionRecord = {
+  id: string;
+  module: 'commercial_district_introductions';
+  sourceSequenceNumber?: number;
+  commercialDistrictName: string;
+  district: string;
+  areaCode?: string;
+  districtFromAreaCode?: string;
+  districtMismatch: boolean;
+  districtTagRaw?: string;
+  districtTag?: string;
+  districtTagCategory: CommercialDistrictTagCategory;
+  organizationName?: string;
+  hasOrganizationName: boolean;
+  locationDescription: string;
+  nearbyMrtRaw?: string;
+  nearbyMrt?: string;
+  nearbyMrtLineCodes: string[];
+  nearbyMrtStationNames: string[];
+  commercialDistrictTypeRaw?: string;
+  commercialDistrictType?: string;
+  commercialDistrictTypeCategories: CommercialDistrictTypeCategory[];
+  foodRelated: boolean;
+  shoppingRelated: boolean;
+  leisureRelated: boolean;
+  nightMarketRelated: boolean;
+  traditionalMarketRelated: boolean;
+  hotSpringRelated: boolean;
+  culturalCreativeRelated: boolean;
+  departmentStoreRelated: boolean;
+  transportationRelated: boolean;
+  description: string;
+  descriptionPlainText?: string;
+  descriptionLength?: number;
+  locationPrecision: 'district_centroid' | 'location_description_only' | 'exact' | 'missing';
+  googleMapsQuery?: string;
+  source: string;
+  sourceAgency: string;
+};
+
+export type CommercialDistrictIntroductionSummary = {
+  totalRecords: number;
+  districtCount: number;
+  areaCodeCount: number;
+  districtTagCount: number;
+  organizationCount: number;
+  nearbyMrtStationCount: number;
+  commercialDistrictTypeCount: number;
+  recordsWithOrganizationName: number;
+  recordsWithCommercialDistrictType: number;
+  recordsWithNearbyMrt: number;
+  foodRelatedCount: number;
+  shoppingRelatedCount: number;
+  leisureRelatedCount: number;
+  nightMarketRelatedCount: number;
+  traditionalMarketRelatedCount: number;
+  hotSpringRelatedCount: number;
+  culturalCreativeRelatedCount: number;
+  departmentStoreRelatedCount: number;
+  byDistrict: Array<{
+    district: string;
+    areaCode?: string;
+    commercialDistrictCount: number;
+    foodRelatedCount: number;
+    shoppingRelatedCount: number;
+    leisureRelatedCount: number;
+    nightMarketRelatedCount: number;
+  }>;
+  byDistrictTag: Array<{
+    districtTag: string;
+    districtTagCategory: CommercialDistrictTagCategory;
+    count: number;
+  }>;
+  byCommercialDistrictTypeCategory: Array<{
+    category: CommercialDistrictTypeCategory;
+    count: number;
+  }>;
+  byMrtStation: Array<{ stationName: string; lineCodes: string[]; count: number }>;
+  topCommercialDistrictTypes: Array<{ commercialDistrictType: string; count: number }>;
+  dataQuality: {
+    missingOrganizationNameCount: number;
+    missingCommercialDistrictTypeCount: number;
+    missingNearbyMrtCount: number;
+    districtMismatchCount: number;
+    duplicateCommercialDistrictNameCount: number;
+    duplicateLocationDescriptionCount: number;
+    invalidAreaCodeCount: number;
+  };
 };
 
 export type TaipeiFoodTraceabilityProductIndexItem = {
@@ -235,6 +347,13 @@ export type ConversionReport = {
     sourceFile: string;
     invalidCaloriesExamples: string[];
     invalidUrlExamples: string[];
+  };
+  commercialDistricts?: CommercialDistrictIntroductionSummary & {
+    source: string;
+    sourceAgency: string;
+    sourceFile: string;
+    invalidAreaCodeExamples: string[];
+    unparsedMrtExamples: string[];
   };
   notes: string[];
 };

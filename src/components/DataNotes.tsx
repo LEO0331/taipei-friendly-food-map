@@ -38,6 +38,15 @@ export function DataNotes({ language, t }: Props) {
           <p>{t('foodTraceabilityFriendlyShopNote')}</p>
         </article>
         <article>
+          <h3>{t('commercialDistrictIntroductions')}</h3>
+          <p>{t('commercialDistrictDataNote')}</p>
+          <p>{t('commercialDistrictMapNotice')}</p>
+          <p>{t('commercialDistrictInterpretationNote')}</p>
+          <p>{t('commercialDistrictFriendlyFoodDistinctionNote')}</p>
+          <p>{t('commercialDistrictWaterRefillDistinctionNote')}</p>
+          <p>{t('commercialDistrictFoodTraceabilityDistinctionNote')}</p>
+        </article>
+        <article>
           <h3>{language === 'zh' ? '資料筆數比較' : 'Dataset comparison'}</h3>
           <p>{t('coverageComparisonNotice')}</p>
         </article>

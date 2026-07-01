@@ -1,12 +1,14 @@
 # Taipei Friendly Food Map / 台北友善餐飲地圖
 
-Mobile-first bilingual web app for exploring Taipei friendly stores, water refill locations, registered restaurant-business records, and food traceability product data. The app uses Vite, React, TypeScript, Leaflet, OpenStreetMap tiles, and static JSON files served from `public/data`.
+Mobile-first bilingual web app for exploring Taipei friendly stores, water refill locations, registered restaurant-business records, food traceability product data, and commercial district introductions. The app uses Vite, React, TypeScript, Leaflet, OpenStreetMap/CARTO tiles, and static JSON files served from `public/data`.
 
 ## Purpose
 
 The map helps people find nearby friendly stores and food-related places with service tags such as language support, vegetarian-friendly, Muslim-friendly, accessibility, Wi-Fi, charging, payment, bathroom, parent-child, bicycle-friendly, and period-friendly.
 
 Food source transparency: Taipei Food Traceability Platform product and ingredient lookup / 食材來源透明資訊：臺北市食材登錄平台產品與原料查詢.
+
+Commercial districts and local food/shopping context: Taipei commercial district introductions / 商圈、美食與生活消費：臺北市商圈介紹.
 
 Traditional Chinese is the default UI language. English is available through the language toggle.
 
@@ -22,6 +24,8 @@ Traditional Chinese is the default UI language. English is available through the
   <https://data.taipei/dataset/detail?id=3e5d3f27-90f1-45e7-8c04-73ac593922a4>
 - Taipei Food Traceability Platform / 臺北市食材登錄平台
   <https://data.taipei/dataset/detail?id=40900e11-3002-4c9b-9e23-aa3b72e3d46e>
+- Taipei commercial district introductions / 臺北市商圈介紹
+  <https://data.taipei/dataset/detail?id=52da1174-0d77-434b-88c3-e77b008e8624>
 
 The frontend does not call Taipei Open Data directly. Raw CSV downloads and conversion happen through local scripts, and the app reads static JSON from `public/data`.
 
@@ -36,6 +40,8 @@ Actual operation, service availability, and friendly facilities should be verifi
 Water-refill records identify stores listed as providing drinking water. They are separate from the general friendly-store list. Water availability, opening hours, and current operation should be verified on site.
 
 Food Traceability Platform records are a separate `taipei_food_traceability_products` module for company, brand, product, ingredient, ingredient-brand, serving-size, calorie-field, and source-link lookup. The dataset has no address or coordinate fields, so it does not create map markers. Serving size and calories are source fields only; the app does not make food-safety, allergy, nutrition, diet, availability, or product-recommendation claims.
+
+Commercial district introduction records are a separate `commercial_district_introductions` module. The conversion preserves district, AreaCode, tag, organization name, location description, nearby MRT, commercial district type, and description fields; derives food/shopping/leisure flags; and shows district-level map bubbles plus external map lookup links only. The dataset does not provide official coordinates or exact commercial district boundaries and is not an individual store list, real-time business-status feed, restaurant ranking, or food-safety source.
 
 ## Data Workflow
 
@@ -69,6 +75,12 @@ Fetch or copy the food-traceability CSV:
 npm run data:fetch:food-traceability
 ```
 
+Fetch or copy the commercial-district CSV:
+
+```sh
+npm run data:fetch:commercial-districts
+```
+
 Re-download even if files already exist:
 
 ```sh
@@ -91,8 +103,12 @@ Generated files:
 - `public/data/food-traceability/summary.json`
 - `public/data/food-traceability/search-index.json`
 - `public/data/food-traceability/product-details/chunk-*.json`
+- `public/data/commercial-district-introductions.json`
+- `public/data/commercial-district-introduction-summary.json`
 
 Raw files are stored under `data/raw/` and are ignored by git. Food traceability product details are split into chunked JSON, while the initial UI loads only summary and lightweight search/index files.
+
+Commercial district conversion supports UTF-8-SIG and Big5 fallback, keeps AreaCode as text, maps AreaCode to Taipei districts for validation, parses `吃在商圈 / 買在商圈 / 玩在商圈`, extracts nearby MRT line/station text where possible, and categorizes commercial district types for browsing.
 
 ## Matching Rules
 
@@ -142,4 +158,4 @@ The app includes a web app manifest, SVG icon placeholders, mobile viewport meta
 
 ## Disclaimer
 
-This site presents public data from Taipei Open Data. Dataset coverage comparisons do not represent all restaurants, market share, real-time water availability, actual friendly-service coverage, real-time product sales status, food-safety certification, inspection results, recall information, allergy advice, nutrition advice, diet advice, or product recommendations.
+This site presents public data from Taipei Open Data. Dataset coverage comparisons do not represent all restaurants, market share, real-time water availability, actual friendly-service coverage, real-time product sales status, exact commercial district boundaries, restaurant rankings, food-safety certification, inspection results, recall information, allergy advice, nutrition advice, diet advice, or product recommendations.

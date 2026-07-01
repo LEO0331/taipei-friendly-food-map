@@ -58,6 +58,22 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
           [t('topCompanyByRecords'), summary.foodTraceability.topCompaniesByRowCount[0]?.companyName ?? '-'],
         ]
       : []),
+    ...(summary.commercialDistricts
+      ? [
+          [t('commercialDistrictCount'), summary.commercialDistricts.totalRecords],
+          [t('districtsCovered'), summary.commercialDistricts.districtCount],
+          [t('tagCount'), summary.commercialDistricts.districtTagCount],
+          [t('organizationCount'), summary.commercialDistricts.organizationCount],
+          [t('nearbyMrtStationCount'), summary.commercialDistricts.nearbyMrtStationCount],
+          [t('foodRelatedDistrictCount'), summary.commercialDistricts.foodRelatedCount],
+          [t('shoppingRelatedDistrictCount'), summary.commercialDistricts.shoppingRelatedCount],
+          [t('leisureRelatedDistrictCount'), summary.commercialDistricts.leisureRelatedCount],
+          [t('nightMarketRelatedDistrictCount'), summary.commercialDistricts.nightMarketRelatedCount],
+          [t('traditionalMarketRelatedDistrictCount'), summary.commercialDistricts.traditionalMarketRelatedCount],
+          [t('topDistrictByCommercialDistrictCount'), summary.commercialDistricts.byDistrict[0]?.district ?? '-'],
+          [t('topTag'), summary.commercialDistricts.byDistrictTag[0]?.districtTag ?? '-'],
+        ]
+      : []),
   ];
   const friendlyByDistrict = TAIPEI_DISTRICTS.map((district) => ({
     label: district,
@@ -195,6 +211,37 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
                 data={summary.foodTraceability.topIngredientsByProductCount
                   .slice(0, 10)
                   .map((item) => ({ label: item.ingredientName, value: item.productCount }))}
+              />
+            </article>
+          </>
+        )}
+        {summary.commercialDistricts && (
+          <>
+            <article>
+              <h3>{language === 'zh' ? '各行政區商圈數' : 'Commercial districts by district'}</h3>
+              <DisclaimerNotice>{t('commercialDistrictChartNotice')}</DisclaimerNotice>
+              <BarChart
+                data={summary.commercialDistricts.byDistrict.map((item) => ({
+                  label: item.district,
+                  value: item.commercialDistrictCount,
+                }))}
+              />
+            </article>
+            <article>
+              <h3>{language === 'zh' ? '各標籤商圈數' : 'Commercial districts by tag'}</h3>
+              <BarChart
+                data={summary.commercialDistricts.byDistrictTag.map((item) => ({
+                  label: item.districtTag,
+                  value: item.count,
+                }))}
+              />
+            </article>
+            <article>
+              <h3>{language === 'zh' ? '鄰近捷運站分布' : 'Nearby MRT station distribution'}</h3>
+              <BarChart
+                data={summary.commercialDistricts.byMrtStation
+                  .slice(0, 10)
+                  .map((item) => ({ label: item.stationName, value: item.count }))}
               />
             </article>
           </>

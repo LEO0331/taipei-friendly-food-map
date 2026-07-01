@@ -1,0 +1,630 @@
+{
+  "totalRecords": 65,
+  "districtCount": 12,
+  "areaCodeCount": 12,
+  "districtTagCount": 3,
+  "organizationCount": 48,
+  "nearbyMrtStationCount": 46,
+  "commercialDistrictTypeCount": 62,
+  "recordsWithOrganizationName": 48,
+  "recordsWithCommercialDistrictType": 64,
+  "recordsWithNearbyMrt": 65,
+  "foodRelatedCount": 44,
+  "shoppingRelatedCount": 35,
+  "leisureRelatedCount": 12,
+  "nightMarketRelatedCount": 3,
+  "traditionalMarketRelatedCount": 2,
+  "hotSpringRelatedCount": 2,
+  "culturalCreativeRelatedCount": 6,
+  "departmentStoreRelatedCount": 10,
+  "byDistrict": [
+    {
+      "district": "大同區",
+      "areaCode": "63000060",
+      "commercialDistrictCount": 11,
+      "foodRelatedCount": 7,
+      "shoppingRelatedCount": 4,
+      "leisureRelatedCount": 3,
+      "nightMarketRelatedCount": 2
+    },
+    {
+      "district": "中山區",
+      "areaCode": "63000040",
+      "commercialDistrictCount": 10,
+      "foodRelatedCount": 6,
+      "shoppingRelatedCount": 5,
+      "leisureRelatedCount": 3,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "中正區",
+      "areaCode": "63000050",
+      "commercialDistrictCount": 9,
+      "foodRelatedCount": 5,
+      "shoppingRelatedCount": 5,
+      "leisureRelatedCount": 1,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "萬華區",
+      "areaCode": "63000070",
+      "commercialDistrictCount": 6,
+      "foodRelatedCount": 5,
+      "shoppingRelatedCount": 3,
+      "leisureRelatedCount": 0,
+      "nightMarketRelatedCount": 1
+    },
+    {
+      "district": "士林區",
+      "areaCode": "63000110",
+      "commercialDistrictCount": 5,
+      "foodRelatedCount": 4,
+      "shoppingRelatedCount": 4,
+      "leisureRelatedCount": 1,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "大安區",
+      "areaCode": "63000030",
+      "commercialDistrictCount": 5,
+      "foodRelatedCount": 3,
+      "shoppingRelatedCount": 4,
+      "leisureRelatedCount": 1,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "內湖區",
+      "areaCode": "63000100",
+      "commercialDistrictCount": 4,
+      "foodRelatedCount": 3,
+      "shoppingRelatedCount": 2,
+      "leisureRelatedCount": 0,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "信義區",
+      "areaCode": "63000020",
+      "commercialDistrictCount": 4,
+      "foodRelatedCount": 2,
+      "shoppingRelatedCount": 2,
+      "leisureRelatedCount": 0,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "北投區",
+      "areaCode": "63000120",
+      "commercialDistrictCount": 3,
+      "foodRelatedCount": 3,
+      "shoppingRelatedCount": 1,
+      "leisureRelatedCount": 2,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "松山區",
+      "areaCode": "63000010",
+      "commercialDistrictCount": 3,
+      "foodRelatedCount": 1,
+      "shoppingRelatedCount": 2,
+      "leisureRelatedCount": 1,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "文山區",
+      "areaCode": "63000080",
+      "commercialDistrictCount": 3,
+      "foodRelatedCount": 3,
+      "shoppingRelatedCount": 2,
+      "leisureRelatedCount": 0,
+      "nightMarketRelatedCount": 0
+    },
+    {
+      "district": "南港區",
+      "areaCode": "63000090",
+      "commercialDistrictCount": 2,
+      "foodRelatedCount": 2,
+      "shoppingRelatedCount": 1,
+      "leisureRelatedCount": 0,
+      "nightMarketRelatedCount": 0
+    }
+  ],
+  "byDistrictTag": [
+    {
+      "districtTag": "吃在商圈",
+      "districtTagCategory": "food",
+      "count": 24
+    },
+    {
+      "districtTag": "玩在商圈",
+      "districtTagCategory": "leisure",
+      "count": 22
+    },
+    {
+      "districtTag": "買在商圈",
+      "districtTagCategory": "shopping",
+      "count": 19
+    }
+  ],
+  "byCommercialDistrictTypeCategory": [
+    {
+      "category": "food",
+      "count": 44
+    },
+    {
+      "category": "mixed",
+      "count": 36
+    },
+    {
+      "category": "shopping",
+      "count": 27
+    },
+    {
+      "category": "department_store",
+      "count": 10
+    },
+    {
+      "category": "home_living",
+      "count": 7
+    },
+    {
+      "category": "cultural_creative",
+      "count": 6
+    },
+    {
+      "category": "automotive",
+      "count": 5
+    },
+    {
+      "category": "medical_lifestyle",
+      "count": 4
+    },
+    {
+      "category": "electronics",
+      "count": 4
+    },
+    {
+      "category": "hospitality",
+      "count": 4
+    },
+    {
+      "category": "night_market",
+      "count": 3
+    },
+    {
+      "category": "hot_spring",
+      "count": 2
+    },
+    {
+      "category": "education",
+      "count": 2
+    },
+    {
+      "category": "pet",
+      "count": 2
+    },
+    {
+      "category": "traditional_market",
+      "count": 2
+    },
+    {
+      "category": "other",
+      "count": 1
+    },
+    {
+      "category": "unknown",
+      "count": 1
+    }
+  ],
+  "byMrtStation": [
+    {
+      "stationName": "中山站",
+      "lineCodes": [
+        "G14",
+        "R11",
+        "R12"
+      ],
+      "count": 5
+    },
+    {
+      "stationName": "龍山寺站",
+      "lineCodes": [
+        "BL10"
+      ],
+      "count": 5
+    },
+    {
+      "stationName": "北門站",
+      "lineCodes": [
+        "G13",
+        "O12",
+        "BL11",
+        "G12"
+      ],
+      "count": 4
+    },
+    {
+      "stationName": "圓山站",
+      "lineCodes": [
+        "R14",
+        "O10"
+      ],
+      "count": 4
+    },
+    {
+      "stationName": "雙連站",
+      "lineCodes": [
+        "R12",
+        "G14",
+        "R11"
+      ],
+      "count": 4
+    },
+    {
+      "stationName": "西門站",
+      "lineCodes": [
+        "BL11",
+        "G12",
+        "G13"
+      ],
+      "count": 4
+    },
+    {
+      "stationName": "士林站",
+      "lineCodes": [
+        "R16",
+        "R15"
+      ],
+      "count": 3
+    },
+    {
+      "stationName": "松山機場站",
+      "lineCodes": [
+        "BR13"
+      ],
+      "count": 3
+    },
+    {
+      "stationName": "石牌站",
+      "lineCodes": [
+        "R19"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "劍潭站",
+      "lineCodes": [
+        "R15",
+        "R16"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "芝山站",
+      "lineCodes": [
+        "R17"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "大橋頭站",
+      "lineCodes": [
+        "G13",
+        "O12"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "台北車站",
+      "lineCodes": [
+        "BL12",
+        "R10"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "中正紀念堂站",
+      "lineCodes": [
+        "G10",
+        "R08",
+        "G09",
+        "O05"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "台大醫院站",
+      "lineCodes": [
+        "R09",
+        "BL11",
+        "G12"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "港墘站",
+      "lineCodes": [
+        "BR17"
+      ],
+      "count": 2
+    },
+    {
+      "stationName": "新北投站",
+      "lineCodes": [
+        "R22A"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "古亭站",
+      "lineCodes": [
+        "G09",
+        "O05",
+        "G10",
+        "R08"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "忠孝新生站",
+      "lineCodes": [
+        "BL14",
+        "O07"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "公館站",
+      "lineCodes": [
+        "G07"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "民權西路站",
+      "lineCodes": [
+        "O11",
+        "R13"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "松江南京站",
+      "lineCodes": [
+        "G15",
+        "O08"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "中山國小站",
+      "lineCodes": [
+        "R14",
+        "O10"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "行天宮站",
+      "lineCodes": [
+        "O09"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "中山國中站",
+      "lineCodes": [
+        "BR12"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "劍南路站",
+      "lineCodes": [
+        "BR15"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "東湖站",
+      "lineCodes": [
+        "BR22"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "西湖站",
+      "lineCodes": [
+        "BR16"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "南京復興站",
+      "lineCodes": [
+        "G16",
+        "BR11"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "世貿站",
+      "lineCodes": [
+        "R03"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "松山站",
+      "lineCodes": [
+        "G19"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "市政府站",
+      "lineCodes": [
+        "BL18"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "永春站",
+      "lineCodes": [
+        "BL19"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "忠孝復興站",
+      "lineCodes": [
+        "BL15",
+        "BR10",
+        "BL16",
+        "BL17"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "忠孝敦化站",
+      "lineCodes": [
+        "BL15",
+        "BR10",
+        "BL16",
+        "BL17"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "國父紀念館站",
+      "lineCodes": [
+        "BL15",
+        "BR10",
+        "BL16",
+        "BL17"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "東門站",
+      "lineCodes": [
+        "R07",
+        "O06"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "大安站",
+      "lineCodes": [
+        "R05",
+        "BR09"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "台電大樓站",
+      "lineCodes": [
+        "G08"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "信義安和站",
+      "lineCodes": [
+        "R04"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "景美站",
+      "lineCodes": [
+        "G05"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "貓空站",
+      "lineCodes": [],
+      "count": 1
+    },
+    {
+      "stationName": "萬芳醫院站",
+      "lineCodes": [
+        "BR04"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "南港站",
+      "lineCodes": [
+        "BL22"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "南港軟體園區站",
+      "lineCodes": [
+        "BR23"
+      ],
+      "count": 1
+    },
+    {
+      "stationName": "捷運西門站",
+      "lineCodes": [
+        "BL11",
+        "G12",
+        "R09"
+      ],
+      "count": 1
+    }
+  ],
+  "topCommercialDistrictTypes": [
+    {
+      "commercialDistrictType": "餐飲小吃",
+      "count": 2
+    },
+    {
+      "commercialDistrictType": "以餐飲小吃為主",
+      "count": 2
+    },
+    {
+      "commercialDistrictType": "以溫泉業、餐飲業為主",
+      "count": 1
+    },
+    {
+      "commercialDistrictType": "溫泉、餐飲",
+      "count": 1
+    },
+    {
+      "commercialDistrictType": "餐飲、日常生活用品",
+      "count": 1
+    },
+    {
+      "commercialDistrictType": "餐飲、服飾、日用品、家飾、喜餅",
+      "count": 1
+    },
+    {
+      "commercialDistrictType": "以餐飲小吃、服飾為主",
+      "count": 1
+    },
+    {
+      "commercialDistrictType": "餐飲、手工創意商品、百貨",
+      "count": 1
+    },
+    {
+      "commercialDistrictType": "以二手汽車買賣為主",
+      "count": 1
+    },
+    {
+      "commercialDistrictType": "以服飾配件、材料批發為主",
+      "count": 1
+    }
+  ],
+  "dataQuality": {
+    "missingOrganizationNameCount": 17,
+    "missingCommercialDistrictTypeCount": 1,
+    "missingNearbyMrtCount": 0,
+    "districtMismatchCount": 0,
+    "duplicateCommercialDistrictNameCount": 0,
+    "duplicateLocationDescriptionCount": 0,
+    "invalidAreaCodeCount": 0
+  }
+}

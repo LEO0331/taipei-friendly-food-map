@@ -7,5 +7,6 @@ data/raw/friendly-food/*.csv
 data/raw/friendly-food/*.json
 data/raw/water-refill-stores/*.csv
 data/raw/taipei-food-traceability-products/*.csv
+data/raw/commercial-district-introductions/*.csv
 .playwright-cli
 .omx

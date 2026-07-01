@@ -364,7 +364,8 @@ a {
 }
 
 .directory,
-.traceability-module {
+.traceability-module,
+.commercial-module {
   display: grid;
   gap: 12px;
 }
@@ -612,7 +613,8 @@ a {
   font-weight: 700;
 }
 
-.traceability-filters input {
+.traceability-filters input,
+.traceability-filters select {
   width: 100%;
   min-height: 42px;
   border: 1px solid #d5d1c5;
@@ -626,6 +628,35 @@ a {
 .ingredient-list {
   display: grid;
   gap: 10px;
+}
+
+.commercial-layout,
+.commercial-map-panel,
+.commercial-directory {
+  display: grid;
+  gap: 12px;
+}
+
+.commercial-map-panel {
+  padding: 14px;
+  border: 1px solid #ded9cc;
+  border-radius: 8px;
+  background: #fffdf8;
+}
+
+.commercial-map-panel h3,
+.commercial-directory h3 {
+  margin: 0;
+}
+
+.commercial-map {
+  width: 100%;
+  min-height: 360px;
+  height: min(52svh, 560px);
+  border: 1px solid #d7d1c5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eef2eb;
 }
 
 .product-detail {
@@ -694,6 +725,11 @@ a {
 
   .traceability-results {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .commercial-layout {
+    grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
   }
 }
 

@@ -1,6 +1,7 @@
 import type {
   FriendlyFoodSummary,
   FriendlyStore,
+  CommercialDistrictIntroductionSummary,
   RestaurantBusiness,
   TaipeiFoodTraceabilitySummary,
   WaterRefillStore,
@@ -13,6 +14,7 @@ export type AppData = {
   restaurants: RestaurantBusiness[];
   summary: FriendlyFoodSummary;
   foodTraceabilitySummary?: TaipeiFoodTraceabilitySummary;
+  commercialDistrictSummary?: CommercialDistrictIntroductionSummary;
 };
 
 const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
@@ -38,17 +40,27 @@ export const loadFriendlyFoodData = async (): Promise<AppData> => {
     dataPath('food-traceability/summary.json'),
     undefined,
   );
+  const commercialDistrictSummary = await loadJson<CommercialDistrictIntroductionSummary | undefined>(
+    dataPath('commercial-district-introduction-summary.json'),
+    undefined,
+  );
   return {
     friendlyStores,
     waterRefillStores,
     restaurants,
     summary:
       summaryFromFile
-        ? { ...summaryFromFile, foodTraceability: foodTraceabilitySummary ?? summaryFromFile.foodTraceability }
+        ? {
+            ...summaryFromFile,
+            foodTraceability: foodTraceabilitySummary ?? summaryFromFile.foodTraceability,
+            commercialDistricts: commercialDistrictSummary ?? summaryFromFile.commercialDistricts,
+          }
         : {
             ...buildFriendlyFoodSummary(friendlyStores, restaurants, waterRefillStores),
             foodTraceability: foodTraceabilitySummary,
+            commercialDistricts: commercialDistrictSummary,
           },
     foodTraceabilitySummary,
+    commercialDistrictSummary,
   };
 };

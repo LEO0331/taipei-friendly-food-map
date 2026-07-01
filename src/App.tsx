@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { DataNotes } from './components/DataNotes';
+import { CommercialDistrictModule } from './components/CommercialDistrictModule';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
 import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
@@ -187,8 +188,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && (
+      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -227,6 +228,9 @@ export default function App() {
           {activeTab === 'overview' && <FriendlyOverviewDashboard summary={data.summary} language={language} t={t} />}
           {activeTab === 'traceability' && (
             <FoodTraceabilityModule summary={data.foodTraceabilitySummary} language={language} t={t} />
+          )}
+          {activeTab === 'commercialDistricts' && (
+            <CommercialDistrictModule summary={data.commercialDistrictSummary} language={language} t={t} />
           )}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
         </div>
