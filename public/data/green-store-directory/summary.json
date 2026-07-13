@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-07-13T06:30:29.369Z",
+  "totalStores": 1640,
+  "uniqueStoreNames": 1637,
+  "districtCount": 12,
+  "greenStoreTypeCount": 1,
+  "recordsWithPhone": 1632,
+  "recordsWithMobile": 8,
+  "recordsWithContactNumber": 1640,
+  "topDistrict": "大安區",
+  "topGreenStoreType": "連鎖型綠色商店",
+  "byDistrict": [
+    {
+      "district": "大安區",
+      "count": 207
+    },
+    {
+      "district": "中山區",
+      "count": 207
+    },
+    {
+      "district": "內湖區",
+      "count": 164
+    },
+    {
+      "district": "士林區",
+      "count": 152
+    },
+    {
+      "district": "中正區",
+      "count": 150
+    },
+    {
+      "district": "松山區",
+      "count": 135
+    },
+    {
+      "district": "信義區",
+      "count": 128
+    },
+    {
+      "district": "文山區",
+      "count": 119
+    },
+    {
+      "district": "北投區",
+      "count": 110
+    },
+    {
+      "district": "萬華區",
+      "count": 101
+    },
+    {
+      "district": "大同區",
+      "count": 82
+    },
+    {
+      "district": "南港區",
+      "count": 65
+    }
+  ],
+  "byGreenStoreType": [
+    {
+      "greenStoreType": "連鎖型綠色商店",
+      "count": 1640
+    }
+  ],
+  "byPhoneAvailability": [
+    {
+      "hasPhone": true,
+      "count": 1632
+    },
+    {
+      "hasPhone": false,
+      "count": 8
+    }
+  ],
+  "dataQuality": {
+    "duplicateRecordCount": 0,
+    "duplicatePrimaryKeyCount": 0,
+    "missingStoreNameCount": 0,
+    "missingAddressCount": 0,
+    "unknownGreenStoreTypeCount": 0
+  }
+}

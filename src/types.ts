@@ -6,6 +6,7 @@ export type FriendlyFoodModule =
   | 'drinking_water_friendly_stores'
   | 'taipei_food_traceability_products'
   | 'commercial_district_introductions'
+  | 'green_store_directory'
   | 'data_table'
   | 'data_notes';
 
@@ -221,6 +222,68 @@ export type CommercialDistrictIntroductionSummary = {
   };
 };
 
+export type GreenStoreDirectoryRecord = {
+  id: string;
+  module: 'green_store_directory';
+  primaryKey: string;
+  sourceSequenceNumber?: string;
+  storeName: string;
+  storeNameNormalized: string;
+  address: string;
+  addressNormalized: string;
+  districtNameFromAddress?: string;
+  roadName?: string;
+  storeNumber?: string;
+  storeNumberNormalized?: string;
+  contactPerson?: string;
+  phone?: string;
+  phoneNormalized?: string;
+  extension?: string;
+  mobile?: string;
+  mobileNormalized?: string;
+  fullContactNumber?: string;
+  hasPhone: boolean;
+  greenStoreType?: string;
+  greenStoreTypeNormalized?: string;
+  googleMapsQuery: string;
+  rawSource: {
+    sourceSequenceNumber?: string;
+    storeName?: string;
+    address?: string;
+    storeNumber?: string;
+    contactPerson?: string;
+    phone?: string;
+    extension?: string;
+    mobile?: string;
+    greenStoreType?: string;
+  };
+  source: string;
+  sourceAgency: string;
+};
+
+export type GreenStoreDirectorySummary = {
+  generatedAt: string;
+  totalStores: number;
+  uniqueStoreNames: number;
+  districtCount: number;
+  greenStoreTypeCount: number;
+  recordsWithPhone: number;
+  recordsWithMobile: number;
+  recordsWithContactNumber: number;
+  topDistrict?: string;
+  topGreenStoreType?: string;
+  byDistrict: Array<{ district: string; count: number }>;
+  byGreenStoreType: Array<{ greenStoreType: string; count: number }>;
+  byPhoneAvailability: Array<{ hasPhone: boolean; count: number }>;
+  dataQuality: {
+    duplicateRecordCount: number;
+    duplicatePrimaryKeyCount: number;
+    missingStoreNameCount: number;
+    missingAddressCount: number;
+    unknownGreenStoreTypeCount: number;
+  };
+};
+
 export type TaipeiFoodTraceabilityProductIndexItem = {
   productKey: string;
   productName: string;
@@ -354,6 +417,16 @@ export type ConversionReport = {
     sourceFile: string;
     invalidAreaCodeExamples: string[];
     unparsedMrtExamples: string[];
+  };
+  greenStoreDirectory?: GreenStoreDirectorySummary & {
+    source: string;
+    sourceAgency: string;
+    sourceFile: string;
+    duplicateRecordCount: number;
+    duplicatePrimaryKeyCount: number;
+    missingStoreNameCount: number;
+    missingAddressCount: number;
+    unknownGreenStoreTypeCount: number;
   };
   notes: string[];
 };

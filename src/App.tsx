@@ -4,6 +4,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { DataNotes } from './components/DataNotes';
 import { CommercialDistrictModule } from './components/CommercialDistrictModule';
+import { GreenStoreDirectoryModule } from './components/GreenStoreDirectoryModule';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
 import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
@@ -188,8 +189,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && (
+      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -231,6 +232,9 @@ export default function App() {
           )}
           {activeTab === 'commercialDistricts' && (
             <CommercialDistrictModule summary={data.commercialDistrictSummary} language={language} t={t} />
+          )}
+          {activeTab === 'greenStores' && (
+            <GreenStoreDirectoryModule summary={data.greenStoreDirectorySummary} language={language} t={t} />
           )}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
         </div>

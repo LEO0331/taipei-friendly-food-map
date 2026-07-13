@@ -2,6 +2,7 @@ import type {
   FriendlyFoodSummary,
   FriendlyStore,
   CommercialDistrictIntroductionSummary,
+  GreenStoreDirectorySummary,
   RestaurantBusiness,
   TaipeiFoodTraceabilitySummary,
   WaterRefillStore,
@@ -15,6 +16,7 @@ export type AppData = {
   summary: FriendlyFoodSummary;
   foodTraceabilitySummary?: TaipeiFoodTraceabilitySummary;
   commercialDistrictSummary?: CommercialDistrictIntroductionSummary;
+  greenStoreDirectorySummary?: GreenStoreDirectorySummary;
 };
 
 const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
@@ -44,6 +46,10 @@ export const loadFriendlyFoodData = async (): Promise<AppData> => {
     dataPath('commercial-district-introduction-summary.json'),
     undefined,
   );
+  const greenStoreDirectorySummary = await loadJson<GreenStoreDirectorySummary | undefined>(
+    dataPath('green-store-directory/summary.json'),
+    undefined,
+  );
   return {
     friendlyStores,
     waterRefillStores,
@@ -62,5 +68,6 @@ export const loadFriendlyFoodData = async (): Promise<AppData> => {
           },
     foodTraceabilitySummary,
     commercialDistrictSummary,
+    greenStoreDirectorySummary,
   };
 };

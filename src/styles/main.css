@@ -365,9 +365,143 @@ a {
 
 .directory,
 .traceability-module,
-.commercial-module {
+.commercial-module,
+.green-store-module {
   display: grid;
   gap: 12px;
+}
+
+.green-store-header p {
+  color: #087f5b;
+}
+
+.green-store-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 5px;
+  border: 1px solid #cfe0d4;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #f4faf5, #fffcf4);
+}
+
+.green-store-tabs button {
+  min-height: 36px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: transparent;
+  color: #426053;
+  cursor: pointer;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.green-store-tabs button.active {
+  background: #0f5c42;
+  color: #fff;
+  box-shadow: 0 3px 10px rgb(15 92 66 / 20%);
+}
+
+.green-store-view {
+  display: grid;
+  gap: 12px;
+}
+
+.green-store-view > h3 {
+  margin: 0;
+}
+
+.green-store-fill {
+  background: linear-gradient(90deg, #0f8c68, #73b763);
+}
+
+.green-store-filters {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #d5e1d7;
+  border-radius: 10px;
+  background: #fafffb;
+}
+
+.green-store-filters label {
+  display: grid;
+  gap: 6px;
+  color: #3c5c4d;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.green-store-filters input:not([type='checkbox']),
+.green-store-filters select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #cddbd0;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0 12px;
+}
+
+.green-store-filters .green-store-phone-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+}
+
+.green-store-phone-toggle input {
+  width: 17px;
+  height: 17px;
+  accent-color: #0f7c5b;
+}
+
+.green-store-table-wrap {
+  overflow: auto;
+  border: 1px solid #d7e2d9;
+  border-radius: 10px;
+  background: #fffef9;
+}
+
+.green-store-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.green-store-table th,
+.green-store-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #e2e9e3;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.green-store-table th {
+  position: sticky;
+  top: 0;
+  background: #eaf4ec;
+  color: #24563e;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.green-store-table tbody tr:hover {
+  background: #f5faf5;
+}
+
+.green-store-map-link {
+  display: inline-flex;
+  border-radius: 999px;
+  background: #e3f3e8;
+  padding: 5px 9px;
+  color: #0b6547;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .store-card {
@@ -716,6 +850,11 @@ a {
 
   .traceability-filters {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .green-store-filters {
+    grid-template-columns: minmax(240px, 2fr) repeat(2, minmax(150px, 1fr)) minmax(170px, 1fr);
+    align-items: end;
   }
 
   .traceability-filters .search-field,

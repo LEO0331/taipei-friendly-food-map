@@ -26,6 +26,8 @@ Traditional Chinese is the default UI language. English is available through the
   <https://data.taipei/dataset/detail?id=40900e11-3002-4c9b-9e23-aa3b72e3d46e>
 - Taipei commercial district introductions / 臺北市商圈介紹
   <https://data.taipei/dataset/detail?id=52da1174-0d77-434b-88c3-e77b008e8624>
+- Taipei Green Store Directory / 臺北市綠色商店
+  <https://data.taipei/dataset/detail?id=1756cb64-0066-444a-a323-9f3b5a961045>
 
 The frontend does not call Taipei Open Data directly. Raw CSV downloads and conversion happen through local scripts, and the app reads static JSON from `public/data`.
 
@@ -81,6 +83,13 @@ Fetch or copy the commercial-district CSV:
 npm run data:fetch:commercial-districts
 ```
 
+Fetch or copy the Green Store CSV (manual CSV fallback):
+
+```sh
+npm run data:fetch:green-stores
+npm run data:fetch:green-stores -- --local /path/to/green-stores.csv
+```
+
 Re-download even if files already exist:
 
 ```sh
@@ -105,10 +114,14 @@ Generated files:
 - `public/data/food-traceability/product-details/chunk-*.json`
 - `public/data/commercial-district-introductions.json`
 - `public/data/commercial-district-introduction-summary.json`
+- `public/data/green-store-directory/records.json`
+- `public/data/green-store-directory/summary.json`
 
 Raw files are stored under `data/raw/` and are ignored by git. Food traceability product details are split into chunked JSON, while the initial UI loads only summary and lightweight search/index files.
 
 Commercial district conversion supports UTF-8-SIG and Big5 fallback, keeps AreaCode as text, maps AreaCode to Taipei districts for validation, parses `吃在商圈 / 買在商圈 / 玩在商圈`, extracts nearby MRT line/station text where possible, and categorizes commercial district types for browsing.
+
+Green Store conversion supports UTF-8-SIG, Big5, and CP950 input, preserves the source fields, and uses store number as its primary key with a normalized name/address fallback. The directory has addresses but no confirmed official coordinates, so it provides district summaries and external map-search links rather than exact markers.
 
 ## Matching Rules
 

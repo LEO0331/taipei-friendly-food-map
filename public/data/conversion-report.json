@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T06:56:07.300Z",
+  "generatedAt": "2026-07-13T06:30:29.398Z",
   "notes": [
     "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
     "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
@@ -7,7 +7,8 @@
     "Restaurant matching is best effort and avoids labeling unmatched businesses as not friendly.",
     "Water refill availability and operation should be verified on site.",
     "Food Traceability Platform records are source-field lookup data, not store locations, safety certification, nutrition advice, or product recommendations.",
-    "Commercial district introductions are district/context records, not exact store locations, boundaries, recommendations, or real-time business status."
+    "Commercial district introductions are district/context records, not exact store locations, boundaries, recommendations, or real-time business status.",
+    "Green Store records have addresses but no confirmed official coordinates; exact map markers are not generated."
   ],
   "downloads": [
     {
@@ -37,6 +38,13 @@
       "filePath": "data/raw/water-refill-stores/water-refill-stores.csv",
       "fileSize": 237622,
       "notes": "Copied local CSV 臺北市提供飲水店家_20251205.csv."
+    },
+    {
+      "sourceUrl": "https://data.taipei/api/dataset/1756cb64-0066-444a-a323-9f3b5a961045/resource/209123b3-335f-432f-9521-711e18ce3388/download",
+      "downloadedAt": "2026-07-13T06:29:37.174Z",
+      "filePath": "data\\raw\\green-store-directory\\green-store-directory.csv",
+      "fileSize": 238654,
+      "notes": "Downloaded official Taipei Green Store CSV."
     }
   ],
   "friendlyStores": {
@@ -968,5 +976,98 @@
     "sourceFile": "data/raw/commercial-district-introductions/114年6月臺北市商圈介紹.csv",
     "invalidAreaCodeExamples": [],
     "unparsedMrtExamples": []
+  },
+  "greenStoreDirectory": {
+    "generatedAt": "2026-07-13T06:30:29.369Z",
+    "totalStores": 1640,
+    "uniqueStoreNames": 1637,
+    "districtCount": 12,
+    "greenStoreTypeCount": 1,
+    "recordsWithPhone": 1632,
+    "recordsWithMobile": 8,
+    "recordsWithContactNumber": 1640,
+    "byDistrict": [
+      {
+        "district": "大安區",
+        "count": 207
+      },
+      {
+        "district": "中山區",
+        "count": 207
+      },
+      {
+        "district": "內湖區",
+        "count": 164
+      },
+      {
+        "district": "士林區",
+        "count": 152
+      },
+      {
+        "district": "中正區",
+        "count": 150
+      },
+      {
+        "district": "松山區",
+        "count": 135
+      },
+      {
+        "district": "信義區",
+        "count": 128
+      },
+      {
+        "district": "文山區",
+        "count": 119
+      },
+      {
+        "district": "北投區",
+        "count": 110
+      },
+      {
+        "district": "萬華區",
+        "count": 101
+      },
+      {
+        "district": "大同區",
+        "count": 82
+      },
+      {
+        "district": "南港區",
+        "count": 65
+      }
+    ],
+    "byGreenStoreType": [
+      {
+        "greenStoreType": "連鎖型綠色商店",
+        "count": 1640
+      }
+    ],
+    "byPhoneAvailability": [
+      {
+        "hasPhone": true,
+        "count": 1632
+      },
+      {
+        "hasPhone": false,
+        "count": 8
+      }
+    ],
+    "dataQuality": {
+      "duplicateRecordCount": 0,
+      "duplicatePrimaryKeyCount": 0,
+      "missingStoreNameCount": 0,
+      "missingAddressCount": 0,
+      "unknownGreenStoreTypeCount": 0
+    },
+    "source": "臺北市綠色商店",
+    "sourceAgency": "臺北市政府環境保護局",
+    "sourceFile": "data\\raw\\green-store-directory\\green-store-directory.csv (utf-8)",
+    "duplicateRecordCount": 0,
+    "duplicatePrimaryKeyCount": 0,
+    "missingStoreNameCount": 0,
+    "missingAddressCount": 0,
+    "unknownGreenStoreTypeCount": 0,
+    "topDistrict": "大安區",
+    "topGreenStoreType": "連鎖型綠色商店"
   }
 }
