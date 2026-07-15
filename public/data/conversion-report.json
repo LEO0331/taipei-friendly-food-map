@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T06:30:29.398Z",
+  "generatedAt": "2026-07-15T03:48:45.693Z",
   "notes": [
     "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
     "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
@@ -8,7 +8,8 @@
     "Water refill availability and operation should be verified on site.",
     "Food Traceability Platform records are source-field lookup data, not store locations, safety certification, nutrition advice, or product recommendations.",
     "Commercial district introductions are district/context records, not exact store locations, boundaries, recommendations, or real-time business status.",
-    "Green Store records have addresses but no confirmed official coordinates; exact map markers are not generated."
+    "Green Store records have addresses but no confirmed official coordinates; exact map markers are not generated.",
+    "Restaurant hygiene grading records have addresses but no confirmed official coordinates; exact map markers are not generated."
   ],
   "downloads": [
     {
@@ -45,6 +46,13 @@
       "filePath": "data\\raw\\green-store-directory\\green-store-directory.csv",
       "fileSize": 238654,
       "notes": "Downloaded official Taipei Green Store CSV."
+    },
+    {
+      "sourceUrl": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=c5646d80-9118-4439-b924-075f96371d75",
+      "downloadedAt": "2026-07-15T03:48:30.667Z",
+      "filePath": "data\\raw\\restaurant-hygiene-grading-records\\restaurant-hygiene-grading-records.csv",
+      "fileSize": 169383,
+      "notes": "Downloaded official Taipei restaurant hygiene grading CSV."
     }
   ],
   "friendlyStores": {
@@ -1069,5 +1077,198 @@
     "unknownGreenStoreTypeCount": 0,
     "topDistrict": "大安區",
     "topGreenStoreType": "連鎖型綠色商店"
+  },
+  "restaurantHygieneGradingRecords": {
+    "generatedAt": "2026-07-15T03:48:45.690Z",
+    "totalRecords": 1686,
+    "uniqueBusinesses": 1686,
+    "districtCount": 12,
+    "assessmentResultCategoryCount": 2,
+    "recordsWithRegistrationNumbers": 1686,
+    "byDistrict": [
+      {
+        "district": "大安區",
+        "count": 307
+      },
+      {
+        "district": "中山區",
+        "count": 224
+      },
+      {
+        "district": "士林區",
+        "count": 197
+      },
+      {
+        "district": "信義區",
+        "count": 172
+      },
+      {
+        "district": "北投區",
+        "count": 127
+      },
+      {
+        "district": "松山區",
+        "count": 127
+      },
+      {
+        "district": "內湖區",
+        "count": 126
+      },
+      {
+        "district": "中正區",
+        "count": 122
+      },
+      {
+        "district": "大同區",
+        "count": 99
+      },
+      {
+        "district": "南港區",
+        "count": 69
+      },
+      {
+        "district": "萬華區",
+        "count": 59
+      },
+      {
+        "district": "文山區",
+        "count": 57
+      }
+    ],
+    "byAssessmentResult": [
+      {
+        "assessmentResult": "優",
+        "count": 1609
+      },
+      {
+        "assessmentResult": "良",
+        "count": 77
+      }
+    ],
+    "byAssessmentResultAndDistrict": [
+      {
+        "district": "大安區",
+        "assessmentResult": "優",
+        "count": 289
+      },
+      {
+        "district": "中山區",
+        "assessmentResult": "優",
+        "count": 209
+      },
+      {
+        "district": "士林區",
+        "assessmentResult": "優",
+        "count": 187
+      },
+      {
+        "district": "信義區",
+        "assessmentResult": "優",
+        "count": 169
+      },
+      {
+        "district": "中正區",
+        "assessmentResult": "優",
+        "count": 122
+      },
+      {
+        "district": "內湖區",
+        "assessmentResult": "優",
+        "count": 121
+      },
+      {
+        "district": "北投區",
+        "assessmentResult": "優",
+        "count": 120
+      },
+      {
+        "district": "松山區",
+        "assessmentResult": "優",
+        "count": 112
+      },
+      {
+        "district": "大同區",
+        "assessmentResult": "優",
+        "count": 98
+      },
+      {
+        "district": "南港區",
+        "assessmentResult": "優",
+        "count": 68
+      },
+      {
+        "district": "文山區",
+        "assessmentResult": "優",
+        "count": 57
+      },
+      {
+        "district": "萬華區",
+        "assessmentResult": "優",
+        "count": 57
+      },
+      {
+        "district": "大安區",
+        "assessmentResult": "良",
+        "count": 18
+      },
+      {
+        "district": "中山區",
+        "assessmentResult": "良",
+        "count": 15
+      },
+      {
+        "district": "松山區",
+        "assessmentResult": "良",
+        "count": 15
+      },
+      {
+        "district": "士林區",
+        "assessmentResult": "良",
+        "count": 10
+      },
+      {
+        "district": "北投區",
+        "assessmentResult": "良",
+        "count": 7
+      },
+      {
+        "district": "內湖區",
+        "assessmentResult": "良",
+        "count": 5
+      },
+      {
+        "district": "信義區",
+        "assessmentResult": "良",
+        "count": 3
+      },
+      {
+        "district": "萬華區",
+        "assessmentResult": "良",
+        "count": 2
+      },
+      {
+        "district": "大同區",
+        "assessmentResult": "良",
+        "count": 1
+      },
+      {
+        "district": "南港區",
+        "assessmentResult": "良",
+        "count": 1
+      }
+    ],
+    "dataQuality": {
+      "duplicateRecordCount": 0,
+      "missingBusinessNameCount": 0,
+      "missingRegistrationNumberCount": 0,
+      "missingAddressCount": 0,
+      "missingAssessmentResultCount": 0,
+      "unknownDistrictCount": 0,
+      "unknownAssessmentValueCount": 0
+    },
+    "source": "https://data.taipei/dataset/detail?id=59579c19-a561-4564-8c0f-545bfb32c0f6",
+    "sourceAgency": "臺北市政府衛生局",
+    "sourceFile": "data\\raw\\restaurant-hygiene-grading-records\\restaurant-hygiene-grading-records.csv (utf-8)",
+    "topDistrict": "大安區"
   }
 }

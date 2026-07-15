@@ -1,0 +1,190 @@
+{
+  "generatedAt": "2026-07-15T03:48:45.690Z",
+  "totalRecords": 1686,
+  "uniqueBusinesses": 1686,
+  "districtCount": 12,
+  "assessmentResultCategoryCount": 2,
+  "recordsWithRegistrationNumbers": 1686,
+  "topDistrict": "大安區",
+  "byDistrict": [
+    {
+      "district": "大安區",
+      "count": 307
+    },
+    {
+      "district": "中山區",
+      "count": 224
+    },
+    {
+      "district": "士林區",
+      "count": 197
+    },
+    {
+      "district": "信義區",
+      "count": 172
+    },
+    {
+      "district": "北投區",
+      "count": 127
+    },
+    {
+      "district": "松山區",
+      "count": 127
+    },
+    {
+      "district": "內湖區",
+      "count": 126
+    },
+    {
+      "district": "中正區",
+      "count": 122
+    },
+    {
+      "district": "大同區",
+      "count": 99
+    },
+    {
+      "district": "南港區",
+      "count": 69
+    },
+    {
+      "district": "萬華區",
+      "count": 59
+    },
+    {
+      "district": "文山區",
+      "count": 57
+    }
+  ],
+  "byAssessmentResult": [
+    {
+      "assessmentResult": "優",
+      "count": 1609
+    },
+    {
+      "assessmentResult": "良",
+      "count": 77
+    }
+  ],
+  "byAssessmentResultAndDistrict": [
+    {
+      "district": "大安區",
+      "assessmentResult": "優",
+      "count": 289
+    },
+    {
+      "district": "中山區",
+      "assessmentResult": "優",
+      "count": 209
+    },
+    {
+      "district": "士林區",
+      "assessmentResult": "優",
+      "count": 187
+    },
+    {
+      "district": "信義區",
+      "assessmentResult": "優",
+      "count": 169
+    },
+    {
+      "district": "中正區",
+      "assessmentResult": "優",
+      "count": 122
+    },
+    {
+      "district": "內湖區",
+      "assessmentResult": "優",
+      "count": 121
+    },
+    {
+      "district": "北投區",
+      "assessmentResult": "優",
+      "count": 120
+    },
+    {
+      "district": "松山區",
+      "assessmentResult": "優",
+      "count": 112
+    },
+    {
+      "district": "大同區",
+      "assessmentResult": "優",
+      "count": 98
+    },
+    {
+      "district": "南港區",
+      "assessmentResult": "優",
+      "count": 68
+    },
+    {
+      "district": "文山區",
+      "assessmentResult": "優",
+      "count": 57
+    },
+    {
+      "district": "萬華區",
+      "assessmentResult": "優",
+      "count": 57
+    },
+    {
+      "district": "大安區",
+      "assessmentResult": "良",
+      "count": 18
+    },
+    {
+      "district": "中山區",
+      "assessmentResult": "良",
+      "count": 15
+    },
+    {
+      "district": "松山區",
+      "assessmentResult": "良",
+      "count": 15
+    },
+    {
+      "district": "士林區",
+      "assessmentResult": "良",
+      "count": 10
+    },
+    {
+      "district": "北投區",
+      "assessmentResult": "良",
+      "count": 7
+    },
+    {
+      "district": "內湖區",
+      "assessmentResult": "良",
+      "count": 5
+    },
+    {
+      "district": "信義區",
+      "assessmentResult": "良",
+      "count": 3
+    },
+    {
+      "district": "萬華區",
+      "assessmentResult": "良",
+      "count": 2
+    },
+    {
+      "district": "大同區",
+      "assessmentResult": "良",
+      "count": 1
+    },
+    {
+      "district": "南港區",
+      "assessmentResult": "良",
+      "count": 1
+    }
+  ],
+  "dataQuality": {
+    "duplicateRecordCount": 0,
+    "missingBusinessNameCount": 0,
+    "missingRegistrationNumberCount": 0,
+    "missingAddressCount": 0,
+    "missingAssessmentResultCount": 0,
+    "unknownDistrictCount": 0,
+    "unknownAssessmentValueCount": 0
+  }
+}

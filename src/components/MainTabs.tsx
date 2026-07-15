@@ -1,6 +1,6 @@
 import type { TranslationKey } from '../data/translations';
 
-export type TabKey = 'map' | 'directory' | 'overview' | 'traceability' | 'commercialDistricts' | 'greenStores' | 'notes';
+export type TabKey = 'map' | 'directory' | 'overview' | 'traceability' | 'commercialDistricts' | 'greenStores' | 'hygieneGrading' | 'notes';
 
 type Props = {
   activeTab: TabKey;
@@ -15,6 +15,7 @@ const tabs: Array<{ key: TabKey; label: TranslationKey }> = [
   { key: 'traceability', label: 'foodTraceability' },
   { key: 'commercialDistricts', label: 'commercialDistricts' },
   { key: 'greenStores', label: 'greenStoreDirectory' },
+  { key: 'hygieneGrading', label: 'restaurantHygieneGradingRecords' },
   { key: 'notes', label: 'dataNotes' },
 ];
 

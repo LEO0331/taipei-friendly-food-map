@@ -2,6 +2,7 @@ import type { Language } from '../types';
 
 export const translations = {
   zh: {
+    restaurantHygieneGradingRecords: '餐飲衛生管理分級評核業者',
     greenStoreDirectory: '臺北市綠色商店',
     appTitle: '台北友善餐飲地圖',
     appSubtitle: '探索台北友善店家、提供飲水店家、餐館業登記店家、食材登錄與商圈介紹',
@@ -144,6 +145,7 @@ export const translations = {
     commercialDistrictSearchPlaceholder: '搜尋商圈、行政區、捷運站、商圈類型或說明',
   },
   en: {
+    restaurantHygieneGradingRecords: 'Food Business Hygiene Grading Records',
     greenStoreDirectory: 'Taipei Green Store Directory',
     appTitle: 'Taipei Friendly Food Map',
     appSubtitle: 'Explore Taipei friendly stores, water refill stores, registered restaurant businesses, food traceability records, and commercial districts',

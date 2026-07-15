@@ -416,6 +416,14 @@ a {
   background: linear-gradient(90deg, #0f8c68, #73b763);
 }
 
+.hygiene-header p {
+  color: #9a3412;
+}
+
+.hygiene-fill {
+  background: #c2410c;
+}
+
 .green-store-filters {
   display: grid;
   gap: 10px;

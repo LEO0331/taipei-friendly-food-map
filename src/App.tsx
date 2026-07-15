@@ -5,6 +5,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { DataNotes } from './components/DataNotes';
 import { CommercialDistrictModule } from './components/CommercialDistrictModule';
 import { GreenStoreDirectoryModule } from './components/GreenStoreDirectoryModule';
+import { RestaurantHygieneGradingModule } from './components/RestaurantHygieneGradingModule';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
 import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
@@ -189,8 +190,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && (
+      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -235,6 +236,9 @@ export default function App() {
           )}
           {activeTab === 'greenStores' && (
             <GreenStoreDirectoryModule summary={data.greenStoreDirectorySummary} language={language} t={t} />
+          )}
+          {activeTab === 'hygieneGrading' && (
+            <RestaurantHygieneGradingModule summary={data.restaurantHygieneGradingSummary} language={language} />
           )}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
         </div>

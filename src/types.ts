@@ -7,6 +7,7 @@ export type FriendlyFoodModule =
   | 'taipei_food_traceability_products'
   | 'commercial_district_introductions'
   | 'green_store_directory'
+  | 'restaurant_hygiene_grading_records'
   | 'data_table'
   | 'data_notes';
 
@@ -284,6 +285,55 @@ export type GreenStoreDirectorySummary = {
   };
 };
 
+export type RestaurantHygieneGradingRecord = {
+  id: string;
+  module: 'restaurant_hygiene_grading_records';
+  districtCode: string;
+  districtName?: string;
+  districtCodeNormalized?: string;
+  businessName: string;
+  businessNameNormalized: string;
+  foodBusinessRegistrationNumber: string;
+  registrationNumberNormalized: string;
+  address: string;
+  addressNormalized: string;
+  roadName?: string;
+  assessmentResult: string;
+  assessmentResultNormalized: string;
+  googleMapsQuery: string;
+  rawSource: {
+    districtCode: string;
+    businessName: string;
+    foodBusinessRegistrationNumber: string;
+    address: string;
+    assessmentResult: string;
+  };
+  source: string;
+  sourceAgency: string;
+};
+
+export type RestaurantHygieneGradingSummary = {
+  generatedAt: string;
+  totalRecords: number;
+  uniqueBusinesses: number;
+  districtCount: number;
+  assessmentResultCategoryCount: number;
+  recordsWithRegistrationNumbers: number;
+  topDistrict?: string;
+  byDistrict: Array<{ district: string; count: number }>;
+  byAssessmentResult: Array<{ assessmentResult: string; count: number }>;
+  byAssessmentResultAndDistrict: Array<{ district: string; assessmentResult: string; count: number }>;
+  dataQuality: {
+    duplicateRecordCount: number;
+    missingBusinessNameCount: number;
+    missingRegistrationNumberCount: number;
+    missingAddressCount: number;
+    missingAssessmentResultCount: number;
+    unknownDistrictCount: number;
+    unknownAssessmentValueCount: number;
+  };
+};
+
 export type TaipeiFoodTraceabilityProductIndexItem = {
   productKey: string;
   productName: string;
@@ -427,6 +477,11 @@ export type ConversionReport = {
     missingStoreNameCount: number;
     missingAddressCount: number;
     unknownGreenStoreTypeCount: number;
+  };
+  restaurantHygieneGradingRecords?: RestaurantHygieneGradingSummary & {
+    source: string;
+    sourceAgency: string;
+    sourceFile: string;
   };
   notes: string[];
 };

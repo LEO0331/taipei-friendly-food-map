@@ -9,5 +9,6 @@ data/raw/water-refill-stores/*.csv
 data/raw/taipei-food-traceability-products/*.csv
 data/raw/commercial-district-introductions/*.csv
 data/raw/green-store-directory/*.csv
+data/raw/restaurant-hygiene-grading-records/*.csv
 .playwright-cli
 .omx
