@@ -6,6 +6,7 @@ import { DataNotes } from './components/DataNotes';
 import { CommercialDistrictModule } from './components/CommercialDistrictModule';
 import { GreenStoreDirectoryModule } from './components/GreenStoreDirectoryModule';
 import { RestaurantHygieneGradingModule } from './components/RestaurantHygieneGradingModule';
+import { FailedFoodInspectionModule } from './components/FailedFoodInspectionModule';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
 import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
@@ -190,8 +191,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && (
+      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -240,6 +241,7 @@ export default function App() {
           {activeTab === 'hygieneGrading' && (
             <RestaurantHygieneGradingModule summary={data.restaurantHygieneGradingSummary} language={language} />
           )}
+          {activeTab === 'failedInspections' && <FailedFoodInspectionModule summary={data.failedFoodInspectionSummary} language={language} />}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
         </div>
       </section>

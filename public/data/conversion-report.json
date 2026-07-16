@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T03:48:45.693Z",
+  "generatedAt": "2026-07-16T06:30:04.556Z",
   "notes": [
     "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
     "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
@@ -53,6 +53,27 @@
       "filePath": "data\\raw\\restaurant-hygiene-grading-records\\restaurant-hygiene-grading-records.csv",
       "fileSize": 169383,
       "notes": "Downloaded official Taipei restaurant hygiene grading CSV."
+    },
+    {
+      "sourceUrl": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=3fc106cb-c8aa-4f74-8dbc-3272c7ffcae0",
+      "downloadedAt": "2026-07-16T06:28:46.220Z",
+      "filePath": "data\\raw\\failed-food-inspection-records\\113.csv",
+      "fileSize": 73050,
+      "notes": "113年度臺北市衛生局食品抽驗不合格清冊"
+    },
+    {
+      "sourceUrl": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=bb347e3d-626a-46e5-bb96-9061e8d08c26",
+      "downloadedAt": "2026-07-16T06:28:46.383Z",
+      "filePath": "data\\raw\\failed-food-inspection-records\\112.csv",
+      "fileSize": 66166,
+      "notes": "112年度臺北市衛生局食品抽驗不合格清冊"
+    },
+    {
+      "sourceUrl": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=bc24a40f-5687-4338-8f9a-449de248ab93",
+      "downloadedAt": "2026-07-16T06:28:46.542Z",
+      "filePath": "data\\raw\\failed-food-inspection-records\\111.csv",
+      "fileSize": 39069,
+      "notes": "111年度臺北市衛生局食品抽驗不合格清冊"
     }
   ],
   "friendlyStores": {
@@ -1270,5 +1291,3851 @@
     "sourceAgency": "臺北市政府衛生局",
     "sourceFile": "data\\raw\\restaurant-hygiene-grading-records\\restaurant-hygiene-grading-records.csv (utf-8)",
     "topDistrict": "大安區"
+  },
+  "failedFoodInspectionRecords": {
+    "generatedAt": "2026-07-16T06:30:04.552Z",
+    "totalRecords": 672,
+    "yearsCovered": 3,
+    "foodCategoryCount": 89,
+    "uniqueSampleNames": 438,
+    "districtCount": 12,
+    "byYear": [
+      {
+        "year": 2022,
+        "count": 155
+      },
+      {
+        "year": 2023,
+        "count": 249
+      },
+      {
+        "year": 2024,
+        "count": 268
+      }
+    ],
+    "byMonth": [
+      {
+        "month": "2024-06",
+        "count": 42
+      },
+      {
+        "month": "2022-11",
+        "count": 38
+      },
+      {
+        "month": "2024-11",
+        "count": 38
+      },
+      {
+        "month": "2023-08",
+        "count": 36
+      },
+      {
+        "month": "2023-05",
+        "count": 33
+      },
+      {
+        "month": "2023-11",
+        "count": 31
+      },
+      {
+        "month": "2024-09",
+        "count": 31
+      },
+      {
+        "month": "2024-10",
+        "count": 31
+      },
+      {
+        "month": "2022-08",
+        "count": 28
+      },
+      {
+        "month": "2022-10",
+        "count": 26
+      },
+      {
+        "month": "2023-10",
+        "count": 26
+      },
+      {
+        "month": "2024-02",
+        "count": 25
+      },
+      {
+        "month": "2023-09",
+        "count": 23
+      },
+      {
+        "month": "2023-02",
+        "count": 21
+      },
+      {
+        "month": "2024-07",
+        "count": 21
+      },
+      {
+        "month": "2023-07",
+        "count": 17
+      },
+      {
+        "month": "2024-05",
+        "count": 17
+      },
+      {
+        "month": "2024-08",
+        "count": 17
+      },
+      {
+        "month": "2022-07",
+        "count": 16
+      },
+      {
+        "month": "2024-04",
+        "count": 16
+      },
+      {
+        "month": "2023-06",
+        "count": 15
+      },
+      {
+        "month": "2024-01",
+        "count": 15
+      },
+      {
+        "month": "2024-03",
+        "count": 15
+      },
+      {
+        "month": "2023-01",
+        "count": 14
+      },
+      {
+        "month": "2023-03",
+        "count": 13
+      },
+      {
+        "month": "2023-04",
+        "count": 13
+      },
+      {
+        "month": "2022-01",
+        "count": 12
+      },
+      {
+        "month": "2022-05",
+        "count": 9
+      },
+      {
+        "month": "2022-02",
+        "count": 8
+      },
+      {
+        "month": "2022-09",
+        "count": 8
+      },
+      {
+        "month": "2023-12",
+        "count": 7
+      },
+      {
+        "month": "2022-04",
+        "count": 4
+      },
+      {
+        "month": "2022-03",
+        "count": 3
+      },
+      {
+        "month": "2022-06",
+        "count": 2
+      },
+      {
+        "month": "2022-12",
+        "count": 1
+      }
+    ],
+    "byCategory": [
+      {
+        "category": "小葉菜類",
+        "count": 129
+      },
+      {
+        "category": "根莖菜類",
+        "count": 44
+      },
+      {
+        "category": "大漿果類",
+        "count": 31
+      },
+      {
+        "category": "香辛植物及其他草木本植物",
+        "count": 30
+      },
+      {
+        "category": "果菜類",
+        "count": 28
+      },
+      {
+        "category": "小漿果類",
+        "count": 22
+      },
+      {
+        "category": "冰品",
+        "count": 22
+      },
+      {
+        "category": "包葉菜類",
+        "count": 19
+      },
+      {
+        "category": "豆菜類",
+        "count": 17
+      },
+      {
+        "category": "花草茶",
+        "count": 17
+      },
+      {
+        "category": "食品容器具",
+        "count": 16
+      },
+      {
+        "category": "核果類",
+        "count": 16
+      },
+      {
+        "category": "飲料",
+        "count": 16
+      },
+      {
+        "category": "豆乾類",
+        "count": 15
+      },
+      {
+        "category": "鮮果蔬菜類及其加工品",
+        "count": 15
+      },
+      {
+        "category": "竹笙",
+        "count": 13
+      },
+      {
+        "category": "烤肉用蔬菜",
+        "count": 12
+      },
+      {
+        "category": "木耳",
+        "count": 10
+      },
+      {
+        "category": "包裝",
+        "count": 10
+      },
+      {
+        "category": "白木耳",
+        "count": 10
+      },
+      {
+        "category": "豆製品(豆干絲)",
+        "count": 9
+      },
+      {
+        "category": "乾豆類",
+        "count": 7
+      },
+      {
+        "category": "蜜餞食品",
+        "count": 7
+      },
+      {
+        "category": "中秋月餅",
+        "count": 6
+      },
+      {
+        "category": "瓜菜類",
+        "count": 6
+      },
+      {
+        "category": "柑桔類",
+        "count": 6
+      },
+      {
+        "category": "香辛植物類",
+        "count": 6
+      },
+      {
+        "category": "塑膠類",
+        "count": 6
+      },
+      {
+        "category": "蕈菜類",
+        "count": 6
+      },
+      {
+        "category": "雞肉",
+        "count": 6
+      },
+      {
+        "category": "豆腐",
+        "count": 5
+      },
+      {
+        "category": "花生粉",
+        "count": 5
+      },
+      {
+        "category": "梨果類",
+        "count": 5
+      },
+      {
+        "category": "醃漬蔬菜",
+        "count": 5
+      },
+      {
+        "category": "八仙果",
+        "count": 4
+      },
+      {
+        "category": "豆製品(豆干)",
+        "count": 4
+      },
+      {
+        "category": "其他豆製品-干絲",
+        "count": 4
+      },
+      {
+        "category": "菊花",
+        "count": 4
+      },
+      {
+        "category": "膠囊錠狀食品",
+        "count": 4
+      },
+      {
+        "category": "沙拉醬",
+        "count": 3
+      },
+      {
+        "category": "花生製品",
+        "count": 3
+      },
+      {
+        "category": "脫水蔬果類",
+        "count": 3
+      },
+      {
+        "category": "雞蛋",
+        "count": 3
+      },
+      {
+        "category": "蟹類",
+        "count": 3
+      },
+      {
+        "category": "水產及其加工品",
+        "count": 2
+      },
+      {
+        "category": "牛肉",
+        "count": 2
+      },
+      {
+        "category": "奶蛋素",
+        "count": 2
+      },
+      {
+        "category": "奶精",
+        "count": 2
+      },
+      {
+        "category": "沙拉",
+        "count": 2
+      },
+      {
+        "category": "非即食 醃漬蔬菜",
+        "count": 2
+      },
+      {
+        "category": "食品洗潔劑",
+        "count": 2
+      },
+      {
+        "category": "配料",
+        "count": 2
+      },
+      {
+        "category": "盛裝飲用水",
+        "count": 2
+      },
+      {
+        "category": "速食麵",
+        "count": 2
+      },
+      {
+        "category": "黑棗",
+        "count": 2
+      },
+      {
+        "category": "酸菜類(屬醃漬蔬菜)",
+        "count": 2
+      },
+      {
+        "category": "蔬果",
+        "count": 2
+      },
+      {
+        "category": "醃漬水果",
+        "count": 2
+      },
+      {
+        "category": "糕粿糬類製品",
+        "count": 2
+      },
+      {
+        "category": "人造奶油",
+        "count": 1
+      },
+      {
+        "category": "巴西蘑菇",
+        "count": 1
+      },
+      {
+        "category": "日本進口食品",
+        "count": 1
+      },
+      {
+        "category": "水解醬油",
+        "count": 1
+      },
+      {
+        "category": "半成品(豆製品)",
+        "count": 1
+      },
+      {
+        "category": "瓜果類",
+        "count": 1
+      },
+      {
+        "category": "生鮮水果",
+        "count": 1
+      },
+      {
+        "category": "皮蛋",
+        "count": 1
+      },
+      {
+        "category": "百合",
+        "count": 1
+      },
+      {
+        "category": "羊肉",
+        "count": 1
+      },
+      {
+        "category": "自製飲品",
+        "count": 1
+      },
+      {
+        "category": "其他豆製品-豆干",
+        "count": 1
+      },
+      {
+        "category": "其他糖漬鹽漬果類",
+        "count": 1
+      },
+      {
+        "category": "油脂",
+        "count": 1
+      },
+      {
+        "category": "芥花油",
+        "count": 1
+      },
+      {
+        "category": "深海魚類",
+        "count": 1
+      },
+      {
+        "category": "軟體動物",
+        "count": 1
+      },
+      {
+        "category": "魚類",
+        "count": 1
+      },
+      {
+        "category": "無標示 全素或純素",
+        "count": 1
+      },
+      {
+        "category": "葡萄籽油",
+        "count": 1
+      },
+      {
+        "category": "蜜餞食品(脫水水果)",
+        "count": 1
+      },
+      {
+        "category": "辣椒粉",
+        "count": 1
+      },
+      {
+        "category": "醃漬蔬果",
+        "count": 1
+      },
+      {
+        "category": "養殖魚類",
+        "count": 1
+      },
+      {
+        "category": "糕粿類製品",
+        "count": 1
+      },
+      {
+        "category": "螺獅粉",
+        "count": 1
+      },
+      {
+        "category": "鮮奶油",
+        "count": 1
+      },
+      {
+        "category": "醬油",
+        "count": 1
+      },
+      {
+        "category": "鵝肉",
+        "count": 1
+      },
+      {
+        "category": "臘肉類",
+        "count": 1
+      }
+    ],
+    "byNoncomplianceReason": [
+      {
+        "reason": "殺菌劑過氧化氫：陽性（不得檢出）",
+        "count": 13
+      },
+      {
+        "reason": "標示",
+        "count": 13
+      },
+      {
+        "reason": "檢出過氧化氫為陽性(不得檢出)",
+        "count": 5
+      },
+      {
+        "reason": "(一)內容物為二種以上混合物未依其含量多寡由高至低分別標示。 (二)未標示「淨重、容量或數量」及「原產地（國）」。 (三)內容物含有麩質之穀類、蛋、奶、大豆及其製品，未標示食品過敏原資訊等。",
+        "count": 3
+      },
+      {
+        "reason": "殺菌劑過氧化氫：陽性(標準：不得殘留)",
+        "count": 3
+      },
+      {
+        "reason": "衛生標準",
+        "count": 3
+      },
+      {
+        "reason": "1.蘇丹三號-8ppb (標準：不得檢出) 2.克美素-0.07ppm (標準：不得檢出)",
+        "count": 2
+      },
+      {
+        "reason": "三甲氧芐氨嘧啶(trimethoprim): 0.1ppm （標準：0.05ppm）",
+        "count": 2
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.26ppm(標準：不得檢出)",
+        "count": 2
+      },
+      {
+        "reason": "重金屬鎘5mg/kg（標準：2mg/kg以下）",
+        "count": 2
+      },
+      {
+        "reason": "殺草劑Oxadiazon 樂滅草0.02ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺草劑Oxadiazon 樂滅草0.03ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺菌劑Flutriafol 護汰芬0.02ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺線蟲劑Fosthiazate 福賽絕0.02ppm(標準：不得檢出)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟎劑Spirodiclofen 賜派芬0.08ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.3ppm(標準：1.0ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.02ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.03ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟲劑Fipronil-sulfone芬普尼代謝物0.002ppm(標準：0.001ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟲劑Fipronil-sulfone芬普尼代謝物0.003ppm(標準：0.001ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.02ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.04ppm(標準：0.01ppm以下)",
+        "count": 2
+      },
+      {
+        "reason": "產品外包裝未標示「製造廠商或國內負責廠商名稱、電話號碼及地址」及「淨重、容量或數量」，且營養標示未標示「每一份量（或每一份、每份）」。",
+        "count": 2
+      },
+      {
+        "reason": "腸桿菌科：3.2x10^2 CFU/g (標準：10 CFU/g)",
+        "count": 2
+      },
+      {
+        "reason": "檢出甜味劑「蔗糖素」惟未於成分內容物標示。",
+        "count": 2
+      },
+      {
+        "reason": "檢出甜味劑「醋磺內酯鉀」及「蔗糖素」，惟未於成分內容物標示。",
+        "count": 2
+      },
+      {
+        "reason": "營養標示反式脂肪含量為「每份：0公克/每100公克：0公克」，惟檢出每100公克反式脂肪酸含量0.40公克，依據「包裝食品營養標示應遵行事項」，每100公克固體（半固體）反式脂肪酸含量不超過0.3公克得標示為0，案內產品應依實際數值標示。",
+        "count": 2
+      },
+      {
+        "reason": "(1)公告禁用農藥五氯苯胺（Pentachloroaniline）0.04ppm、五氯硝苯（Quintozene（PCNB））0.04ppm (2)產品外包裝標示「嚴選安心產品合格」、「通過多項農殘檢驗合格」等字樣，涉標示不實",
+        "count": 1
+      },
+      {
+        "reason": "(1)生長調節劑Chlormequat克美素0.34ppm(標準:不得檢出) (2)產品外包裝標示「通過SGS農藥殘留檢驗符合國家標準」字樣，涉標示不實",
+        "count": 1
+      },
+      {
+        "reason": "(1)生長調節劑Chlormequat克美素0.58 ppm（標準：不得檢出） (2)產品外包裝標示「多項農藥殘留檢驗合格」、「國家多項農殘檢驗合格」等字樣，涉標示不實",
+        "count": 1
+      },
+      {
+        "reason": "(1)殺菌劑2-Phenylphenol 0.07 ppm（標準：不得檢出） (2)產品外包裝標示「合格 安心使用」字樣，涉標示不實",
+        "count": 1
+      },
+      {
+        "reason": "(1)殺蟲劑Acetamiprid 亞滅培2.86ppm(標準：0.01ppm以下)/(2)殺菌劑Carbendazim 貝芬替0.02ppm(標準：0.01ppm以下)/(3)殺蟲劑Chlorfenapyr 克凡派2.01ppm(標準：0.01ppm以下)/(4)殺菌劑Chlorothalonil 四氯異苯腈0.13ppm(標準：0.02ppm以下)/(5)殺蟲劑Chlorpyrifos 陶斯松0.04ppm(標準：0.01ppm以下)/(6)殺蟎劑Cyflumetofen 賽芬蟎1.45ppm(標準：0.01ppm以下)/(7)殺菌劑Cyprodinil 賽普洛0.40ppm(標準：0.01ppm以下)/(8)殺蟲劑Deltamethrin 第滅寧0.66ppm(標準：0.01ppm以下)/(9)殺菌劑Difenoconazole 待克利0.40ppm(標準：0.01ppm以下)/(10)殺蟲劑Diflubenzuron 二福隆1.80ppm(標準：0.01ppm以下)/(11)殺蟲劑Dimethoate 大滅松4.24ppm(標準：不得檢出)/(12)殺菌劑Dimethomorph 達滅芬3.81ppm(標準：0.01ppm以下)/(13)殺蟲劑Dinotefuran 達特南0.02ppm(標準：不得檢出)/(14)殺草劑Diuron 達有龍0.02ppm(標準：不得檢出)/(15)殺蟲劑Flonicamid 氟尼胺0.02ppm(標準：0.01ppm以下)/(16)殺蟲劑Flubendiamide 氟大滅0.19ppm(標準：不得檢出)/(17)殺菌劑Fludioxonil 護汰寧0.61ppm(標準：0.01ppm以下)/(18)殺菌劑Fluopicolide 氟比來0.83ppm(標準：0.01ppm以下)/(19)殺菌劑Flutolanil 福多寧0.32ppm(標準：0.01ppm以下)/(20)殺菌劑Fluxapyroxad 氟克殺0.63ppm(標準：不得檢出) /(21)殺蟲劑Imidacloprid 益達胺0.15ppm(標準：0.01ppm以下)/(22)殺蟲劑Omethoate 歐滅松0.31ppm(標準：不得檢出)/(23)殺草劑Pendimethalin 施得圃0.02ppm(標準：0.01ppm以下)/(24)殺菌劑Procymidone 撲滅寧0.02ppm(標準：0.01ppm以下) /(25)殺菌劑Propamocarb hydrochloride 普拔克1.08ppm(標準：0.01ppm以下)/(26)殺菌劑Pyraclostrobin 百克敏5.55ppm(標準：0.01ppm以下)/(27)殺蟲劑Pyriproxyfen 百利普芬0.08ppm(標準：0.01ppm以下)/(28)殺蟎劑Spirotetramat 賜派滅0.79ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "1.「Tritan」為商標名稱，無法正確指稱材質名稱。 2.未依規定以印刷、打印或壓印方式標示材質及耐熱溫度於主要本體",
+        "count": 1
+      },
+      {
+        "reason": "1.二、四地(2,4-D)-0.27ppm (標準：0.05ppm) 2.克美素-0.16ppm (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "1.未有內容物名稱、食品添加 物名稱、原產地（國）、製 造廠商或國內負責廠商名稱 、電話號碼及地址、營養標 示。 2.同時標示最佳賞味期及有效 期限。",
+        "count": 1
+      },
+      {
+        "reason": "1.未標示淨重、容量或數量。 2.未標示湯匙耐熱溫度。",
+        "count": 1
+      },
+      {
+        "reason": "1.甲醛：43.0ppm (標準:不得檢出) 2.蒸發殘渣：74ppm (標準:30ppm以下) 3.未標示淨重、容量或數量",
+        "count": 1
+      },
+      {
+        "reason": "1.扶吉胺-1.0ppm (標準:不得檢出) 2.鎘-0.18mg/kg (標準:0.05mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "1.扶吉胺-5.67ppm (標準:不得檢出) 2.鎘-0.17mg/kg (標準:0.05mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "1.防腐劑苯甲酸1.0g/kg（標準：0.6g/kg以下）、己二烯酸4.0g/kg（標準：2.0g/kg以下） 2.產品屬包裝食品惟未依規定以中文標示",
+        "count": 1
+      },
+      {
+        "reason": "1.苯甲酸：0.5 g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "1.重金屬鎘5mg/kg（標準：2mg/kg以下） 2.產品屬包裝食品惟未依規定以中文標示",
+        "count": 1
+      },
+      {
+        "reason": "1.動物性成分陽性、動物性成分陽性(豬、雞、魚)陽性。 2.植物性成分陽性、五辛(洋蔥)陽性。",
+        "count": 1
+      },
+      {
+        "reason": "1.動物性成分陽性、動物性成分陽性(豬、雞)陽性。 2.植物性成分陽性、五辛(洋蔥)陽性。",
+        "count": 1
+      },
+      {
+        "reason": "1.殺菌劑四克利(Tetraconazole)：0.09ppm(標準：0.01ppm)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺菌劑芬普尼(Fipronil)：0.472ppm(標準：0.001ppm) 2.殺菌劑芬普尼代謝物(Fipronil-sulfone)：0.06ppm(標準：0.001ppm) 3.殺蟲劑百利普芬(Pyriproxyfen)：1.81ppm(標準：0.01ppm)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺菌劑賽氟滅(Thifluzamide)：0.14ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑克凡派(Chlorfenapyr)：1.1ppm(標準：1.0ppm) 2.殺蟲劑賽安勃(Cyantraniliprole)：0.77ppm(標準：不得檢出) 3.殺蟲劑芬普尼（Fipronil）：0.144ppm、芬普尼代謝物（ Fipronil-sulfone）：0.047ppm，共計0.191 ppm（標準：0.001ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑克凡派(Chlorfenapyr)：1.8ppm(標準：1.0ppm) 2.殺蟲劑賽安勃(Cyantraniliprole)：0.43ppm(標準：不得檢出) 3.殺蟲劑芬普尼（Fipronil）：0.077ppm、芬普尼代謝物（ Fipronil-sulfone）：0.027ppm，共計檢出0.104 ppm（標準： 0.001ppm 以下）",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑克凡派(Chlorfenapyr)：2.2ppm(標準：1.0ppm)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑克凡派0.09ppm（標準：0.05ppm以下） 2.產品外包裝未依規定以中文標示",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑芬普尼(Fipronil)：0.046ppm、芬普尼代謝物(Fipronil-sulfone)：0.011ppm(標準：0.001ppm) 2.殺蟲劑百利普芬(Pyriproxyfen)：0.73ppm(標準：0.01ppm)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑芬普尼(Fipronil)：0.372ppm、芬普尼代謝物(Fipronil- sulfone)：0.039ppm，共計0.411 ppm（標準：0.001ppm以下） 2.殺蟲劑托福松(Terbufos)：1.42ppm (標準：0.05ppm)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑芬普尼代謝物(Fipronil-sulfone)：0.003ppm(標準：0.001ppm) 2.殺菌劑賽氟滅(Thifluzamide)：0.04ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑滅芬諾(Methoxyfenozide)：0.29ppm(標準：0.01ppm) 2.殺菌劑賽氟滅(Thifluzamide)：0.55ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑賽洛寧(λ-Cyhalothrin)：0.02ppm (標準：0.01ppm)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑賽滅寧(Cypermethrin)：2.9ppm(標準：2ppm) 2.殺蟲劑芬普尼(Fipronil)：0.013ppm(標準：0.001ppm) 3.殺蟲劑芬普尼代謝物(Fipronil-sulfone)：0.049ppm(標準：0.001ppm)",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑Acetamiprid亞滅培3.9ppm（標準：2.0ppm以下） 2.產品外包裝標示「天然生機」字樣及產品內附有未檢出農藥殘留之檢驗報告，標示不實且易生誤解",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑Chlorfenapyr 克凡派11.0ppm(標準：2.0ppm以下)、Methomyl 納乃得1.5ppm(標準：1.0ppm以下) 2.產品內附有未檢出農藥殘留之檢驗報告與外包裝標示「安心使用」字樣，標示不實且易生誤解",
+        "count": 1
+      },
+      {
+        "reason": "1.殺蟲劑Cypermethrin賽滅寧0.14ppm（標準：0.03ppm以下）、殺草劑Pendimethalin施得圃0.07ppm（ 標準： 0.05ppm 以下）、殺菌劑Pydiflumetofen派滅芬0.10ppm（標準：不得檢出） 2.產品外包裝標示「檢驗合格」字樣及附有農藥殘留檢驗合格之檢驗報告，標示不實且易生誤解",
+        "count": 1
+      },
+      {
+        "reason": "1.產品無完整中文標示 2.動物性成分檢出牛雞成分，惟僅標示牛成分",
+        "count": 1
+      },
+      {
+        "reason": "1.黃麴毒素B1：19.0 μg/kg（標準：2 μg/kg以下） 2.總黃麴毒素B1+B2+G1+G2：21.7μg/kg（標準：4 μg/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "1.黃麴毒素B1：27.3µg/kg（標準：2µg/kg以下）及總黃麴毒素：33.5µg/kg（標準：4µg/kg以下） 2.產品外包裝未標示「內容物名稱」、「淨重、容量或數量」、「製造廠商或國內負責廠商名稱」、「原產地 （國）」、「營養標示」，且未標示「有效日期」字樣",
+        "count": 1
+      },
+      {
+        "reason": "1.檢出蔗糖素0.58 g/kg，內容 物未標示。 2.內容物標示「糖精鈉鹽」及 「環己基(代)磺醯胺酸鈉」 ，檢驗結果未檢出。",
+        "count": 1
+      },
+      {
+        "reason": "1.檢驗符合規定2.標示不符規定",
+        "count": 1
+      },
+      {
+        "reason": "1.檢驗結果檢出防腐劑「己二烯酸」、著色劑「食用色素紅色六號」、甜味劑「紐甜」及「甜菊糖」，惟未於成分內容物標示。 2.產品外包裝未標示「製造廠商或國內負責廠商名稱、電話號碼及地址」及「淨重、容量或數量」，且營養標示未標示「每一份量（或每一份、每份）」。",
+        "count": 1
+      },
+      {
+        "reason": "1.蘇丹三號-4ppb (標準：不得檢出) 2.克美素-0.06ppm (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "乃卡巴精(nicarbazin): 0.016 ppm (標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "二‧四地（2,4-D）:0.1ppm （標準:0.05ppm）",
+        "count": 1
+      },
+      {
+        "reason": "二氧化硫 0.19g/kg(標準：0.030g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "二氧化硫0.09 g/kg(漂白劑標準：0.030 g/kg以下) 標示添加物：偏亞硫酸鈉(抗氧化劑)(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "二氧化硫0.19g/kg(標準：0.030g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "三甲氧芐氨嘧啶(trimethoprim): 0.09ppm （標準：0.05ppm）",
+        "count": 1
+      },
+      {
+        "reason": "三聚氰胺:4.6ppm (標準:2.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "大腸桿菌群：57CFU/100mL (標準：陰性)",
+        "count": 1
+      },
+      {
+        "reason": "大腸桿菌群：陽性 (標準：陰性)",
+        "count": 1
+      },
+      {
+        "reason": "己二烯酸 1.0g/kg (標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "己二烯酸：0.33g/kg (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "己二烯酸：0.70g/kg (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "己二烯酸0.76 g/kg(標準：不得檢出) 醋磺內酯鉀0.09 g/kg(標準：不得檢出) 環己基(代)磺醯胺酸鹽0.58 g/kg(標準：不得檢出) 糖精0.08g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "已二烯酸 2.22 g/kg (標準2.0 g/kg)",
+        "count": 1
+      },
+      {
+        "reason": "未向中央主管機關申請查驗並申報其產品有關資訊。",
+        "count": 1
+      },
+      {
+        "reason": "未有中文標示",
+        "count": 1
+      },
+      {
+        "reason": "未依規定以印刷、打印或壓印方式標示材質於主要本體",
+        "count": 1
+      },
+      {
+        "reason": "未標示主要成分化學之名稱",
+        "count": 1
+      },
+      {
+        "reason": "未標示有效日期。",
+        "count": 1
+      },
+      {
+        "reason": "未標示原產地（國）、有效日期標示單獨黏貼未依規定印刷於外包裝上。",
+        "count": 1
+      },
+      {
+        "reason": "未標示原產地（國）及「有效日期」字樣",
+        "count": 1
+      },
+      {
+        "reason": "未標示製造日期",
+        "count": 1
+      },
+      {
+        "reason": "本體未以印刷、打印或壓印方式標示材質名稱及耐熱溫度。",
+        "count": 1
+      },
+      {
+        "reason": "本體未以印刷、打印或壓印方式標示耐熱溫度。",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑2,6-DIPN 0.05ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.04ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.04ppm(標準：不得檢出) 殺菌劑Boscalid 白克列1.4ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.08ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.08ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.18ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.29ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.32 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.33ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat 克美素0.37ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat克美素0.13ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat克美素0.18ppm(標準：不得檢出) 產品外包裝標示「符合國家檢驗標準」字樣",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat克美素0.23ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat克美素0.24 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Chlormequat克美素0.31ppm（標準：不得檢出），另外箱標示「合格」字樣",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Gibberellic acid 勃激素A3 0.05ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "生長調節劑Gibberellic acid 勃激素A3 0.07ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "甲醇：4.09 mg/mL (標準 : 1 mg/mL)",
+        "count": 1
+      },
+      {
+        "reason": "甲磺氯黴素(Thiamphenicol): 0.005 ppm(標準:不得檢出) 氟滅菌(flumequine): 0.07 ppm(標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "甲醛：24.0ppm (標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "百滅寧:0.09 ppm (標準:0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "克美素-0.08ppm (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "克美素-0.1ppm (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "初抽：腸桿菌科:43(標準:10 CFU/mL) 複抽：腸桿菌科:5.7×10^2(標準:10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "初抽不符合規定，鎘：2.3mg/kg(標準：0.5mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "扶吉胺Fluazinam 0.07ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑己二烯酸：1.3 g/kg(1.0 g/kg)",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑己二烯酸2.1g/kg（標準：2.0g/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑己二烯酸2.2 g/kg（標準：2.0g/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑己二烯酸2.3g/kg（標準：2.0g/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑己二烯酸2.4g/kg（標準：2.0g/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑己二烯酸4.7g/kg（標準：2.0g/kg以下），且該產品為包裝食品，惟未依相關規定標示",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑苯甲酸：0.74 g/kg(標準：0.6 g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "防腐劑苯甲酸：1.42 g/kg（標準：不得添加）",
+        "count": 1
+      },
+      {
+        "reason": "芬化利(Fenvalerate)0.04 ppm (標準:0.1ppm) 環氧乙烷(Ethylene Oxide)1.34mg/kg (標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "芬普尼(Fipronil):0.001 ppm、芬普尼代謝物(Fipronil-sulfone)0.001 ppm=0.002 ppm (標準:0.001 ppm) 賽速安(Thiamethoxam):0.16 ppm (標準:0.02 ppm)",
+        "count": 1
+      },
+      {
+        "reason": "芬普尼(Fipronil)0.001ppm (標準:0.001ppm) 賽速安(Thiamethoxam)0.03(標準:0.02ppm)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸 0.57 g/kg(標準：1.0 /g/kg)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸 1.2g/kg(標準：0.6 g/kg以下) 二氧化硫 0.35g/kg(標準：0.030g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸：0.75g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸：0.91g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸：1.39g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸：1.94g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸：2.9g/kg （標準：1.0g/kg）",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸1.17 g/kg(標準：0.6 g/kg) 二氧化硫0.48 g/kg(標準：0.030 g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸1.25g/kg(標準：0.6g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸1.33g/kg(標準：0.6 g/kg) 二氧化硫0.06g/kg(標準：0.030 g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "苯甲酸1.3g/kg(標準：0.6g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "重金屬鎘18mg/kg（標準：2mg/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "重金屬鎘3mg/kg(標準：2mg/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "重金屬鎘4mg/kg（標準：2mg/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "重金屬鎘5mg/kg(標準：2mg/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "重金屬鎘9mg/kg（標準：2mg/kg以下）",
+        "count": 1
+      },
+      {
+        "reason": "原產地標示不實",
+        "count": 1
+      },
+      {
+        "reason": "恩氟喹啉羧酸(enrofloxacin)：0.03ppm (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "砷:0.35 mg/kg (標準:0.2 mg/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "除草劑Metolachlor 莫多草0.04ppm(標準：0.01ppm以下) 殺草劑Pendimethalin 施得圃0.2ppm(標準：0.1ppm以下) 殺菌劑Pyraclostrobin 百克敏2.5ppm(標準：2.0ppm以下) 殺蟲劑Terbufos 托福松0.07ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺丹-0.03ppm (標準:0.01ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑草脫淨(Atrazine)：0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.01ppm(標準：不得檢出) 殺菌劑Dimethomorph 達滅芬2.6ppm(標準：2.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.01ppm(標準：不得檢出) 殺蟲劑 Chlorpyrifos 陶斯松0.02ppm(標準：不得檢出) 殺蟲劑Fenitrothion 撲滅松0.02ppm(標準：0.01ppm以下) 殺草劑Pendimethalin 施得圃0.2ppm(標準：0.1ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.01ppm(標準：不得檢出) 殺蟲劑Carbofuran 加保扶0.02ppm(標準：不得檢出) 殺蟲劑Chlorpyrifos 陶斯松0.03ppm(標準：0.01ppm以下) 殺蟲劑Fenitrothion 撲滅松0.04ppm(標準：0.01ppm以下) 殺菌劑Hexaconazole 菲克利0.02ppm(標準：0.01ppm以下) 殺草劑Oxadiazon 樂滅草0.02ppm(標準：0.01ppm以下) 殺草劑Pendimethalin 施得圃0.03ppm(標準：0.01ppm以下) 殺蟲劑Phorate 福瑞松0.02ppm(標準：不得檢出) 殺草劑Thiobencarb 殺丹0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.02ppm(標準：不得檢出) 殺蟲劑Fenitrothion 撲滅松0.02ppm(標準：0.01ppm以下) 殺菌劑Isoprothiolane 亞賜圃0.04ppm(標準：0.01ppm以下) 殺草劑Pendimethalin 施得圃0.04ppm(標準：0.01ppm以下) 殺蟲劑Phenthoate 賽達松0.02ppm(標準：0.01ppm以下) 殺菌劑Procymidone 撲滅寧0.02ppm(標準：0.01ppm以下) 殺菌劑Thifluzamide 賽氟滅0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.02ppm(標準：不得檢出) 殺蟲劑Indoxacarb 因得克0.05ppm( 標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.04ppm(標準：不得檢出) 殺菌劑Hexaconazole 菲克利0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn 草殺淨0.12ppm(標準：不得檢出) 殺蟲劑Indoxacarb 因得克0.06ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Ametryn草殺淨0.06ppm（ 標準： 不得檢出） 殺菌劑Propamocarb hydrochloride普拔克13.9ppm（標準：10.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Atrazine草脫淨0.01 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Atrazine草脫淨0.01 ppm（標準：不得檢出） 殺草劑Linuron理有龍0.01 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Glyphosate嘉磷塞2.1ppm（標準：2.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Linuron 理有龍0.02ppm(標準：不得檢出) 殺菌劑Thifluzamide 賽氟滅0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Linuron 理有龍0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Linuron理有龍0.02ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Oxadiazon 樂滅草0.04ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Oxadiazon 樂滅草0.05ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Pendimethalin施得圃0.2 ppm（標準：0.1ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺草劑Thiobencarb 殺丹0.08ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑 Difenoconazole待克利1.2 ppm（標準：0.5 ppm以下） 殺蟎劑Fenazaquin芬殺蟎0.4 ppm（標準：0.1ppm以下 ）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑 Pencycuron 賓克隆 0.09ppm(標準：0.05ppm以下)殺菌劑Zoxamide座賽胺 0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑2-Phenylphenol 0.06ppm（標準：不得檢出） 產品外包裝標示「通過農藥殘留檢驗合格」、「合格養生食品合格安心」、「符合國家檢測標準敬請安心使用」等字樣",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑四氯異苯腈(Chlorothalonil)：16.1ppm(標準：5ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑過氧化氫：陽性(標準：不得殘留) 防腐劑苯甲酸：1.81 g/kg(標準：0.6 g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑腐絕(Thiabendazole)： 0.13ppm (標準：0.01ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Azoxystrobin 亞托敏1.2ppm(標準：1.0ppm以下) 殺蟲劑Chlorpyrifos 陶斯松0.04ppm(標準：不得檢出) 殺菌劑Cyazofamid 賽座滅0.04ppm(標準：0.01pm以下) 殺草劑Oxadiazon 樂滅草0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Azoxystrobin亞托敏0.5ppm（標準：0.1ppm以下） 殺菌劑Famoxadone凡殺同0.04ppm（標準：0.01ppm以下） 殺菌劑Flutolanil福多寧2.4ppm（標準：2.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Azoxystrobin亞托敏3.8 ppm（標準：1.0 ppm以下） 殺菌劑Dimethomorph達滅芬4.8 ppm（標準：2.5 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Azoxystrobin亞托敏5.4ppm（標準：1.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Boscalid 白克列0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Boscalid 白克列0.12ppm(標準：0.01ppm以下) 殺菌劑Fluxapyroxad 氟克殺0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Boscalid 白克列14.9ppm(標準：4.0ppm以下) 殺菌劑Difenoconazole 待克利3.5ppm(標準：1.0ppm以下) 殺菌劑Dimethomorph 達滅芬4.9ppm(標準：2.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Boscalid 白克列21.87ppm(標準：0.01ppm以下) 殺菌劑Procymidone 撲滅寧10.3ppm(標準：5.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Boscalid白克列5.6 ppm（標準：4.0 ppm以下） 殺蟲劑Emamectin benzoate因滅汀0.06 ppm（標準：0.05 ppm以下） 殺菌劑Pyraclostrobin百克敏2.2ppm（標準：2.0 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Bupirimate 布瑞莫0.02ppm(標準：0.01ppm以下) 殺菌劑Prochloraz 撲克拉0.69ppm(標準：0.01ppm以下) 殺蟲劑Pyriproxyfen 百利普芬0.6ppm(標準：0.2ppm以下) 殺蟲劑Spinetoram 賜諾特0.08ppm(標準：0.05ppm以下) 殺蟲劑Tolfenpyrad 脫芬瑞0.07ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Bupirimate 布瑞莫0.03ppm(標準：0.01ppm以下) 殺蟲劑Chlorpyrifos 陶斯松0.04ppm(標準：0.01ppm以下) 殺菌劑Diniconazole 達克利0.30ppm(標準：不得檢出) 殺線蟲劑Fosthiazate 福賽絕0.01ppm(標準：不得檢出) 殺菌劑Prochloraz 撲克拉0.10ppm(標準：0.01ppm以下) 殺蟲劑Thiamethoxam 賽速安0.09ppm(標準：0.02ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Carbendazim 貝芬替 0.21ppm(標準：0.05ppm以下) 殺蟲劑Cypermethrin 賽滅寧 0.21ppm(標準：0.03ppm以下) 殺蟲劑Fipronil 芬普尼 0.006ppm(標準：0.002ppm以下) 殺蟲劑Imidacloprid 益達胺 0.29ppm(標準：0.05ppm以下) 殺菌劑Isoprothiolane 亞賜圃 0.18ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Carbendazim 貝芬替0.05ppm(標準：0.01ppm以下) 殺蟲劑Chlorfenapyr 克凡派0.02ppm(標準：0.01ppm以下) 殺蟲劑Dinotefuran 達特南0.20ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Carbendazim 貝芬替1.2ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Carbendazim 貝芬替1.3ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Chlorothalonil 四氯異苯腈0.18ppm(標準：0.02ppm以下) 殺菌劑Dimethomorph 達滅芬0.04ppm(標準：0.01ppm以下) 殺蟲劑Methiocarb 滅賜克0.53ppm(標準：0.01ppm以下) 殺蟲劑Profenophos 佈飛松0.05ppm(標準：0.01ppm以下) 殺菌劑Pyraclostrobin 百克敏0.10ppm(標準：0.01ppm以下) 殺菌劑Tebuconazole 得克利0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Chlorothalonil 四氯異苯腈13.7ppm(標準：2.0ppm以下) 殺菌劑Difenoconazole 待克利1.4ppm(標準：1.0ppm以下) 殺菌劑Propiconazole 普克利0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Chlorothalonil 四氯異苯腈3.9ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Chlorothalonil四氯異苯腈4.1ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Cyproconazole 環克座0.3ppm(標準：0.2ppm以下) 殺蟎劑Spirodiclofen 賜派芬0.81ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Cyprodinil 賽普洛0.04ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Cyprodinil賽普洛0.8ppm（標準：0.5ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利0.6ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利1.0ppm(標準：0.5ppm以下) 殺蟎劑Spirodiclofen 賜派芬0.8ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利1.2ppm(標準：0.5ppm以下) 殺菌劑Zoxamide 座賽胺0.13ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利1.2ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利1.4ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利1.4ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利1.5ppm(標準：0.5ppm以下) 殺菌劑Pydiflumetofen 派滅芬0.05ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利1.9ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利2.1ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利2.7ppm(標準：0.5ppm以下) 殺蟎劑Pyridaben 畢達本0.8ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole 待克利6.3ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole待克利 1.6ppm（ 標準：0.5ppm以下） 殺蟲劑Imidacloprid益達胺 1.2ppm（標準：0.5ppm以下）殺菌劑Pyraclostrobin百克敏 0.8ppm（標準：0.5ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Difenoconazole待克利0.8 ppm（標準：0.5ppm以下） 殺蟲劑Profenophos佈飛松1.1 ppm（標準：1.0 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬0.02ppm(標準：0.01ppm以下) 殺菌劑Procymidone 撲滅寧0.09ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬0.02ppm(標準：0.01ppm以下) 殺菌劑Propamocarb hydrochloride 普拔克0.21ppm(標準：0.01ppm以下) 殺蟲劑Terbufos 托福松0.05ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬0.03ppm(標準：0.01ppm以下) 殺菌劑Diniconazole 達克利0.05ppm(標準：不得檢出) 殺菌劑Fluopicolide 氟比來0.05ppm(標準：0.01ppm以下) 殺菌劑Flusilazole 護矽得0.05ppm(標準：不得檢出) 殺菌劑Prochloraz 撲克拉0.27ppm(標準：0.01ppm以下) 殺草劑Prometryn 佈滅淨0.04ppm(標準：不得檢出) 殺菌劑Propiconazole 普克利4.54ppm(標準：0.01ppm以下) 殺菌劑Pydiflumetofen 派滅芬0.12ppm(標準：不得檢出) 殺蟲劑Thiamethoxam 賽速安0.36ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬0.04ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬0.06ppm(標準：0.01ppm以下) 殺蟲劑Imidacloprid 益達胺0.03ppm(標準：0.01ppm以下) 殺草劑Oxadiazon 樂滅草0.04ppm(標準：0.01ppm以下) 殺線蟲劑Oxamyl 毆殺滅0.04ppm(標準：0.01ppm以下) 殺草劑Pendimethalin 施得圃0.06ppm(標準：0.01ppm以下) 殺蟲劑Phenthoate 賽達松0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬0.07ppm(標準：0.01ppm以下) 殺菌劑Diniconazole 達克利0.02ppm(標準：不得檢出) 殺菌劑Fluopicolide 氟比來0.02ppm(標準：0.01ppm以下) 殺菌劑Flusilazole 護矽得0.09ppm(標準：不得檢出) 殺菌劑Prochloraz 撲克拉0.10ppm(標準：0.01ppm以下) 殺菌劑Procymidone 撲滅寧0.02ppm(標準：0.01ppm以下) 殺菌劑Propiconazole 普克利1.98ppm(標準：0.01ppm以下) 殺菌劑Pydiflumetofen 派滅芬0.03ppm(標準：不得檢出) 殺蟲劑Thiamethoxam 賽速安0.11ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬0.28ppm(標準：0.01ppm以下) 殺菌劑Flutolanil 福多寧0.64ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬2.9ppm(標準：2.5ppm以下) 殺蟲劑Indoxacarb 因得克0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬3.9ppm(標準：2.5ppm以下) 殺蟲劑Profenophos 佈飛松3.8ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph 達滅芬4.1ppm(標準：2.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Dimethomorph達滅芬 0.21 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Diniconazole 達克利0.05ppm(標準：不得檢出) 殺線蟲劑Fosthiazate 福賽絕0.01ppm(標準：不得檢出) 殺蟲劑Thiamethoxam 賽速安0.06ppm(標準：0.02ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Diniconazole 達克利0.21ppm(標準：不得檢出) 殺菌劑Fluopicolide 氟比來0.06ppm(標準：0.01ppm以下) 殺菌劑Prochloraz 撲克拉0.08ppm(標準：0.01ppm以下) 殺菌劑Propamocarb hydrochloride 普拔克0.42ppm(標準：0.1ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Diniconazole達克利0.03ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Famoxadone 凡殺同0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Fenoxanil 芬諾尼0.01ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Fludioxonil 護汰寧2.2ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Fluopyram 氟派瑞0.04ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Fluopyram 氟派瑞2.5ppm(標準：1.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Fluopyram氟派瑞0.02 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Flusilazole護矽得0.07ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Flutolanil 福多寧0.05ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Flutolanil 福多寧2.7ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Flutolanil福多寧1.12ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Flutolanil福多寧2.9ppm（標準：2.0ppm以下） 殺蟲劑Methomyl納乃得5.8ppm（標準：3.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Fluxapyroxad 氟克殺0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Fluxapyroxad 氟克殺0.05ppm(標準：不得檢出) 殺蟲劑Pyriproxyfen 百利普芬0.4ppm(標準：0.2ppm以下) 殺蟲劑Cyromazine 賽滅淨0.50ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Hexaconazole菲克利0.03 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Iprobenfos 丙基喜樂松0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Iprobenfos 丙基喜樂松0.05ppm(標準：0.01ppm以下) 殺菌劑Tricyclazole 三賽唑0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Iprodione 依普同0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Isoprothiolane 亞賜圃0.05ppm(標準：0.01ppm以下) 殺蟲劑Phenthoate 賽達松0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Isoprothiolane亞賜圃 0.09 ppm（標準：0.01 ppm以下） 殺菌劑Thifluzamide賽氟滅0.07 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Isopyrazam 亞派占0.50ppm(標準：不得檢出) 殺蟎劑Spirotetramat 賜派滅0.04ppm(標準：不得檢出) 殺蟲劑Thiacloprid 賽果培0.11ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Mandipropamid 曼普胺0.06ppm(標準：不得檢出) 殺菌劑Oxathiapiprolin 歐西比0.01ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Mefentrifluconazole 滅芬座0.12ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Mepronil 滅普寧0.10ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Metrafenone 滅芬農0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Penconazole 平克座0.08ppm(其他(茶類)*:0.05ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Penconazole 平克座0.14ppm(標準:0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pencycuron 賓克隆0.04ppm(標準0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pencycuron賓克隆0.02 ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pencycuron賓克隆0.15 ppm（標準：0.05 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Procymidone 撲滅寧0.02ppm(標準：0.01ppm以下) 殺蟲劑Cyromazine 賽滅淨0.12ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Procymidone 撲滅寧3.1ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Procymidone 撲滅寧5.6ppm(標準：5.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Propam ocarb hydrochloride普拔克11.6ppm（標準：5.0ppm以下） 殺菌劑Tebuconazole得克利0.16ppm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Propamocarb hydrochloride普拔克6.6ppm（標準： 5.0ppm以下） 殺菌劑Tebuconazole得克利0.23ppm（標準：0.05 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Propiconazole 普克利0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Propiconazole 普克利0.08ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pydiflumetofen 派滅芬0.01ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin 百克敏0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin 百克敏0.32 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin 百克敏0.48ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin 百克敏0.70ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin 百克敏0.73ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin 百克敏0.92ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin 百克敏1.0ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Pyraclostrobin百克敏0.8ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Tebuconazole 得克利0.09ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Tebuconazole 得克利0.10ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Tebuconazole得克利0.06 ppm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Thifluzamide 賽氟滅0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Thifluzamide 賽氟滅0.16ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Thifluzamide賽氟滅0.02ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺菌劑Triadimenol 三泰隆 0.27ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺線蟲劑Oxamyl 毆殺滅0.7ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺線蟲劑Oxamyl 毆殺滅1.3ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺線蟲劑Oxamyl 毆殺滅1.4ppm(標準：0.5ppm以下) 殺蟲劑Profenophos 佈飛松1.8ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺線蟲劑Oxamyl毆殺滅1.1 ppm（標準：0.5 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑 Spirodiclofen 賜派芬0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑亞醌蟎代謝物(Acequinocyl-hydroxyl)0.06ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Acrinathrin 阿納寧0.01 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Acrinathrin 阿納寧0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Bifenazate 必芬蟎0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Bifenazate 必芬蟎0.07ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Bifenazate 必芬蟎0.08ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Bifenazate 必芬蟎0.13ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Bifenazate 必芬蟎7.6ppm(標準：2.0ppm以下) 殺蟲劑Deltamethrin 第滅寧0.4ppm(標準：0.2ppm以下) 殺蟲劑Spiromesifen 賜滅芬2.1ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Ethion 愛殺松0.04ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Ethion 愛殺松0.09ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Etoxazole 依殺蟎0.05ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Fenazaquin 芬殺蟎0.09ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Fenbutatin-oxide 芬佈賜0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Fenbutatin-oxide 芬佈賜0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Fenpyroximate芬普蟎0.26ppm（標準：0.01ppm 以下） 殺蟲劑Methoxyfenozide滅芬諾2.06ppm（標準：0.01ppm以下 ）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Formetanate 覆滅蟎0.40ppm(標準：不得檢出) 殺蟲劑Thiamethoxam 賽速安0.04ppm(標準：0.02ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Propargite 毆蟎多0.16ppm(標準：不得檢出) 生長調節劑Chlormequat 克美素0.48ppm(標準：不得檢出) 外包裝標示「通過SGS檢驗無農藥殘留」、「安心使用」等字樣",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Propargite毆蟎多0.07ppm（標準：不得檢出） 生長調節劑Chlormequat克美素0.26ppm（標準：不得檢出） 外包裝標示外包裝標示「通過SGS檢驗無農藥殘留」、「安心使用」等字樣",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Pyridaben畢達本0.01 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Spirodiclofen 賜派芬0.02 ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Spirodiclofen 賜派芬0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Spirodiclofen 賜派芬0.07ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Spirodiclofen 賜派芬0.14ppm(標準： 0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Spirodiclofen 賜派芬0.17ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟎劑Spirodiclofen 賜派芬0.52(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-羥基加保扶(3-OH Carbofuran)0.02ppm、加保扶(Carbofuran)0.03ppm(標準：不得檢出) 殺蟎劑Ethion 愛殺松0.30ppm(標準：不得檢出) 殺蟲劑Etofenprox 依芬寧0.06ppm(標準：不得檢出) 殺蟲劑Indoxacarb 因得克0.09ppm(標準：0.01ppm以下) 殺菌劑Propamocarb hydrochloride 普拔克0.3ppm(標準：0.1ppm以下) 殺菌劑Thifluzamide 賽氟滅0.05(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-羥基加保扶(3-OH Carbofuran)0.11ppm、加保扶(Carbofuran)0.41ppm、丁基加保扶(Carbosulfan)0.08ppm(標準：0.5ppm以下) 殺蟎劑Spirodiclofen 賜派芬0.02ppm(標準：0.01ppm以下) 殺蟲劑 Tolfenpyrad 脫芬瑞0.20ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-酮基加保扶（ 3-keto Carbofuran） 0.03ppm、3-羥基加保扶（ 3 -O H C a rb o fu ra n ） 0 .1 3 p p m 、加保扶（C arbofuran ） 0.04ppm （ 標準： 0.1ppm 以下） 殺蟲劑Diflubenzuron二福隆1.3ppm（標準：1.0ppm以下） 殺蟲劑Pyriproxyfen百利普芬0.29ppm（標準：0.01ppm以下） 殺蟲劑Tolfenpyrad脫芬瑞0.7ppm（標準：0.5ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-酮基加保扶（ 3-keto Carbofuran） 0.04ppm、3-羥基加保扶（ 3-OH Carbofuran）0.54ppm、加保扶（Carbofuran）1.06ppm、丁基加保扶（Carbosulfan）0.20ppm（標準：0.5ppm以下） 殺蟎劑Spirodiclofen賜派芬0.11ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-酮基加保扶(3-keto Carbofuran)0.01ppm、3-羥基加保扶(3-OH Carbofuran)0.18ppm、加保扶(Carbofuran)0.38ppm(標準：0.2ppm以下) 殺蟲劑Acetamiprid 亞滅培0.08ppm(標準：0.01ppm以下) 殺蟲劑Chlorpyrifos 陶斯松0.39ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-keto Carbofuran3-酮基加保扶0.02ppm、3-O H C arbofuran3-羥基加保扶0.22ppm 、Carbofuran加保扶0.51ppm、Carbosulfan丁基加保扶0.05ppm（標準：0.5ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-OH Carbofuran 3-羥基加保扶0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-OH Carbofuran 3-羥基加保扶0.13ppm、Carbofuran加保扶0.18ppm(標準：0.2ppm以下) 殺蟲劑Etofenprox 依芬寧0.05ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑3-OH Carbofuran3羥基加保扶0.01ppm、Carbofuran 加保扶0.01ppm(標準：不得檢出) 殺蟲劑Chlorpyrifos 陶斯松0.01ppm(標準：不得檢出) 殺菌劑Pencycuron 賓克隆0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑芬普尼(Fipronil)：0.001ppm、芬普尼代謝物(Fipronil-sulfone)：0.001ppm(標準：0.001ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑芬普尼(Fipronil)0.012ppm、芬普尼代謝物(Fipronil-sulfone)0.008ppm(標準:0.001ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑芬普尼代謝物（ Fipronil-sulfone） 0.002ppm（標準：0.001 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑陶斯松(Chlorpyrifos)：0.23 ppm（0.01 ppm）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑賽安勃(Cyantraniliprole)：0.07ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Abamectin 阿巴汀0.06ppm(標準：0.05ppm以下) 殺蟲劑Chlorfenapyr 克凡派1.4ppm(標準：1.0ppm以下) 殺蟲劑Cyantraniliprole 賽安勃0.05ppm(標準：不得檢出) 殺蟲劑Fipronil 芬普尼0.210ppm、Fipronil-sulfone芬普尼代謝物0.048ppm(標準：0.001ppm以下) 殺蟲劑Pyriproxyfen 百利普芬1.54ppm(標準：0.01ppm以下) 殺蟲劑Tolfenpyrad 脫芬瑞0.7ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Abamectin 阿巴汀0.07ppm(標準：0.02ppm以下) 殺蟲劑Deltamethrin 第滅寧0.6ppm(標準：0.2ppm以下) 殺菌劑Fludioxonil 護汰寧3.2ppm(標準：2.0ppm以下) 殺菌劑Propamocarb hydrochloride 普拔克14.8ppm(標準：9.0ppm以下) 殺蟲劑Spiromesifen 賜滅芬2.9ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Abamectin 阿巴汀0.07ppm(標準：0.05ppm以下) 殺蟲劑Emamectin benzoate 因滅汀1.76ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Abamectin 阿巴汀0.12ppm(標準：0.05ppm以下) 殺蟲劑Chlorfenapyr 克凡派1.5ppm(標準：1.0ppm以下) 殺蟲劑Methomyl 納乃得0.8ppm(標準：0.7以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Abamectin 阿巴汀0.16ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid 亞滅培 0.21ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid 亞滅培0.29ppm(標準：0.01ppm以下) 殺蟎劑Hexythiazox 合賽多0.17ppm(標準：0.01ppm以下) 殺蟎劑Spirodiclofen 賜派芬0.13ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid 亞滅培0.37ppm(標準：0.01ppm以下) 殺菌劑Dimethomorph 達滅芬0.62ppm(標準：0.01ppm以下) 殺蟲劑Dinotefuran 達特南0.03ppm(標準：不得檢出) 殺蟲劑Methomyl 納乃得2.28ppm(標準：不得檢出) 殺菌劑Pyraclostrobin 百克敏0.12ppm(標準：0.01ppm以下) 殺蟲劑Thiodicarb 硫敵克0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid 亞滅培9.1ppm(標準：2.0ppm以下) 殺菌劑Carbendazim 貝芬替1.3ppm(標準：1.0ppm以下) 殺蟲劑Chlorfenapyr 克凡派3.8ppm(標準：1.0ppm以下) 殺蟲劑Cyantraniliprole 賽安勃0.34ppm(標準：不得檢出) 殺蟲劑Fipronil 芬普尼0.002ppm及芬普尼代謝物Fipronil-sulfone0.002ppm，合計共0.004ppm(標準0.001ppm以下) 殺菌劑Propamocarb hydrochloride 普拔克10.9ppm(標準：10.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid亞滅培0.18ppm（標準：0.05ppm以下） 殺蟲劑Chlorpyrifos 陶斯松0.05ppm（標準：0.03ppm以下） 殺蟲劑Imidacloprid益達胺0.07ppm（標準：0.05ppm以下） 殺菌劑Tebuconazole 得克利0.06ppm（標準：0.05 ppm以下） 外包裝標示「合格」、「安心使用」等字樣，涉易生誤解",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid亞滅培0.31 ppm（標準：0.05 ppm以下） 殺蟲劑Carbofuran加保扶0.11 ppm（標準：不得檢出） 殺蟲劑Imidacloprid益達胺0.10 ppm（標準：0.05ppm以下） 殺菌劑Tebuconazole得克利0.20ppm（標準：0.05 ppm以下） 產品外包裝標示「嚴選安心產品 合格 敬請民眾安心使用」等字樣，涉易生誤解",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid亞滅培0.87ppm（標準：0.05ppm以下） 殺蟲劑Carbofuran加保扶0.37ppm（標準：不得檢出） 殺蟲劑Chlorpyrifos陶斯松0.26ppm（標準：0.03ppm以下） 殺蟲劑Clothianidin可尼丁0.06ppm（標準：0.03ppm以下） 殺菌劑Difenoconazole待克利0.10ppm（標準：0.05ppm以下） 殺蟲劑Imidacloprid益達胺0.23ppm（標準：0.05ppm以下） 殺菌劑Pyraclostrobin百克敏0.13ppm（標準：0.05ppm以下） 殺菌劑Tebuconazole得克利0.34ppm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid亞滅培1.08ppm（標準：0.05ppm以下） 殺蟲劑Bifenthrin畢芬寧0.07ppm（標準：0.03ppm以下） 殺蟲劑Carbofuran加保扶0.82ppm（標準：不得檢出）殺蟲劑Chlorpyrifos陶斯松0.35ppm（標準：不得檢出）殺蟲劑Clothianidin可尼丁0.08ppm（標準：0.03ppm以下） 殺菌劑Difenoconazole待克利0.32ppm（標準：0.05ppm以下） 殺蟲劑Imidacloprid益達胺0.27ppm（標準：0.05ppm以下） 殺菌劑Pyraclostrobin百克敏0.57ppm（標準：0.05ppm以下） 殺菌劑Tebuconazole得克利0.85ppm（標準：0.05ppm以下 殺蟲劑Cyhalothrin賽洛寧0.08ppm（標準：0.03ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Acetamiprid亞滅培2.5 ppm（標準：2.0 ppm以下） 殺菌劑Dimethomorph達滅芬3.7 ppm（標準：2.5ppm以下） 殺菌劑Tebuconazole得克利1.47 ppm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Bifenthrin 畢芬寧 0.07ppm(標準：0.03ppm以下) 殺蟲劑Cypermethrin 賽滅寧 0.06ppm(標準：0.03ppm以下) 殺蟲劑Fipronil 芬普尼 0.003ppm(標準：0.002ppm以下) 殺蟲劑Triazophos 三落松 0.08ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Bifenthrin 畢芬寧1.89ppm(標準：0.01ppm以下) 殺菌劑Carbendazim 貝芬替0.02ppm(標準：0.01ppm以下) 殺蟲劑Chlorfenapyr 克凡派0.09ppm(標準：0.01ppm以下) 殺菌劑Difenoconazole 待克利0.54ppm(標準：0.01ppm以下) 殺菌劑Dimethomorph 達滅芬0.60ppm(標準：0.01ppm以下) 殺蟲劑Dinotefuran 達特南0.74ppm(標準：不得檢出) 殺蟲劑Fenvalerate 芬化利0.26ppm(標準：0.01ppm以下) 殺蟲劑Flubendiamide 氟大滅0.56ppm(標準：不得檢出) 殺菌劑Fluopicolide 氟比來0.03ppm(標準：0.01ppm以下) 殺蟲劑Methomyl 納乃得10.26ppm(標準：不得檢出) 殺線蟲劑Oxamyl 毆殺滅0.04ppm(標準：0.01ppm以下) 殺菌劑Procymidone 撲滅寧0.16ppm(標準：0.01ppm以下) 殺蟲劑Profenophos 佈飛松0.03ppm(標準：0.01ppm以下) 殺菌劑Propamocarb hydrochloride 普拔克0.32ppm(標準：0.01ppm以下) 殺菌劑Pyraclostrobin 百克敏0.07ppm(標準：0.01ppm以下) 殺蟲劑Pyriproxyfen 百利普芬0.06ppm(標準：0.01ppm以下) 殺蟎劑Spirotetramat 賜派滅0.02ppm(標準：不得檢出) 殺菌劑Thiabendazole 腐絕0.06ppm(標準：0.01ppm以下) 殺蟲劑Thiodicarb 硫敵克0.10ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Buprofezin布芬淨0.02ppm（標準：不得檢出） 殺菌劑Pyraclostrobin百克敏0.8ppm（標準：0.5ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Carbaryl 加保利0.9ppm(標準：0.5ppm以下) 殺菌劑Carbendazim 貝芬替4.9ppm(標準：2.0ppm以下) 殺蟲劑Chlorpyrifos 陶斯松0.12ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派0.6ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派0.7ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.1ppm(標準：1.0ppm以下) 殺蟲劑Cyantraniliprole 賽安勃0.13ppm(標準：不得檢出) 殺蟲劑Fipronil 芬普尼0.237ppm、Fipronil-sulfone芬普尼代謝物0.070ppm(標準：0.001ppm以下) 殺蟲劑Pyriproxyfen 百利普芬0.59ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.2ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.4ppm(標準： 1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.4ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.6ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.6ppm(標準：1.0ppm以下) 殺草劑Thiobencarb 殺丹0.14ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派1.7ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派2.0ppm(標準：1.0ppm以下) 殺蟲劑Indoxacarb 因得克2.4ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派2.2ppm(標準：1.0ppm以下) 殺蟲劑Fipronil 芬普尼0.435ppm及芬普尼代謝物Fipronil-sulfone0.083ppm，合計共0.518ppm(標準：0.001ppm以下) 殺蟲劑Indoxacarb 因得克3.7ppm(標準：2.0ppm以下) 殺蟲劑Pyriproxyfen 百利普芬1.53ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派2.4ppm(標準：1.0ppm以下) 殺蟲劑Indoxacarb 因得克2.4ppm(標準：2.0ppm以下) 殺菌劑Pyraclostrobin 百克敏2.7ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr 克凡派4.6ppm(標準：1.0ppm以下) 生長調節劑Paclobutrazol 巴克素0.09ppm(標準：0.01ppm以下) 殺蟲劑Pyriproxyfen 百利普芬0.05ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr克凡派0.07 ppm（標準：0.05 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr克凡派0.08 ppm（標準：0.05 ppm以下） 殺蟲劑Chlorpyrifos陶斯松0.01 ppm（標準：不得檢出）殺蟲劑Fipronil-sulfone芬普尼代謝物0.004 ppm（標準： 0.001ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorfenapyr克凡派2.8 ppm（標準：1.0 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松 0.30ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.01ppm(標準：不得檢出) 殺蟲劑Fenitrothion 撲滅松0.03ppm(標準：0.01ppm以下) 殺草劑Oxadiazon 樂滅草0.02ppm(標準：0.01ppm以下) 殺草劑Pendimethalin 施得圃0.2ppm(標準：0.1ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.02ppm(標準：0.01ppm以下) 殺菌劑Prochloraz 撲克拉0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.02ppm(標準：0.01ppm以下) 殺蟲劑Fipronil 芬普尼0.012ppm、Fipronil-sulfone芬普尼代謝物0.016ppm(標準：0.001ppm以下) 殺蟲劑Pyriproxyfen 百利普芬0.51ppm(標準：0.01ppm以下) 殺蟲劑Tolfenpyrad 脫芬瑞0.8ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.02ppm(標準：0.01ppm以下) 殺蟲劑Phosmet 益滅松0.8ppm(標準：0.2ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.03ppm(標準：0.01ppm以下) 殺菌劑Famoxadone 凡殺同0.68ppm(標準：0.01ppm以下) 殺蟲劑Fenvalerate 芬化利2.8ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.06ppm(標準：0.01ppm以下) 殺蟲劑Terbufos 托福松0.09ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.07ppm(標準： 0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.08ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.14ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.14ppm(標準：0.03ppm以下) 殺蟲劑Fipronil 芬普尼0.068ppm、Fipronil-sulfone芬普尼代謝物0.020ppm(標準：0.002ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.18ppm(其他(茶類)*:0.05ppm) 殺菌劑Metalaxyl 滅達樂0.06ppm(其他(茶類)*:0.05ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.19ppm(標準：0.01ppm以下) 殺蟲劑Thiamethoxam 賽速安0.11ppm(標準：0.02ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos 陶斯松0.28ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos陶斯松0.02ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos陶斯松0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos陶斯松0.24ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos陶斯松0.45ppm(標準：不得檢出) 殺菌劑Cyazofamid 賽座滅0.03ppm(標準：0.01ppm以下) 殺蟲劑Imidacloprid 益達胺1.2ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Chlorpyrifos陶斯松1.14ppm(標準：不得檢出) 殺蟲劑Fenvalerate 芬化利1.2ppm(標準：1.0ppm以下) 殺蟲劑Permethrin 百滅寧0.97ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.04ppm(標準：0.02ppm以下) 殺蟎劑Pyridaben 畢達本0.07ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.06ppm(標準：0.02ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.07ppm(標準：0.02ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.08ppm(標準：0.02ppm以下) 殺蟲劑Dichlorvos二氯松0.04ppm(標準：不得檢出) 殺蟲劑Trichlorfon 三氯松0.19ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.11 ppm（標準：0.02 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.15ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.20ppm(標準：0.02ppm以下) 殺蟲劑Lufenuron 祿芬隆0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin 可尼丁0.23ppm(標準：0.02ppm以下) 殺菌劑Dimethomorph 達滅芬2.4ppm(標準：2.0ppm以下) 殺菌劑Tebuconazole 得克利1.8ppm(標準：1.0ppm以下) 殺蟲劑Tolfenpyrad 脫芬瑞0.62ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin可尼丁0.11 ppm（標準：0.02 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Clothianidin可尼丁0.15 ppm（標準：0.02 ppm以下） 殺蟲劑Thiamethoxam賽速安0.91 ppm（標準：0.25 ppm 以下） 殺蟲劑Trichlorfon三氯松0.08 ppm（標準：0.01 ppm以下） 殺蟲劑Cyhalothrin賽洛寧0.08 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyantraniliprole 賽安勃0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyantraniliprole 賽安勃0.05ppm(標準：不得檢出) 殺蟲劑Flonicamid 氟尼胺0.06ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyantraniliprole 賽安勃0.34ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyazofamid賽座滅0.03 ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyhalothrin 賽洛寧0.6ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyhalothrin 賽洛寧1.0ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyhalothrin 賽洛寧2.3ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyhalothrin賽洛寧 0.02 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cypermethrin 賽滅寧 0.04ppm(標準：0.03ppm以下) 殺蟲劑Deltamethrin 第滅寧 0.04ppm(標準：0.03ppm以下) 殺菌劑Tebuconazole 得克利 0.72ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cypermethrin 賽滅寧 0.11ppm(標準：0.03ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cypermethrin 賽滅寧0.02ppm(標準：0.01ppm以下) 殺蟲劑Fipronil-sulfone芬普尼代謝物0.002ppm(標準：0.001ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cypermethrin 賽滅寧0.04ppm(標準：0.03ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cypermethrin 賽滅寧1.6ppm(標準：1.0ppm以下) 殺蟲劑Dinotefuran 達特南4.6ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cypermethrin賽滅寧1.3ppm（標準:1.0 ppm以下） 殺菌劑Dimethomorph達滅芬2 .8ppm（ 標準： 2 .5ppm以下） 殺蟲劑Dinotefuran達特南7.6ppm（標準：2.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.01ppm(標準：不得檢出) 殺蟲劑Pyrimidifen 畢汰芬0.02ppm(標準：不得檢出) 殺蟲劑Pyriproxyfen 百利普芬0.4ppm(標準：0.2ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.05ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.12ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.14ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.15ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.25ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.48ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine 賽滅淨0.48ppm(標準：不得檢出) 殺蟎劑Pyridaben 畢達本0.04ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine賽滅淨0.03ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine賽滅淨0.11ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine賽滅淨0.15 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Cyromazine賽滅淨0.26ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Deltamethrin 第滅寧0.3ppm(標準：0.2ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Deltamethrin 第滅寧1.0ppm(標準：0.5ppm以下) 殺菌劑Difenoconazole 待克利3.4ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Deltamethrin 第滅寧1.4ppm(標準：0.5ppm以下) 殺菌劑Pyraclostrobin 百克敏0.6ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Diazinon 大利松0.01ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Diflubenzuron 二福隆0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Diflubenzuron 二福隆0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Diflubenzuron二福隆2.4 ppm（標準：1.0 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dimethoate 大滅松0.07ppm(標準：0.02ppm以下) 殺蟲劑Omethoate 歐滅松0.10ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dinotefuran 達特南0.09ppm(標準：0.05ppm以下) 殺蟲劑Fipronil-sulfone芬普尼代謝物0.002ppm(標準：0.001ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dinotefuran 達特南0.15ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dinotefuran 達特南0.17ppm(標準：0.05ppm以下) 殺蟲劑Malathion 馬拉松0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dinotefuran 達特南0.21 ppm（標準：0.05 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dinotefuran達特南0.06 ppm（標準：0.05 ppm以下） 殺蟲劑Emamectin benzoate因滅汀0.011 ppm（標準：不得檢出） 殺蟲劑Profenophos佈飛松0.48 ppm（標準：0.05 ppm以下） 殺蟲劑Terbufos托福松0.51 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dinotefuran達特南0.18ppm（標準：不得檢出） 殺菌劑Propiconazole普克利0.09ppm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Dinotefuran達特南2.8ppm（標準：2.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Emamectin benzoate 因滅汀0.010ppm(標準：0.007ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Emamectin benzoate 因滅汀0.07ppm(標準：0.05ppm以下) 殺蟲劑 Permethrin 百滅寧2.5ppm(標準：2.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Emamectin benzoate 因滅汀0.10ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Emamectin benzoate 因滅汀0.12ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Emamectin benzoate 因滅汀0.34ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Emamectin benzoate 因滅汀總量0.13ppm(標準：0.05ppm以下) 殺蟲劑Fenvalerate 芬化利5.1ppm(標準：2.0ppm以下) 殺蟲劑Methomyl 納乃得5.1ppm(標準：3.0ppm以下) 殺蟲劑Profenophos 佈飛松1.3ppm(標準：1.0ppm以下) 殺菌劑Pyraclostrobin 百克敏3.2ppm(標準：2.0ppm以下) 殺蟲劑Pyriproxyfen 百利普芬0.98ppm(標準：0.01ppm以下) 殺蟲劑Thiodicarb 硫敵克4.4ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenitrothion 撲滅松0.02 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenitrothion 撲滅松0.02ppm(標準：0.01ppｍ以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenitrothion 撲滅松0.02ppm(標準：0.01ppm以下) 殺草劑Pendimethalin 施得圃0.6ppm(標準：0.1ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenitrothion 撲滅松0.02ppm(標準：0.01ppm以下) 殺蟲劑Imidacloprid 益達胺0.03ppm(標準：0.01ppm以下) 殺菌劑Iprodione 依普同0.03ppm(標準：0.01ppm以下) 殺菌劑Mandipropamid 曼普胺0.01ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenitrothion 撲滅松0.03ppm(標準：0.01ppm以下) 殺菌劑Procymidone 撲滅寧0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenvalerate 芬化利0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenvalerate 芬化利0.6ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenvalerate 芬化利1.8ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fenvalerate芬化利0.2 ppm（標準：0.1 ppm 以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil 芬普尼0.001ppm、Fipronil-sulfone芬普尼代謝物0.001ppm(標準：0.001ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil 芬普尼0.001ppm、Fipronil-sulfone芬普尼代謝物0.004ppm(標準：0.001ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil 芬普尼0.002ppm、Fipronil-sulfone芬普尼代謝物0.001ppm(標準：0.001ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil 芬普尼0.002ppm、Fipronil-sulfone芬普尼代謝物0.004ppm(標準：0.001ppm以下) 殺蟲劑Cyhalothrin 賽洛寧0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil 芬普尼0.004ppm、 芬普尼代謝物Fipronil-sulfone 0.011ppm(標準：0.001ppm以下) 殺蟲劑Pyriproxyfen 百利普芬0.36ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil 芬普尼0.007、Fipronil-sulfone芬普尼代謝物0.007 ppm（標準：0.001 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil 芬普尼0.042ppm(標準：0.002ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil-sulfone芬普尼代謝物0.004ppm（標準：0.001ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil-sulfone芬普尼代謝物0.007ppm(標準：0.001ppm以下) 殺菌劑Fluxapyroxad 氟克殺0.7ppm(標準：0.6ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil-sulfone芬普尼代謝物0.016 ppm（標準：0.001 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil芬普尼0.001ppm、Fipronil-sulfone芬普尼代謝物0.003ppm，合計共0.004ppm（標準：0.001ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil芬普尼0.006ppm、Fipronilsulfone芬普尼代謝物0.013ppm（標準：0.001ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil芬普尼0.012ppm（標準：0.002ppm以下） 殺蟲劑Propoxur安丹2.56ppm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fipronil芬普尼0.015ppm(標準:0.002ppm以下) 殺蟲劑Propoxur安丹2.70ppm(標準:0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.02 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.03ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.10ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.14ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.16ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flonicamid 氟尼胺0.22ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flubendiamide 氟大滅0.02ppm(標準：不得檢出) 殺菌劑Iprodione 依普同0.04ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Flubendiamide 氟大滅0.09ppm(其他(茶類)*:0.05ppm) 殺蟲劑Thiacloprid 賽果培0.08ppm(其他(茶類)*:0.05ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Fluvalinate 福化利0.06ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Imidacloprid 益達胺0.6ppm(標準：0.5ppm以下) 殺蟎劑Spirodiclofen 賜派芬0.20ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Imidacloprid 益達胺0.9ppm(標準：0.5ppm以下) 殺菌劑Thifluzamide 賽氟滅0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Imidacloprid 益達胺1.6ppm(標準：0.5ppm以下) 殺菌劑Pyraclostrobin 百克敏0.8ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Imidacloprid益達胺0.50ppm(標準：0.05ppm以下)殺蟲劑Methomyl納乃得0.10ppm(標準：不得檢出) 殺蟲劑Phoxim巴賽松0.09ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Imidacloprid益達胺1.7pm（標準：1.0ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Indoxacarb 因得克0.09ppm(標準:0.01ppm) 殺菌劑Iprodione 依普同0.16ppm(標準:0.05ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Indoxacarb 因得克0.23ppm(標準：0.01ppm以下) 殺蟲劑Spinetoram 賜諾特0.06ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Indoxacarb 因得克0.28ppm(標準： 0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Indoxacarb 因得克0.42ppm(標準:其他蔬果*0.01ppm) 殺菌劑Metalaxyl 滅達樂0.03ppm(標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Indoxacarb因得克0.11 ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Lufenuron 祿芬隆0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Lufenuron祿芬隆0.02 ppm（標準：0.01 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Metaflumizone 美氟綜0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Metaflumizone 美氟綜0.13ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Methomyl 納乃得0.12ppm(標準：不得檢出) 殺蟎劑Propargite 毆蟎多0.05ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Methomyl 納乃得3.1ppm(標準：2.0ppm以下) 殺菌劑Pyraclostrobin 百克敏1.4ppm(標準0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Methomyl納乃得0.01 ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Methomyl納乃得0.08ppm（標準：不得檢出） 生長調節劑Chlormequat克美素0.29ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Methomyl納乃得0.10ppm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Omethoate 歐滅松 0.07ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Permethrin 百滅寧0.29ppm(其他(茶類)*:0.05ppm)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Phenthoate 賽達松0.05ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Phosalone 裕必松0.07ppm(標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Phosalone裕必松 0.19 pm（標準：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Phosmet 益滅松0.6ppm(標準：0.2ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Pirimicarb 比加普0.04ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Profenophos 佈飛松1.8ppm(標準：1.0ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Pyriproxyfen 百利普芬0.04ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Pyriproxyfen 百利普芬0.08ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Pyriproxyfen 百利普芬0.09ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Pyriproxyfen 百利普芬0.19ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Spinetoram 賜諾特0.02ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Terbufos 托福松0.06ppm(標準：0.05ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Tetraniliprole 特安勃0.04ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Tetraniliprole 特安勃0.59ppm(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam 賽速安0.17ppm(標準：0.02ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam 賽速安0.37ppm(標準：0.25ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam 賽速安0.38ppm(標準：0.25ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam 賽速安0.46ppm(標準：0.25ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam 賽速安0.48ppm(標準：0.25ppm以下) 殺蟲劑Trichlorfon 三氯松0.04ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam 賽速安0.51ppm(標準：0.25ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam 賽速安0.84ppm(標準：0.25ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam賽速安0.27ppm(標準：0.25ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Thiamethoxam賽速安0.52ppm（標準：0.25ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Tolfenpyrad 脫芬瑞0.9ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Tolfenpyrad 脫芬瑞1.2ppm(標準：0.5ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Triazophos三落松0.6 ppm（標準：0.5 ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Trichlorfon 三氯松0.02ppm(標準：0.01ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Trichlorfon三氯松 0.06ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "殺蟲劑Trichlorfon三氯松0.03ppm（標準：0.01ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "甜味劑糖精：0.03 g/kg (標準：不得添加)",
+        "count": 1
+      },
+      {
+        "reason": "甜味劑糖精(Saccharin)：0.02 g/kg",
+        "count": 1
+      },
+      {
+        "reason": "產品包裝標示宣稱「本產品不含反式脂肪酸」，惟檢驗結果檢出每100毫升之飽和脂肪酸含量11.82公克及反式脂肪酸含量0.05公克，每100毫升之液體所含飽和脂肪及反式脂肪合計超過0.75公克，依據「包裝食品營養宣稱應遵行事項」該產品不得宣稱不含反式脂肪。",
+        "count": 1
+      },
+      {
+        "reason": "產品外包裝未標示「品名」、「內容物名稱」、「淨 重、容量或數量」、「原產地（國）」及「有效日期」且營養標示未標示「每100公克（或毫升）」",
+        "count": 1
+      },
+      {
+        "reason": "產品無完整中文標示",
+        "count": 1
+      },
+      {
+        "reason": "產品屬包裝食品惟未依規定以中文標示",
+        "count": 1
+      },
+      {
+        "reason": "脫氧羥四環黴素(Doxycycline): 0.4ppm （標準：0.3 ppm）",
+        "count": 1
+      },
+      {
+        "reason": "脫氧羥四環黴素(Doxycycline): 0.8ppm （標準：0.3 ppm）",
+        "count": 1
+      },
+      {
+        "reason": "黃麴毒素B1：4.8μg/kg(2μg/kg以下) 總黃麴毒素B1+B2+G1+G2：5.5μg/kg(4μg/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "黃麴毒素B1：5.0μg/kg(標準：2μg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "黃麴毒素B1：6.5μg/kg(標準：2μg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "滅派林-1.3ppm (標準:1.0ppm)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.0x10^3 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.1x10^4 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.1x10^5 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.3x10^2 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.4x10^2 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.5x10^2 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.5x10^3 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.6x10^3 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.6x10^5 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.7x10^4 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：1.8x10^3 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：18 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：2.0x10^3 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：2.1x10^3 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：2.2x10^2 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：2.2x10^3 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：2.6x10^3 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：3.3x10^4 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：3.4x10^4 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：30 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：35 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：4.6x10^2 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：4.6x10^4 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：40 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：5.4x10^2 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：5.4x10^3 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：5.8x10^3 CFU/g (標準：10 CFU/g)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：50 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：58 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：7.0x10^2 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：70 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：8.6x10^2 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "腸桿菌科：88 CFU/mL (標準：10 CFU/mL)",
+        "count": 1
+      },
+      {
+        "reason": "鉛-3.21mg/kg (標準: 2 mg/kg) 砷-1.03mg/kg (標準: 0.2 mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "漂白劑二氧化硫0.99g/kg（標準：0.50g/kg以下） 殺蟲劑Acetamiprid亞滅培0.08ppm（標準：0.05ppm以下） 殺蟲劑Chlorfenapyr克凡派0.14ppm（標準：0.05ppm以下） 殺蟲劑Chlorpyrifos陶斯松0.06ppm（標準：0.03ppm以下） 殺蟲劑Clothianidin可尼丁0.16ppm（標準：0.05ppm以下） 殺菌劑Propiconazole普克利0.12ppm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "銅6mg/kg (標準:5mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "撲滅寧:0.02 ppm (標準:0.01 ppm以下)",
+        "count": 1
+      },
+      {
+        "reason": "調味粉包檢出環氧乙烷0.187mg/kg (標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "檢出一氧化碳",
+        "count": 1
+      },
+      {
+        "reason": "檢出二氧化硫0.15g/kg (標準：0.030 g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "檢出反式脂肪酸甲基酯(15項) 0.88 g/100 mL，惟案內產品外包裝營養標示每份(10毫升)反式脂肪含量為「0」，標示不實。",
+        "count": 1
+      },
+      {
+        "reason": "檢出防腐劑「苯甲酸」惟未於成分內容物標示。",
+        "count": 1
+      },
+      {
+        "reason": "檢出防腐劑己二烯酸0.24g/kg（標準：2.0g/kg以下），惟外包裝未標示該食品添加物名稱，及標示「不添加防腐劑」字樣，標示不實",
+        "count": 1
+      },
+      {
+        "reason": "檢出防腐劑去水醋酸：0.03 g/kg(標準：不得添加)",
+        "count": 1
+      },
+      {
+        "reason": "檢出苯甲酸0.71 g/kg(標準：0.6 g/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "檢出苯甲酸1.68 g/kg(標準：0.6 g/kg)、過氧化氫為陽性(不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "檢出重金屬鉛及鎘分別為0.3mg/kg，惟外包裝標示「無重金屬殘留」字樣",
+        "count": 1
+      },
+      {
+        "reason": "檢出動物性成分陽性(魚)",
+        "count": 1
+      },
+      {
+        "reason": "檢出甜味劑「甘草素」惟未於成分內容物標示。",
+        "count": 1
+      },
+      {
+        "reason": "檢出甜味劑「紐甜」及「蔗糖素」，惟未於成分內容物標示。",
+        "count": 1
+      },
+      {
+        "reason": "檢出甜味劑「甜菊糖」及「蔗糖素」，惟未於成分內容物標示。",
+        "count": 1
+      },
+      {
+        "reason": "檢出甜味劑「醋磺內酯鉀」惟未於成分內容物標示。",
+        "count": 1
+      },
+      {
+        "reason": "檢出殘留農藥殺蟲劑Chlorpyrifos陶斯松0.05ppm，惟與產品所附加110年11月23日農藥殘留檢驗報告之檢驗結果「未檢出」不符；產品標示「包裝日期：2022.04.25」、「有效期限：3年」，與所附檢驗報告之「採收日期：110/11/20」、「採樣日期：110/11/12」推算明顯不符；另案內產品是否屬具啟封辨識性之包裝食品，如屬包裝食品，該產品標示已涉違反食品安全衛生管理法第22條規定",
+        "count": 1
+      },
+      {
+        "reason": "檢出殘留Ractopamine (未超過標準)，惟產品外包裝標示「定期檢驗無動物用藥殘留」，且業者無法確認該產品確切原產地。",
+        "count": 1
+      },
+      {
+        "reason": "檢出著色劑「食用色素紅色六號」、「食用色素黃色五號」及「食用色素藍色一號」及甜味劑「甘草素」，惟未於成分內容物標示。",
+        "count": 1
+      },
+      {
+        "reason": "檢出漂白劑二氧化硫0.05g/kg，惟外包裝成份未標示",
+        "count": 1
+      },
+      {
+        "reason": "檢出總黃麴毒素(B1+B2+G1+G2) 6.2 μg/kg(4μg/kg以下)、黃麴毒素B1 5.1μg/kg(2μg/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "營養標示反式脂肪含量為「0.11公克/每100公克」，惟檢出每100公克反式脂肪酸含量0.44公克，依據「包裝食品營養標示應遵行事項」，反式脂肪含量標示值誤差允許範圍為「小於或等於標示值之120%」（經換算為0.132公克/每100公克），案內產品應依實際數值標示。",
+        "count": 1
+      },
+      {
+        "reason": "營養標示反式脂肪含量為「0.5公克/每100公克」，惟檢出每100公克反式脂肪酸含量0.71公克，依據「包裝食品營養標示應遵行事項」，反式脂肪含量標示值誤差允許範圍為「小於或等於標示值之120%」（經換算為0.6公克/每100公克），案內產品應依實際數值標示。",
+        "count": 1
+      },
+      {
+        "reason": "營養標示反式脂肪含量為「每份：0.06公克/每10公克（經換算為0.6公克/每100公克）」，惟檢出每100公克反式脂肪酸含量0.87公克，依據「包裝食品營養標示應遵行事項」，反式脂肪含量標示值誤差允許範圍為「小於或等於標示值之120%」（經換算為0.72公克/每100公克），案內產品應依實際數值標示。",
+        "count": 1
+      },
+      {
+        "reason": "營養標示反式脂肪含量為「每份：0公克」，惟檢出每100公克反式脂肪酸含量0.56公克，依據「包裝食品營養標示應遵行事項」，每100公克固體（半固體）反式脂肪酸含量不超過0.3公克得標示為0，案內產品應依實際數值標示。",
+        "count": 1
+      },
+      {
+        "reason": "營養標示反式脂肪含量為「每份：0公克/每100公克：0公克」，惟檢出每100公克反式脂肪酸含量0.41公克，依據「包裝食品營養標示應遵行事項」，每100公克固體（半固體）反式脂肪酸含量不超過0.3公克得標示為0，案內產品應依實際數值標示。",
+        "count": 1
+      },
+      {
+        "reason": "營養標示反式脂肪含量為「每份：0公克/每100公克：0公克」，惟檢出每100公克反式脂肪酸含量0.49公克，依據「包裝食品營養標示應遵行事項」，每100公克固體（半固體）反式脂肪酸含量不超過0.3公克得標示為0，案內產品應依實際數值標示。",
+        "count": 1
+      },
+      {
+        "reason": "營養標示未如實標示",
+        "count": 1
+      },
+      {
+        "reason": "環己基(代)磺醯胺酸鹽 0.90g/kg(標準：不得檢出) 糖精 0.10 g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "環己基(代)磺醯胺酸鹽1.18g/kg(標準：不得檢出) 糖精0.06g/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "磺胺喹啉(sulfaquinoxaline) 0.3ppm (標準:0.1ppm)",
+        "count": 1
+      },
+      {
+        "reason": "總氮量1.26g/100ml(CNS423：甲等醬油總氮量需1.4g/100ml以上)",
+        "count": 1
+      },
+      {
+        "reason": "總黃麴毒素30.8ug/kg(標準：4ug/kg以下)、黃麴毒素B1 25.2ug/kg (標準：2ug/kg以下)",
+        "count": 1
+      },
+      {
+        "reason": "賽果培(Thiacloprid):0.04 ppm (標準:0.02 ppm)",
+        "count": 1
+      },
+      {
+        "reason": "賽速安(Thiamethoxam):0.09 ppm (標準:0.02 ppm) 磷化氫(Phosphine):0.02 ppm (標準:0.01 ppm)",
+        "count": 1
+      },
+      {
+        "reason": "還原型結晶紫（leucocrystal violet, LCV） 0.6 ppb（標準 ：不得檢出）",
+        "count": 1
+      },
+      {
+        "reason": "鎘-0.14mg/kg (標準:0.05mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "鎘-4mg/kg (標準: 2 mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "鎘-8mg/kg (標準: 2 mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "鎘:0.17 mg/kg (標準:0.05 mg/kg以下) 扶吉胺:0.30 ppm (標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "鎘:0.24 mg/kg (標準:0.05 mg/kg以下) 扶吉胺:0.84 ppm (標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "鎘:0.53 mg/kg (標準:0.05 mg/kg以下) 扶吉胺:1.57 ppm (標準:不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "鎘：0.6mg/kg (標準：0.5mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "鎘：1.3 mg/kg(標準：0.5 mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "鎘：3 mg/kg (標準：1 mg/kg)",
+        "count": 1
+      },
+      {
+        "reason": "鎘5mg/kg（標準：2mg/kg以下） 殺蟲劑Chlorpyrifos陶斯松0.18ppm（標準：0.03ppm以下） 殺蟲劑Clothianidin可尼丁0.19pm（標準：0.05ppm以下）",
+        "count": 1
+      },
+      {
+        "reason": "麵條檢出環氧乙烷0.065mg/kg(標準：不得檢出)、醬料包檢出環氧乙烷0.084mg/kg(標準：不得檢出)",
+        "count": 1
+      },
+      {
+        "reason": "DBP:1.4ppm (指標值:0.6ppm)",
+        "count": 1
+      },
+      {
+        "reason": "DBP:6.0ppm (指標值:0.6ppm)",
+        "count": 1
+      },
+      {
+        "reason": "DEHP:6ppm (指標值:3ppm)",
+        "count": 1
+      },
+      {
+        "reason": "DINP:24ppm (指標值:9ppm)",
+        "count": 1
+      },
+      {
+        "reason": "DINP:54 ppm (指標值:9 ppm)",
+        "count": 1
+      },
+      {
+        "reason": "Doxycycline 1.0 ppm(標準:0.1 ppm)",
+        "count": 1
+      },
+      {
+        "reason": "Indoxacarb因得克 0.02ppm (標準:0.01ppm以下)",
+        "count": 1
+      }
+    ],
+    "byDistrict": [
+      {
+        "district": "中山區",
+        "count": 103
+      },
+      {
+        "district": "萬華區",
+        "count": 89
+      },
+      {
+        "district": "信義區",
+        "count": 87
+      },
+      {
+        "district": "大安區",
+        "count": 77
+      },
+      {
+        "district": "士林區",
+        "count": 70
+      },
+      {
+        "district": "內湖區",
+        "count": 55
+      },
+      {
+        "district": "松山區",
+        "count": 49
+      },
+      {
+        "district": "北投區",
+        "count": 40
+      },
+      {
+        "district": "中正區",
+        "count": 37
+      },
+      {
+        "district": "南港區",
+        "count": 30
+      },
+      {
+        "district": "大同區",
+        "count": 27
+      },
+      {
+        "district": "文山區",
+        "count": 8
+      }
+    ],
+    "byCategoryAndYear": [
+      {
+        "category": "小葉菜類",
+        "year": 2024,
+        "count": 68
+      },
+      {
+        "category": "小葉菜類",
+        "year": 2023,
+        "count": 44
+      },
+      {
+        "category": "香辛植物及其他草木本植物",
+        "year": 2024,
+        "count": 21
+      },
+      {
+        "category": "根莖菜類",
+        "year": 2024,
+        "count": 20
+      },
+      {
+        "category": "根莖菜類",
+        "year": 2023,
+        "count": 19
+      },
+      {
+        "category": "小葉菜類",
+        "year": 2022,
+        "count": 17
+      },
+      {
+        "category": "果菜類",
+        "year": 2023,
+        "count": 16
+      },
+      {
+        "category": "食品容器具",
+        "year": 2022,
+        "count": 13
+      },
+      {
+        "category": "大漿果類",
+        "year": 2023,
+        "count": 12
+      },
+      {
+        "category": "冰品",
+        "year": 2023,
+        "count": 12
+      },
+      {
+        "category": "大漿果類",
+        "year": 2024,
+        "count": 11
+      },
+      {
+        "category": "小漿果類",
+        "year": 2023,
+        "count": 11
+      },
+      {
+        "category": "烤肉用蔬菜",
+        "year": 2022,
+        "count": 11
+      },
+      {
+        "category": "包葉菜類",
+        "year": 2023,
+        "count": 10
+      },
+      {
+        "category": "冰品",
+        "year": 2024,
+        "count": 10
+      },
+      {
+        "category": "豆菜類",
+        "year": 2023,
+        "count": 9
+      },
+      {
+        "category": "豆製品(豆干絲)",
+        "year": 2023,
+        "count": 9
+      },
+      {
+        "category": "果菜類",
+        "year": 2024,
+        "count": 9
+      },
+      {
+        "category": "花草茶",
+        "year": 2024,
+        "count": 9
+      },
+      {
+        "category": "核果類",
+        "year": 2024,
+        "count": 9
+      },
+      {
+        "category": "大漿果類",
+        "year": 2022,
+        "count": 8
+      },
+      {
+        "category": "鮮果蔬菜類及其加工品",
+        "year": 2024,
+        "count": 8
+      },
+      {
+        "category": "小漿果類",
+        "year": 2024,
+        "count": 7
+      },
+      {
+        "category": "木耳",
+        "year": 2022,
+        "count": 7
+      },
+      {
+        "category": "包裝",
+        "year": 2024,
+        "count": 7
+      },
+      {
+        "category": "飲料",
+        "year": 2023,
+        "count": 7
+      },
+      {
+        "category": "蜜餞食品",
+        "year": 2024,
+        "count": 7
+      },
+      {
+        "category": "中秋月餅",
+        "year": 2024,
+        "count": 6
+      },
+      {
+        "category": "包葉菜類",
+        "year": 2024,
+        "count": 6
+      },
+      {
+        "category": "豆乾類",
+        "year": 2023,
+        "count": 6
+      },
+      {
+        "category": "豆菜類",
+        "year": 2024,
+        "count": 6
+      },
+      {
+        "category": "香辛植物及其他草木本植物",
+        "year": 2023,
+        "count": 6
+      },
+      {
+        "category": "飲料",
+        "year": 2024,
+        "count": 6
+      },
+      {
+        "category": "白木耳",
+        "year": 2023,
+        "count": 5
+      },
+      {
+        "category": "竹笙",
+        "year": 2022,
+        "count": 5
+      },
+      {
+        "category": "竹笙",
+        "year": 2024,
+        "count": 5
+      },
+      {
+        "category": "豆乾類",
+        "year": 2022,
+        "count": 5
+      },
+      {
+        "category": "香辛植物類",
+        "year": 2023,
+        "count": 5
+      },
+      {
+        "category": "根莖菜類",
+        "year": 2022,
+        "count": 5
+      },
+      {
+        "category": "雞肉",
+        "year": 2024,
+        "count": 5
+      },
+      {
+        "category": "八仙果",
+        "year": 2024,
+        "count": 4
+      },
+      {
+        "category": "小漿果類",
+        "year": 2022,
+        "count": 4
+      },
+      {
+        "category": "白木耳",
+        "year": 2022,
+        "count": 4
+      },
+      {
+        "category": "豆乾類",
+        "year": 2024,
+        "count": 4
+      },
+      {
+        "category": "豆製品(豆干)",
+        "year": 2023,
+        "count": 4
+      },
+      {
+        "category": "其他豆製品-干絲",
+        "year": 2022,
+        "count": 4
+      },
+      {
+        "category": "花草茶",
+        "year": 2022,
+        "count": 4
+      },
+      {
+        "category": "花草茶",
+        "year": 2023,
+        "count": 4
+      },
+      {
+        "category": "柑桔類",
+        "year": 2022,
+        "count": 4
+      },
+      {
+        "category": "核果類",
+        "year": 2023,
+        "count": 4
+      },
+      {
+        "category": "醃漬蔬菜",
+        "year": 2022,
+        "count": 4
+      },
+      {
+        "category": "蕈菜類",
+        "year": 2023,
+        "count": 4
+      },
+      {
+        "category": "鮮果蔬菜類及其加工品",
+        "year": 2022,
+        "count": 4
+      },
+      {
+        "category": "包葉菜類",
+        "year": 2022,
+        "count": 3
+      },
+      {
+        "category": "包裝",
+        "year": 2023,
+        "count": 3
+      },
+      {
+        "category": "瓜菜類",
+        "year": 2022,
+        "count": 3
+      },
+      {
+        "category": "竹笙",
+        "year": 2023,
+        "count": 3
+      },
+      {
+        "category": "豆腐",
+        "year": 2023,
+        "count": 3
+      },
+      {
+        "category": "果菜類",
+        "year": 2022,
+        "count": 3
+      },
+      {
+        "category": "食品容器具",
+        "year": 2023,
+        "count": 3
+      },
+      {
+        "category": "香辛植物及其他草木本植物",
+        "year": 2022,
+        "count": 3
+      },
+      {
+        "category": "核果類",
+        "year": 2022,
+        "count": 3
+      },
+      {
+        "category": "乾豆類",
+        "year": 2024,
+        "count": 3
+      },
+      {
+        "category": "脫水蔬果類",
+        "year": 2022,
+        "count": 3
+      },
+      {
+        "category": "菊花",
+        "year": 2024,
+        "count": 3
+      },
+      {
+        "category": "飲料",
+        "year": 2022,
+        "count": 3
+      },
+      {
+        "category": "塑膠類",
+        "year": 2023,
+        "count": 3
+      },
+      {
+        "category": "鮮果蔬菜類及其加工品",
+        "year": 2023,
+        "count": 3
+      },
+      {
+        "category": "木耳",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "奶蛋素",
+        "year": 2024,
+        "count": 2
+      },
+      {
+        "category": "瓜菜類",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "沙拉",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "沙拉醬",
+        "year": 2022,
+        "count": 2
+      },
+      {
+        "category": "豆菜類",
+        "year": 2022,
+        "count": 2
+      },
+      {
+        "category": "花生粉",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "花生粉",
+        "year": 2024,
+        "count": 2
+      },
+      {
+        "category": "花生製品",
+        "year": 2024,
+        "count": 2
+      },
+      {
+        "category": "非即食 醃漬蔬菜",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "食品洗潔劑",
+        "year": 2022,
+        "count": 2
+      },
+      {
+        "category": "乾豆類",
+        "year": 2022,
+        "count": 2
+      },
+      {
+        "category": "乾豆類",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "梨果類",
+        "year": 2022,
+        "count": 2
+      },
+      {
+        "category": "梨果類",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "速食麵",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "塑膠類",
+        "year": 2024,
+        "count": 2
+      },
+      {
+        "category": "酸菜類(屬醃漬蔬菜)",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "膠囊錠狀食品",
+        "year": 2022,
+        "count": 2
+      },
+      {
+        "category": "膠囊錠狀食品",
+        "year": 2024,
+        "count": 2
+      },
+      {
+        "category": "蔬果",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "醃漬水果",
+        "year": 2023,
+        "count": 2
+      },
+      {
+        "category": "蕈菜類",
+        "year": 2024,
+        "count": 2
+      },
+      {
+        "category": "雞蛋",
+        "year": 2024,
+        "count": 2
+      },
+      {
+        "category": "人造奶油",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "巴西蘑菇",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "日本進口食品",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "木耳",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "水產及其加工品",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "水產及其加工品",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "水解醬油",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "牛肉",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "牛肉",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "半成品(豆製品)",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "奶精",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "奶精",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "瓜果類",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "瓜菜類",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "生鮮水果",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "白木耳",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "皮蛋",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "百合",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "羊肉",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "自製飲品",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "沙拉醬",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "豆腐",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "豆腐",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "其他豆製品-豆干",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "其他糖漬鹽漬果類",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "油脂",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "芥花油",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "花生粉",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "花生製品",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "柑桔類",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "柑桔類",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "香辛植物類",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "烤肉用蔬菜",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "配料",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "配料",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "梨果類",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "深海魚類",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "盛裝飲用水",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "盛裝飲用水",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "軟體動物",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "魚類",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "無標示 全素或純素",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "菊花",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "黑棗",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "黑棗",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "塑膠類",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "葡萄籽油",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "蜜餞食品(脫水水果)",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "辣椒粉",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "醃漬蔬果",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "醃漬蔬菜",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "養殖魚類",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "糕粿糬類製品",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "糕粿糬類製品",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "糕粿類製品",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "螺獅粉",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "鮮奶油",
+        "year": 2024,
+        "count": 1
+      },
+      {
+        "category": "醬油",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "雞肉",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "雞蛋",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "鵝肉",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "臘肉類",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "蟹類",
+        "year": 2022,
+        "count": 1
+      },
+      {
+        "category": "蟹類",
+        "year": 2023,
+        "count": 1
+      },
+      {
+        "category": "蟹類",
+        "year": 2024,
+        "count": 1
+      }
+    ],
+    "dataQuality": {
+      "invalidDateCount": 0,
+      "duplicateRowCount": 1,
+      "missingLocationCount": 0,
+      "unknownCategoryCount": 0,
+      "unresolvedDistrictCount": 0
+    },
+    "source": "https://data.taipei/dataset/detail?id=09a917a0-0fb5-47e1-957c-5f1268fba517",
+    "sourceAgency": "臺北市政府衛生局",
+    "sourceFiles": [
+      "113.csv",
+      "112.csv",
+      "111.csv"
+    ],
+    "latestInspectionDate": "2024-11-20",
+    "topNoncomplianceReason": "殺菌劑過氧化氫：陽性（不得檢出）",
+    "topCategory": "小葉菜類"
   }
 }

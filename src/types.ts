@@ -8,6 +8,7 @@ export type FriendlyFoodModule =
   | 'commercial_district_introductions'
   | 'green_store_directory'
   | 'restaurant_hygiene_grading_records'
+  | 'failed_food_inspection_records'
   | 'data_table'
   | 'data_notes';
 
@@ -334,6 +335,46 @@ export type RestaurantHygieneGradingSummary = {
   };
 };
 
+export type FailedFoodInspectionRecord = {
+  id: string;
+  sourceYear: number | null;
+  sourceResourceName: string;
+  projectName: string;
+  inspectionDateRaw: string;
+  inspectionDate: string | null;
+  inspectionYear: number | null;
+  category: string;
+  sampleName: string;
+  inspectionPostalCode: string;
+  districtName: string;
+  inspectionLocation: string;
+  inspectionResult: string;
+  noncomplianceReason: string;
+  googleMapsQuery: string;
+  rawSource: Record<string, string>;
+  source: string;
+  sourceAgency: string;
+};
+
+export type FailedFoodInspectionSummary = {
+  generatedAt: string;
+  totalRecords: number;
+  latestInspectionDate?: string;
+  yearsCovered: number;
+  foodCategoryCount: number;
+  uniqueSampleNames: number;
+  districtCount: number;
+  topNoncomplianceReason?: string;
+  topCategory?: string;
+  byYear: Array<{ year: number; count: number }>;
+  byMonth: Array<{ month: string; count: number }>;
+  byCategory: Array<{ category: string; count: number }>;
+  byNoncomplianceReason: Array<{ reason: string; count: number }>;
+  byDistrict: Array<{ district: string; count: number }>;
+  byCategoryAndYear: Array<{ category: string; year: number; count: number }>;
+  dataQuality: { invalidDateCount: number; duplicateRowCount: number; missingLocationCount: number; unknownCategoryCount: number; unresolvedDistrictCount: number };
+};
+
 export type TaipeiFoodTraceabilityProductIndexItem = {
   productKey: string;
   productName: string;
@@ -483,5 +524,6 @@ export type ConversionReport = {
     sourceAgency: string;
     sourceFile: string;
   };
+  failedFoodInspectionRecords?: FailedFoodInspectionSummary & { source: string; sourceAgency: string; sourceFiles: string[] };
   notes: string[];
 };

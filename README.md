@@ -30,6 +30,8 @@ Traditional Chinese is the default UI language. English is available through the
   <https://data.taipei/dataset/detail?id=1756cb64-0066-444a-a323-9f3b5a961045>
 - Food Business Hygiene Grading Records / 餐飲衛生管理分級評核業者
   <https://data.taipei/dataset/detail?id=59579c19-a561-4564-8c0f-545bfb32c0f6>
+- Failed Food Inspection Records / 臺北市衛生局食品抽驗不合格清冊
+  <https://data.taipei/dataset/detail?id=09a917a0-0fb5-47e1-957c-5f1268fba517>
 
 The frontend does not call Taipei Open Data directly. Raw CSV downloads and conversion happen through local scripts, and the app reads static JSON from `public/data`.
 
@@ -135,6 +137,8 @@ Commercial district conversion supports UTF-8-SIG and Big5 fallback, keeps AreaC
 Green Store conversion supports UTF-8-SIG, Big5, and CP950 input, preserves the source fields, and uses store number as its primary key with a normalized name/address fallback. The directory has addresses but no confirmed official coordinates, so it provides district summaries and external map-search links rather than exact markers.
 
 Food Business Hygiene Grading Records are a separate assessment-record module, not the general restaurant-business registry. Conversion supports UTF-8-SIG, Big5, and CP950, preserves all five official source fields, resolves Taipei districts from district code or address, and deduplicates registration number, business name, address, and assessment result. Addresses are for external map lookup only: no automatic geocoding or exact markers are created.
+
+Failed Food Inspection Records combine the official 111, 112, and 113 annual CSV resources while preserving source year and resource name. The dashboard treats results as historical records for specific inspections, samples, and batches; it does not create a business blacklist, current-safety score, or exact map markers from incomplete locations.
 
 ## Matching Rules
 

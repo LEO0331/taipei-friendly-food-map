@@ -4,6 +4,7 @@ import type {
   CommercialDistrictIntroductionSummary,
   GreenStoreDirectorySummary,
   RestaurantHygieneGradingSummary,
+  FailedFoodInspectionSummary,
   RestaurantBusiness,
   TaipeiFoodTraceabilitySummary,
   WaterRefillStore,
@@ -19,6 +20,7 @@ export type AppData = {
   commercialDistrictSummary?: CommercialDistrictIntroductionSummary;
   greenStoreDirectorySummary?: GreenStoreDirectorySummary;
   restaurantHygieneGradingSummary?: RestaurantHygieneGradingSummary;
+  failedFoodInspectionSummary?: FailedFoodInspectionSummary;
 };
 
 const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
@@ -56,6 +58,7 @@ export const loadFriendlyFoodData = async (): Promise<AppData> => {
     dataPath('restaurant-hygiene-grading-records/summary.json'),
     undefined,
   );
+  const failedFoodInspectionSummary = await loadJson<FailedFoodInspectionSummary | undefined>(dataPath('failed-food-inspection-records/summary.json'), undefined);
   return {
     friendlyStores,
     waterRefillStores,
@@ -76,5 +79,6 @@ export const loadFriendlyFoodData = async (): Promise<AppData> => {
     commercialDistrictSummary,
     greenStoreDirectorySummary,
     restaurantHygieneGradingSummary,
+    failedFoodInspectionSummary,
   };
 };
