@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T03:28:48.034Z",
+  "generatedAt": "2026-07-21T03:36:15.660Z",
   "notes": [
     "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
     "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
@@ -1293,7 +1293,7 @@
     "topDistrict": "大安區"
   },
   "failedFoodInspectionRecords": {
-    "generatedAt": "2026-07-16T06:30:04.552Z",
+    "generatedAt": "2026-07-21T03:36:15.657Z",
     "totalRecords": 672,
     "yearsCovered": 3,
     "foodCategoryCount": 89,

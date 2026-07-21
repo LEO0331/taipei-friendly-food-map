@@ -1,0 +1,2 @@
+import { mkdir, writeFile } from 'node:fs/promises';
+const url='https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=35acfce1-2c4d-4c70-aa75-601cdab2b3f7'; await mkdir('data/raw/traditional-markets',{recursive:true}); const response=await fetch(url); if(!response.ok)throw new Error(`Traditional markets download failed: HTTP ${response.status}`); await writeFile('data/raw/traditional-markets/markets.csv',Buffer.from(await response.arrayBuffer())); console.log('Downloaded Traditional Markets CSV.');

@@ -10,6 +10,7 @@ export type FriendlyFoodModule =
   | 'restaurant_hygiene_grading_records'
   | 'failed_food_inspection_records'
   | 'organic_farms'
+  | 'traditional_markets'
   | 'data_table'
   | 'data_notes';
 
@@ -377,6 +378,8 @@ export type FailedFoodInspectionSummary = {
 };
 export type OrganicFarmRecord = { id: string; farmName: string; farmerName: string; contactAddress: string; districtName: string; certificationNumber: string; areaHectares: number | null; foodEducationExperienceRaw: string; hasFoodEducationExperience: boolean | null; beekeepingRaw: string; hasBeekeeping: boolean | null; poultryRaisingRaw: string; hasPoultryRaising: boolean | null; note: string; googleMapsQuery: string; rawSource: Record<string, string>; source: string; sourceAgency: string; };
 export type OrganicFarmSummary = { generatedAt: string; totalFarms: number; uniqueFarms: number; districtCount: number; totalAreaHectares: number; foodEducationCount: number; beekeepingCount: number; poultryRaisingCount: number; certificationCount: number; byDistrict: Array<{ district: string; count: number; areaHectares: number }>; areaDistribution: Array<{ range: string; count: number }>; dataQuality: { duplicateCount: number; invalidAreaCount: number; missingFarmNameCount: number; unknownDistrictCount: number; unrecognizedYesNoValueCount: number } };
+export type TraditionalMarketRecord = { id: string; sourceId: string; marketName: string; description: string; descriptionPlainText: string; createdDateRaw: string; createdDate: string | null; address: string; districtNameFromAddress: string; longitude?: number; latitude?: number; hasValidCoordinates: boolean; googleMapsQuery: string; rawSource: Record<string,string> };
+export type TraditionalMarketSummary = { totalMarkets:number; validCoordinateCount:number; districtCount:number; addressCount:number; descriptionCount:number; topDistrict?:string; byDistrict:Array<{district:string;count:number}>; dataQuality:{duplicateCount:number;missingNameCount:number;invalidDateCount:number;missingAddressCount:number;invalidCoordinateCount:number} };
 
 export type TaipeiFoodTraceabilityProductIndexItem = {
   productKey: string;

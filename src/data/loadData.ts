@@ -6,6 +6,7 @@ import type {
   RestaurantHygieneGradingSummary,
   FailedFoodInspectionSummary,
   OrganicFarmSummary,
+  TraditionalMarketSummary,
   RestaurantBusiness,
   TaipeiFoodTraceabilitySummary,
   WaterRefillStore,
@@ -23,6 +24,7 @@ export type AppData = {
   restaurantHygieneGradingSummary?: RestaurantHygieneGradingSummary;
   failedFoodInspectionSummary?: FailedFoodInspectionSummary;
   organicFarmSummary?: OrganicFarmSummary;
+  traditionalMarketSummary?: TraditionalMarketSummary;
 };
 
 const loadJson = async <T>(path: string, fallback: T): Promise<T> => {
@@ -62,6 +64,7 @@ export const loadFriendlyFoodData = async (): Promise<AppData> => {
   );
   const failedFoodInspectionSummary = await loadJson<FailedFoodInspectionSummary | undefined>(dataPath('failed-food-inspection-records/summary.json'), undefined);
   const organicFarmSummary = await loadJson<OrganicFarmSummary | undefined>(dataPath('organic-farms/summary.json'), undefined);
+  const traditionalMarketSummary = await loadJson<TraditionalMarketSummary | undefined>(dataPath('traditional-markets/summary.json'), undefined);
   return {
     friendlyStores,
     waterRefillStores,
@@ -84,5 +87,6 @@ export const loadFriendlyFoodData = async (): Promise<AppData> => {
     restaurantHygieneGradingSummary,
     failedFoodInspectionSummary,
     organicFarmSummary,
+    traditionalMarketSummary,
   };
 };
