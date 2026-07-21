@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-07-21T03:28:48.032Z",
+  "totalFarms": 35,
+  "uniqueFarms": 35,
+  "districtCount": 5,
+  "totalAreaHectares": 25.6431,
+  "foodEducationCount": 0,
+  "beekeepingCount": 0,
+  "poultryRaisingCount": 0,
+  "certificationCount": 35,
+  "byDistrict": [
+    {
+      "district": "內湖區",
+      "count": 9,
+      "areaHectares": 3.3217
+    },
+    {
+      "district": "北投區",
+      "count": 8,
+      "areaHectares": 6.475199999999999
+    },
+    {
+      "district": "士林區",
+      "count": 7,
+      "areaHectares": 8.578299999999999
+    },
+    {
+      "district": "南港區",
+      "count": 4,
+      "areaHectares": 4.7096
+    },
+    {
+      "district": "文山區",
+      "count": 4,
+      "areaHectares": 1.4811
+    }
+  ],
+  "areaDistribution": [
+    {
+      "range": "0–1",
+      "count": 28
+    },
+    {
+      "range": "1–5",
+      "count": 7
+    },
+    {
+      "range": "5+",
+      "count": 0
+    }
+  ],
+  "dataQuality": {
+    "duplicateCount": 0,
+    "invalidAreaCount": 0,
+    "missingFarmNameCount": 0,
+    "unknownDistrictCount": 3,
+    "unrecognizedYesNoValueCount": 45
+  }
+}

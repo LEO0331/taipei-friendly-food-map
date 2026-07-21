@@ -7,6 +7,7 @@ import { CommercialDistrictModule } from './components/CommercialDistrictModule'
 import { GreenStoreDirectoryModule } from './components/GreenStoreDirectoryModule';
 import { RestaurantHygieneGradingModule } from './components/RestaurantHygieneGradingModule';
 import { FailedFoodInspectionModule } from './components/FailedFoodInspectionModule';
+import { OrganicFarmsModule } from './components/OrganicFarmsModule';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
 import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
@@ -191,8 +192,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && (
+      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' || activeTab === 'organicFarms' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && activeTab !== 'organicFarms' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -242,6 +243,7 @@ export default function App() {
             <RestaurantHygieneGradingModule summary={data.restaurantHygieneGradingSummary} language={language} />
           )}
           {activeTab === 'failedInspections' && <FailedFoodInspectionModule summary={data.failedFoodInspectionSummary} language={language} />}
+          {activeTab === 'organicFarms' && <OrganicFarmsModule summary={data.organicFarmSummary} language={language} />}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
         </div>
       </section>

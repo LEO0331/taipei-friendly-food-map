@@ -32,6 +32,8 @@ Traditional Chinese is the default UI language. English is available through the
   <https://data.taipei/dataset/detail?id=59579c19-a561-4564-8c0f-545bfb32c0f6>
 - Failed Food Inspection Records / 臺北市衛生局食品抽驗不合格清冊
   <https://data.taipei/dataset/detail?id=09a917a0-0fb5-47e1-957c-5f1268fba517>
+- Taipei Organic Farms / 臺北市有機農場
+  <https://data.taipei/dataset/detail?id=32aea2da-14a7-47b6-a687-57e29c1ad4a7>
 
 The frontend does not call Taipei Open Data directly. Raw CSV downloads and conversion happen through local scripts, and the app reads static JSON from `public/data`.
 
@@ -139,6 +141,8 @@ Green Store conversion supports UTF-8-SIG, Big5, and CP950 input, preserves the 
 Food Business Hygiene Grading Records are a separate assessment-record module, not the general restaurant-business registry. Conversion supports UTF-8-SIG, Big5, and CP950, preserves all five official source fields, resolves Taipei districts from district code or address, and deduplicates registration number, business name, address, and assessment result. Addresses are for external map lookup only: no automatic geocoding or exact markers are created.
 
 Failed Food Inspection Records combine the official 111, 112, and 113 annual CSV resources while preserving source year and resource name. The dashboard treats results as historical records for specific inspections, samples, and batches; it does not create a business blacklist, current-safety score, or exact map markers from incomplete locations.
+
+Taipei Organic Farms are an address-only directory backed by local static JSON. Contact addresses may not be public entrances and no automatic geocoding or exact markers are created; certification and activity fields remain source records rather than current-status claims.
 
 ## Matching Rules
 

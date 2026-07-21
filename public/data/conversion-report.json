@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T06:30:04.556Z",
+  "generatedAt": "2026-07-21T03:28:48.034Z",
   "notes": [
     "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
     "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
@@ -5137,5 +5137,67 @@
     "latestInspectionDate": "2024-11-20",
     "topNoncomplianceReason": "殺菌劑過氧化氫：陽性（不得檢出）",
     "topCategory": "小葉菜類"
+  },
+  "organicFarms": {
+    "generatedAt": "2026-07-21T03:28:48.032Z",
+    "totalFarms": 35,
+    "uniqueFarms": 35,
+    "districtCount": 5,
+    "totalAreaHectares": 25.6431,
+    "foodEducationCount": 0,
+    "beekeepingCount": 0,
+    "poultryRaisingCount": 0,
+    "certificationCount": 35,
+    "byDistrict": [
+      {
+        "district": "內湖區",
+        "count": 9,
+        "areaHectares": 3.3217
+      },
+      {
+        "district": "北投區",
+        "count": 8,
+        "areaHectares": 6.475199999999999
+      },
+      {
+        "district": "士林區",
+        "count": 7,
+        "areaHectares": 8.578299999999999
+      },
+      {
+        "district": "南港區",
+        "count": 4,
+        "areaHectares": 4.7096
+      },
+      {
+        "district": "文山區",
+        "count": 4,
+        "areaHectares": 1.4811
+      }
+    ],
+    "areaDistribution": [
+      {
+        "range": "0–1",
+        "count": 28
+      },
+      {
+        "range": "1–5",
+        "count": 7
+      },
+      {
+        "range": "5+",
+        "count": 0
+      }
+    ],
+    "dataQuality": {
+      "duplicateCount": 0,
+      "invalidAreaCount": 0,
+      "missingFarmNameCount": 0,
+      "unknownDistrictCount": 3,
+      "unrecognizedYesNoValueCount": 45
+    },
+    "source": "https://data.taipei/dataset/detail?id=32aea2da-14a7-47b6-a687-57e29c1ad4a7",
+    "sourceAgency": "臺北市政府產業發展局",
+    "sourceFile": "organic-farms.csv (big5)"
   }
 }

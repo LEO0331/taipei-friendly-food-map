@@ -9,6 +9,7 @@ export type FriendlyFoodModule =
   | 'green_store_directory'
   | 'restaurant_hygiene_grading_records'
   | 'failed_food_inspection_records'
+  | 'organic_farms'
   | 'data_table'
   | 'data_notes';
 
@@ -374,6 +375,8 @@ export type FailedFoodInspectionSummary = {
   byCategoryAndYear: Array<{ category: string; year: number; count: number }>;
   dataQuality: { invalidDateCount: number; duplicateRowCount: number; missingLocationCount: number; unknownCategoryCount: number; unresolvedDistrictCount: number };
 };
+export type OrganicFarmRecord = { id: string; farmName: string; farmerName: string; contactAddress: string; districtName: string; certificationNumber: string; areaHectares: number | null; foodEducationExperienceRaw: string; hasFoodEducationExperience: boolean | null; beekeepingRaw: string; hasBeekeeping: boolean | null; poultryRaisingRaw: string; hasPoultryRaising: boolean | null; note: string; googleMapsQuery: string; rawSource: Record<string, string>; source: string; sourceAgency: string; };
+export type OrganicFarmSummary = { generatedAt: string; totalFarms: number; uniqueFarms: number; districtCount: number; totalAreaHectares: number; foodEducationCount: number; beekeepingCount: number; poultryRaisingCount: number; certificationCount: number; byDistrict: Array<{ district: string; count: number; areaHectares: number }>; areaDistribution: Array<{ range: string; count: number }>; dataQuality: { duplicateCount: number; invalidAreaCount: number; missingFarmNameCount: number; unknownDistrictCount: number; unrecognizedYesNoValueCount: number } };
 
 export type TaipeiFoodTraceabilityProductIndexItem = {
   productKey: string;
@@ -525,5 +528,6 @@ export type ConversionReport = {
     sourceFile: string;
   };
   failedFoodInspectionRecords?: FailedFoodInspectionSummary & { source: string; sourceAgency: string; sourceFiles: string[] };
+  organicFarms?: OrganicFarmSummary & { source: string; sourceAgency: string; sourceFile: string };
   notes: string[];
 };
