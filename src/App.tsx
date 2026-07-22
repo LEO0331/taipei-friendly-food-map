@@ -8,6 +8,7 @@ import { GreenStoreDirectoryModule } from './components/GreenStoreDirectoryModul
 import { RestaurantHygieneGradingModule } from './components/RestaurantHygieneGradingModule';
 import { FailedFoodInspectionModule } from './components/FailedFoodInspectionModule';
 import { OrganicFarmsModule } from './components/OrganicFarmsModule';
+import { SupermarketsModule } from './components/SupermarketsModule';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
 import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
@@ -192,8 +193,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' || activeTab === 'organicFarms' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && activeTab !== 'organicFarms' && (
+      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' || activeTab === 'organicFarms' || activeTab === 'supermarkets' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && activeTab !== 'organicFarms' && activeTab !== 'supermarkets' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -244,6 +245,7 @@ export default function App() {
           )}
           {activeTab === 'failedInspections' && <FailedFoodInspectionModule summary={data.failedFoodInspectionSummary} language={language} />}
           {activeTab === 'organicFarms' && <OrganicFarmsModule summary={data.organicFarmSummary} language={language} />}
+          {activeTab === 'supermarkets' && <SupermarketsModule language={language} />}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
         </div>
       </section>
