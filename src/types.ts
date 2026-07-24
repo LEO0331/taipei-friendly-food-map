@@ -11,6 +11,7 @@ export type FriendlyFoodModule =
   | 'failed_food_inspection_records'
   | 'organic_farms'
   | 'traditional_markets'
+  | 'temporary_vendor_markets'
   | 'data_table'
   | 'data_notes';
 
@@ -381,6 +382,29 @@ export type OrganicFarmSummary = { generatedAt: string; totalFarms: number; uniq
 export type TraditionalMarketRecord = { id: string; sourceId: string; marketName: string; description: string; descriptionPlainText: string; createdDateRaw: string; createdDate: string | null; address: string; districtNameFromAddress: string; longitude?: number; latitude?: number; hasValidCoordinates: boolean; googleMapsQuery: string; rawSource: Record<string,string> };
 export type TraditionalMarketSummary = { totalMarkets:number; validCoordinateCount:number; districtCount:number; addressCount:number; descriptionCount:number; topDistrict?:string; byDistrict:Array<{district:string;count:number}>; dataQuality:{duplicateCount:number;missingNameCount:number;invalidDateCount:number;missingAddressCount:number;invalidCoordinateCount:number} };
 export type SupermarketRecord = { id:string; sourceSequenceNumber:string; name:string; descriptionRaw:string; descriptionText:string; createdDateRaw:string; createdDate:string|null; address:string; districtName:string; longitude:number|null; latitude:number|null; hasValidCoordinates:boolean; rawSource:Record<string,string> };
+export interface TemporaryVendorMarketRecord {
+  id: string;
+  sourceSequenceNumber: string;
+  districtName: string;
+  operatorName: string;
+  operatingDayRaw: string;
+  operatingDays: string[];
+  startTimeRaw: string;
+  startTime: string | null;
+  endTimeRaw: string;
+  endTime: string | null;
+  locationScope: string;
+  longitudeRaw: string;
+  latitudeRaw: string;
+  longitude: number | null;
+  latitude: number | null;
+  hasValidCoordinates: boolean;
+  rawSource: Record<string, string>;
+}
+export type TemporaryVendorMarketSummary = {
+  sourceUrl: string; sourceUpdatedAt: string; totalRecords: number; duplicateRecordCount: number; districtCount: number; operatorCount: number;
+  validCoordinateCount: number; completeHoursCount: number; operatingDayCount: number; byDistrict: Array<{ label: string; count: number }>;
+};
 
 export type TaipeiFoodTraceabilityProductIndexItem = {
   productKey: string;

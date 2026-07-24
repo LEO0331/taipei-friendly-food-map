@@ -1,4 +1,4 @@
-const CACHE_NAME = 'taipei-friendly-food-map-v8';
+const CACHE_NAME = 'taipei-friendly-food-map-v9';
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const withBase = (path) => `${BASE_PATH}${path}`;
 const APP_SHELL = [
@@ -25,6 +25,8 @@ const APP_SHELL = [
   withBase('data/failed-food-inspection-records/summary.json'),
   withBase('data/organic-farms/records.json'),
   withBase('data/organic-farms/summary.json'),
+  withBase('data/temporary-vendor-markets/records.json'),
+  withBase('data/temporary-vendor-markets/summary.json'),
 ];
 
 self.addEventListener('install', (event) => {

@@ -3,6 +3,7 @@ import type { Language } from '../types';
 export const translations = {
   zh: {
     supermarkets: '臺北市超級市場',
+    temporaryVendorMarkets: '臺北市臨時攤販集中場',
     traditionalMarkets: '臺北市傳統市（商）場',
     organicFarms: '臺北市有機農場',
     failedFoodInspectionRecords: '臺北市衛生局食品抽驗不合格清冊',
@@ -150,6 +151,7 @@ export const translations = {
   },
   en: {
     supermarkets: 'Taipei Supermarkets',
+    temporaryVendorMarkets: 'Temporary Vendor Markets',
     traditionalMarkets: 'Taipei Traditional Markets',
     organicFarms: 'Taipei Organic Farms',
     failedFoodInspectionRecords: 'Failed Food Inspection Records',

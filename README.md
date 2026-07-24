@@ -34,6 +34,8 @@ Traditional Chinese is the default UI language. English is available through the
   <https://data.taipei/dataset/detail?id=09a917a0-0fb5-47e1-957c-5f1268fba517>
 - Taipei Organic Farms / 臺北市有機農場
   <https://data.taipei/dataset/detail?id=32aea2da-14a7-47b6-a687-57e29c1ad4a7>
+- Taipei Temporary Vendor Markets / 臺北市臨時攤販集中場
+  <https://data.taipei/dataset/detail?id=c013d9ec-a550-46bd-ac60-45f085930706>
 
 The frontend does not call Taipei Open Data directly. Raw CSV downloads and conversion happen through local scripts, and the app reads static JSON from `public/data`.
 
@@ -143,6 +145,8 @@ Food Business Hygiene Grading Records are a separate assessment-record module, n
 Failed Food Inspection Records combine the official 111, 112, and 113 annual CSV resources while preserving source year and resource name. The dashboard treats results as historical records for specific inspections, samples, and batches; it does not create a business blacklist, current-safety score, or exact map markers from incomplete locations.
 
 Taipei Organic Farms are an address-only directory backed by local static JSON. Contact addresses may not be public entrances and no automatic geocoding or exact markers are created; certification and activity fields remain source records rather than current-status claims.
+
+Temporary vendor markets are a separate `temporary_vendor_markets` module. It preserves each source field, validates and converts only official coordinates for map markers, and keeps coordinate-less records in the directory. Operating days and hours are source-recorded schedule information from the dataset update and are not real-time market or stall status.
 
 ## Matching Rules
 

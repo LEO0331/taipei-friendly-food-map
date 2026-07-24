@@ -1,0 +1,61 @@
+{
+  "sourceUrl": "https://data.taipei/dataset/detail?id=c013d9ec-a550-46bd-ac60-45f085930706",
+  "sourceUpdatedAt": "2025-08-26 15:58:47",
+  "totalRecords": 47,
+  "duplicateRecordCount": 0,
+  "districtCount": 12,
+  "operatorCount": 43,
+  "validCoordinateCount": 47,
+  "completeHoursCount": 47,
+  "operatingDayCount": 47,
+  "byDistrict": [
+    {
+      "label": "中山",
+      "count": 9
+    },
+    {
+      "label": "大安",
+      "count": 8
+    },
+    {
+      "label": "萬華",
+      "count": 8
+    },
+    {
+      "label": "中正",
+      "count": 4
+    },
+    {
+      "label": "松山",
+      "count": 4
+    },
+    {
+      "label": "士林",
+      "count": 3
+    },
+    {
+      "label": "北投",
+      "count": 3
+    },
+    {
+      "label": "大同",
+      "count": 2
+    },
+    {
+      "label": "內湖",
+      "count": 2
+    },
+    {
+      "label": "文山",
+      "count": 2
+    },
+    {
+      "label": "信義",
+      "count": 1
+    },
+    {
+      "label": "南港",
+      "count": 1
+    }
+  ]
+}

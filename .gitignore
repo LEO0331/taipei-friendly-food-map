@@ -13,5 +13,6 @@ data/raw/restaurant-hygiene-grading-records/*.csv
 data/raw/failed-food-inspection-records/*.csv
 data/raw/organic-farms/*.csv
 data/raw/supermarkets/*.csv
+data/raw/temporary-vendor-markets/*.csv
 .playwright-cli
 .omx
