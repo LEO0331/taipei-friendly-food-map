@@ -39,6 +39,14 @@
       "dependencies": ["feat-003", "feat-004"],
       "status": "not-started",
       "evidence": ""
+    },
+    {
+      "id": "feat-006",
+      "name": "Responsive grouped navigation",
+      "description": "Replace the all-destination horizontal tab strip with contextual category navigation that remains understandable on mobile and desktop.",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "2026-08-18: Implemented four primary categories with contextual child tabs, removed the unfinished Traditional Markets destination, and visually checked 390 px and 1440 px layouts."
     }
   ]
 }

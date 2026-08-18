@@ -63,7 +63,8 @@ a {
 }
 
 .language-toggle,
-.tabs,
+.primary-tabs,
+.secondary-tabs,
 .checkbox-row,
 .tag-filter-list,
 .card-actions,
@@ -83,7 +84,8 @@ a {
 }
 
 .language-toggle button,
-.tabs button,
+.primary-tabs button,
+.secondary-tabs button,
 .tag-filter-list button,
 .nearby-button,
 .card-actions button,
@@ -93,7 +95,8 @@ a {
 }
 
 .language-toggle button,
-.tabs button {
+.primary-tabs button,
+.secondary-tabs button {
   min-height: 38px;
   border-radius: 999px;
   padding: 0 13px;
@@ -103,21 +106,48 @@ a {
 }
 
 .language-toggle button.active,
-.tabs button.active {
+.primary-tabs button.active,
+.secondary-tabs button.active {
   background: #143d2b;
   color: #ffffff;
 }
 
-.tabs {
+.section-navigation {
+  display: grid;
+  gap: 8px;
+}
+
+.primary-tabs,
+.secondary-tabs {
   overflow-x: auto;
   padding: 4px;
   border: 1px solid #d9d5c9;
   border-radius: 999px;
   background: #fffdf8;
+  scrollbar-width: thin;
 }
 
-.tabs button {
+.primary-tabs button,
+.secondary-tabs button {
   flex: 1 0 auto;
+}
+
+.secondary-tabs {
+  justify-content: flex-start;
+  border-color: #e4e0d6;
+  background: transparent;
+}
+
+.secondary-tabs button {
+  min-height: 34px;
+  padding: 0 11px;
+  color: #4d5b54;
+  font-size: 0.9rem;
+}
+
+.secondary-tabs button.active {
+  background: #e2efe5;
+  color: #143d2b;
 }
 
 .workspace {
@@ -970,6 +1000,23 @@ a {
 
   .language-toggle {
     justify-self: start;
+  }
+
+  .primary-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+    border-radius: 12px;
+  }
+
+  .primary-tabs button {
+    min-width: 0;
+    padding: 0 8px;
+    white-space: normal;
+  }
+
+  .secondary-tabs {
+    justify-content: flex-start;
   }
 
   .summary-grid {

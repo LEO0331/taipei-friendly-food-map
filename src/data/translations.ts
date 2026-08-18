@@ -2,6 +2,12 @@ import type { Language } from '../types';
 
 export const translations = {
   zh: {
+    exploreTaipei: '探索台北',
+    foodAndProducts: '食品與農產品',
+    storesAndFacilities: '店家與設施',
+    aboutThisData: '資料說明',
+    navigationSections: '主要分類',
+    currentSectionPages: '目前分類頁面',
     agriculturalProductInspections: '農產品抽檢統計',
     supermarkets: '臺北市超級市場',
     temporaryVendorMarkets: '臺北市臨時攤販集中場',
@@ -151,6 +157,12 @@ export const translations = {
     commercialDistrictSearchPlaceholder: '搜尋商圈、行政區、捷運站、商圈類型或說明',
   },
   en: {
+    exploreTaipei: 'Explore Taipei',
+    foodAndProducts: 'Food & Products',
+    storesAndFacilities: 'Stores & Facilities',
+    aboutThisData: 'About the Data',
+    navigationSections: 'Main sections',
+    currentSectionPages: 'Pages in this section',
     agriculturalProductInspections: 'Agricultural Product Inspections',
     supermarkets: 'Taipei Supermarkets',
     temporaryVendorMarkets: 'Temporary Vendor Markets',

@@ -11,6 +11,7 @@
 - Created a project-specific agent harness and persistent state artifacts.
 - Verified `npm.cmd run build` and `npm.cmd test` on 2026-08-18.
 - Added `doc/CONSULTANT_DASHBOARD_REVIEW.md` with customer-facing product, operational, and data-governance advice.
+- Implemented responsive grouped navigation; the unfinished Traditional Markets destination is no longer exposed.
 
 ## Verification Evidence
 
