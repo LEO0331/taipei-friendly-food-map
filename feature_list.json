@@ -47,6 +47,14 @@
       "dependencies": ["feat-001"],
       "status": "completed",
       "evidence": "2026-08-18: Implemented four primary categories with contextual child tabs, removed the unfinished Traditional Markets destination, and visually checked 390 px and 1440 px layouts."
+    },
+    {
+      "id": "feat-007",
+      "name": "Deployment-safe PWA shell updates",
+      "description": "Prevent stale cached HTML from referencing removed hashed assets after a GitHub Pages deployment.",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "2026-08-18: Service worker cache bumped to v10, navigation changed to network-first with offline fallback, and new workers now skip waiting and claim clients."
     }
   ]
 }

@@ -12,6 +12,7 @@
 - Verified `npm.cmd run build` and `npm.cmd test` on 2026-08-18.
 - Added `doc/CONSULTANT_DASHBOARD_REVIEW.md` with customer-facing product, operational, and data-governance advice.
 - Implemented responsive grouped navigation; the unfinished Traditional Markets destination is no longer exposed.
+- Fixed stale GitHub Pages PWA shell caching with a v10 cache, network-first navigation, and immediate service-worker activation.
 
 ## Verification Evidence
 
