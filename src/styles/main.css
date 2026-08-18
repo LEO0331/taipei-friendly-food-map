@@ -445,6 +445,25 @@ a {
 
 .inspection-header p { color: #7c3aed; }
 .inspection-fill { background: #7c3aed; }
+.agricultural-module { display: grid; gap: 14px; }
+.agricultural-header p { color: #0f766e; }
+.agricultural-filters { display: grid; gap: 10px; padding: 14px; border: 1px solid #bedbd3; border-radius: 10px; background: #f2fbf8; }
+.agricultural-filters label { display: grid; gap: 5px; color: #365c54; font-weight: 750; }
+.agricultural-filters input, .agricultural-filters select { min-height: 40px; border: 1px solid #bad3cd; border-radius: 8px; padding: 0 10px; background: #fff; }
+.agricultural-emphasis { border-color: #d9c386; background: #fff9e9; }
+.agricultural-latest, .agricultural-insights { padding: 14px; border: 1px solid #cfe0d4; border-radius: 10px; background: #fafffb; }
+.agricultural-latest h3, .agricultural-latest p, .agricultural-insights h3, .agricultural-insights ul { margin: 0; }
+.agricultural-latest p, .agricultural-insights li { margin-top: 8px; color: #486159; line-height: 1.55; }
+.agricultural-bars, .agricultural-rate-list { display: grid; gap: 10px; }
+.agricultural-bar-row { display: grid; grid-template-columns: 72px minmax(0, 1fr) max-content; gap: 8px; align-items: center; font-size: .84rem; }
+.agricultural-bar-row small { color: #65766f; }
+.agricultural-bar-row > div { display: grid; gap: 3px; }
+.agricultural-bar-row i { display: block; min-width: 2px; height: 7px; border-radius: 999px; }
+.agricultural-total { background: #84a98c; }.agricultural-qualified { background: #16805f; }.agricultural-unqualified { background: #c9973d; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; color: #53645e; font-size: .82rem; }.chart-legend span:nth-child(1) { color: #84a98c; }.chart-legend span:nth-child(2) { color: #16805f; }.chart-legend span:nth-child(3) { color: #a66b12; }
+.agricultural-rate-list > div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 7px; border-bottom: 1px solid #e3ece7; color: #405851; }.agricultural-rate-list strong { white-space: nowrap; color: #0f5c42; }
+.agricultural-table { min-width: 760px; }
+@media (min-width: 760px) { .agricultural-filters { grid-template-columns: repeat(3, minmax(150px, 1fr)); }.agricultural-filters .search-field { grid-column: 1 / -1; } }
 .organic-fill { background: #15803d; }
 .inspection-filters, .inspection-actions, .inspection-pagination { display: grid; gap: 10px; margin: 14px 0; }
 .inspection-filters label { display: grid; gap: 5px; font-weight: 700; color: #59615d; }

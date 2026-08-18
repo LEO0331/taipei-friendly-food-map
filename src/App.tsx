@@ -7,6 +7,7 @@ import { CommercialDistrictModule } from './components/CommercialDistrictModule'
 import { GreenStoreDirectoryModule } from './components/GreenStoreDirectoryModule';
 import { RestaurantHygieneGradingModule } from './components/RestaurantHygieneGradingModule';
 import { FailedFoodInspectionModule } from './components/FailedFoodInspectionModule';
+import { AgriculturalProductInspectionsModule } from './components/AgriculturalProductInspectionsModule';
 import { OrganicFarmsModule } from './components/OrganicFarmsModule';
 import { SupermarketsModule } from './components/SupermarketsModule';
 import { TemporaryVendorMarketsModule } from './components/TemporaryVendorMarketsModule';
@@ -194,8 +195,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' || activeTab === 'organicFarms' || activeTab === 'supermarkets' || activeTab === 'temporaryVendorMarkets' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && activeTab !== 'organicFarms' && activeTab !== 'supermarkets' && activeTab !== 'temporaryVendorMarkets' && (
+      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' || activeTab === 'agriculturalInspections' || activeTab === 'organicFarms' || activeTab === 'supermarkets' || activeTab === 'temporaryVendorMarkets' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && activeTab !== 'agriculturalInspections' && activeTab !== 'organicFarms' && activeTab !== 'supermarkets' && activeTab !== 'temporaryVendorMarkets' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -245,6 +246,7 @@ export default function App() {
             <RestaurantHygieneGradingModule summary={data.restaurantHygieneGradingSummary} language={language} />
           )}
           {activeTab === 'failedInspections' && <FailedFoodInspectionModule summary={data.failedFoodInspectionSummary} language={language} />}
+          {activeTab === 'agriculturalInspections' && <AgriculturalProductInspectionsModule summary={data.agriculturalProductInspectionSummary} language={language} />}
           {activeTab === 'organicFarms' && <OrganicFarmsModule summary={data.organicFarmSummary} language={language} />}
           {activeTab === 'supermarkets' && <SupermarketsModule language={language} />}
           {activeTab === 'temporaryVendorMarkets' && <TemporaryVendorMarketsModule language={language} />}

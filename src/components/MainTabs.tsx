@@ -1,6 +1,6 @@
 import type { TranslationKey } from '../data/translations';
 
-export type TabKey = 'map' | 'directory' | 'overview' | 'traceability' | 'commercialDistricts' | 'greenStores' | 'hygieneGrading' | 'failedInspections' | 'organicFarms' | 'traditionalMarkets' | 'temporaryVendorMarkets' | 'supermarkets' | 'notes';
+export type TabKey = 'map' | 'directory' | 'overview' | 'traceability' | 'commercialDistricts' | 'greenStores' | 'hygieneGrading' | 'failedInspections' | 'agriculturalInspections' | 'organicFarms' | 'traditionalMarkets' | 'temporaryVendorMarkets' | 'supermarkets' | 'notes';
 
 type Props = {
   activeTab: TabKey;
@@ -17,6 +17,7 @@ const tabs: Array<{ key: TabKey; label: TranslationKey }> = [
   { key: 'greenStores', label: 'greenStoreDirectory' },
   { key: 'hygieneGrading', label: 'restaurantHygieneGradingRecords' },
   { key: 'failedInspections', label: 'failedFoodInspectionRecords' },
+  { key: 'agriculturalInspections', label: 'agriculturalProductInspections' },
   { key: 'organicFarms', label: 'organicFarms' },
   { key: 'traditionalMarkets', label: 'traditionalMarkets' },
   { key: 'temporaryVendorMarkets', label: 'temporaryVendorMarkets' },

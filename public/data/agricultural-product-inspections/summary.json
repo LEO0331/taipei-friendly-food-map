@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-18T01:56:19.478Z",
+  "sourceUpdatedAt": "2026-07-09T16:54:51+08:00",
+  "source": "https://data.taipei/dataset/detail?id=8ab917b0-1029-4003-b776-f169b4e561f1",
+  "sourceAgency": "臺北市政府產業發展局",
+  "importedRowCount": 28,
+  "earliestRocYear": 108,
+  "latestRocYear": 114,
+  "dataQuality": {
+    "inconsistentRowCount": 0,
+    "passRateDiscrepancyCount": 0,
+    "malformedNumericCount": 0
+  }
+}

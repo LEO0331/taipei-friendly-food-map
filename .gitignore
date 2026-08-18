@@ -11,6 +11,7 @@ data/raw/commercial-district-introductions/*.csv
 data/raw/green-store-directory/*.csv
 data/raw/restaurant-hygiene-grading-records/*.csv
 data/raw/failed-food-inspection-records/*.csv
+data/raw/agricultural-product-inspections/*.csv
 data/raw/organic-farms/*.csv
 data/raw/supermarkets/*.csv
 data/raw/temporary-vendor-markets/*.csv

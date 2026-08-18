@@ -2,6 +2,7 @@ import type { Language } from '../types';
 
 export const translations = {
   zh: {
+    agriculturalProductInspections: '農產品抽檢統計',
     supermarkets: '臺北市超級市場',
     temporaryVendorMarkets: '臺北市臨時攤販集中場',
     traditionalMarkets: '臺北市傳統市（商）場',
@@ -150,6 +151,7 @@ export const translations = {
     commercialDistrictSearchPlaceholder: '搜尋商圈、行政區、捷運站、商圈類型或說明',
   },
   en: {
+    agriculturalProductInspections: 'Agricultural Product Inspections',
     supermarkets: 'Taipei Supermarkets',
     temporaryVendorMarkets: 'Temporary Vendor Markets',
     traditionalMarkets: 'Taipei Traditional Markets',

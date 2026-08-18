@@ -9,6 +9,7 @@ export type FriendlyFoodModule =
   | 'green_store_directory'
   | 'restaurant_hygiene_grading_records'
   | 'failed_food_inspection_records'
+  | 'agricultural_product_inspections'
   | 'organic_farms'
   | 'traditional_markets'
   | 'temporary_vendor_markets'
@@ -377,6 +378,28 @@ export type FailedFoodInspectionSummary = {
   byCategoryAndYear: Array<{ category: string; year: number; count: number }>;
   dataQuality: { invalidDateCount: number; duplicateRowCount: number; missingLocationCount: number; unknownCategoryCount: number; unresolvedDistrictCount: number };
 };
+export type AgriculturalProductInspectionRecord = {
+  id: string;
+  rocYear: number | null;
+  year: number | null;
+  category: string;
+  item: string;
+  inspected: number | null;
+  qualified: number | null;
+  unqualified: number | null;
+  officialPassRate: number | null;
+  source: string;
+};
+export type AgriculturalProductInspectionSummary = {
+  generatedAt: string;
+  sourceUpdatedAt: string;
+  source: string;
+  sourceAgency: string;
+  importedRowCount: number;
+  earliestRocYear?: number;
+  latestRocYear?: number;
+  dataQuality: { inconsistentRowCount: number; passRateDiscrepancyCount: number; malformedNumericCount: number };
+};
 export type OrganicFarmRecord = { id: string; farmName: string; farmerName: string; contactAddress: string; districtName: string; certificationNumber: string; areaHectares: number | null; foodEducationExperienceRaw: string; hasFoodEducationExperience: boolean | null; beekeepingRaw: string; hasBeekeeping: boolean | null; poultryRaisingRaw: string; hasPoultryRaising: boolean | null; note: string; googleMapsQuery: string; rawSource: Record<string, string>; source: string; sourceAgency: string; };
 export type OrganicFarmSummary = { generatedAt: string; totalFarms: number; uniqueFarms: number; districtCount: number; totalAreaHectares: number; foodEducationCount: number; beekeepingCount: number; poultryRaisingCount: number; certificationCount: number; byDistrict: Array<{ district: string; count: number; areaHectares: number }>; areaDistribution: Array<{ range: string; count: number }>; dataQuality: { duplicateCount: number; invalidAreaCount: number; missingFarmNameCount: number; unknownDistrictCount: number; unrecognizedYesNoValueCount: number } };
 export type TraditionalMarketRecord = { id: string; sourceId: string; marketName: string; description: string; descriptionPlainText: string; createdDateRaw: string; createdDate: string | null; address: string; districtNameFromAddress: string; longitude?: number; latitude?: number; hasValidCoordinates: boolean; googleMapsQuery: string; rawSource: Record<string,string> };
@@ -556,6 +579,7 @@ export type ConversionReport = {
     sourceFile: string;
   };
   failedFoodInspectionRecords?: FailedFoodInspectionSummary & { source: string; sourceAgency: string; sourceFiles: string[] };
+  agriculturalProductInspections?: AgriculturalProductInspectionSummary;
   organicFarms?: OrganicFarmSummary & { source: string; sourceAgency: string; sourceFile: string };
   notes: string[];
 };

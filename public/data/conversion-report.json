@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T03:36:15.660Z",
+  "generatedAt": "2026-08-18T01:56:19.482Z",
   "notes": [
     "Run npm run fetch:data and npm run convert:data to generate production data files from Taipei Open Data CSV resources.",
     "Fetch script stores raw CSV files locally and avoids repeat downloads unless --force is passed.",
@@ -5199,5 +5199,19 @@
     "source": "https://data.taipei/dataset/detail?id=32aea2da-14a7-47b6-a687-57e29c1ad4a7",
     "sourceAgency": "臺北市政府產業發展局",
     "sourceFile": "organic-farms.csv (big5)"
+  },
+  "agriculturalProductInspections": {
+    "generatedAt": "2026-08-18T01:56:19.478Z",
+    "sourceUpdatedAt": "2026-07-09T16:54:51+08:00",
+    "source": "https://data.taipei/dataset/detail?id=8ab917b0-1029-4003-b776-f169b4e561f1",
+    "sourceAgency": "臺北市政府產業發展局",
+    "importedRowCount": 28,
+    "earliestRocYear": 108,
+    "latestRocYear": 114,
+    "dataQuality": {
+      "inconsistentRowCount": 0,
+      "passRateDiscrepancyCount": 0,
+      "malformedNumericCount": 0
+    }
   }
 }
