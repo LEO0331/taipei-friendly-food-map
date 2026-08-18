@@ -1,0 +1,44 @@
+{
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Harness and baseline verification",
+      "description": "Maintain a restartable agent harness and confirm the TypeScript build and automated tests pass.",
+      "dependencies": [],
+      "status": "completed",
+      "evidence": "2026-08-18: npm.cmd run build and npm.cmd test passed; harness validation scored 100/100."
+    },
+    {
+      "id": "feat-002",
+      "name": "Public-data module delivery",
+      "description": "Add one scoped Taipei public-data module at a time, with a fetch/conversion pipeline, generated data, and a UI that matches the dataset's geographic or statistical nature.",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "2026-08-18: Agricultural Product Inspections dashboard added with 28 source records for ROC years 108–114."
+    },
+    {
+      "id": "feat-003",
+      "name": "Data integrity and UI verification",
+      "description": "For each module, validate field normalization, record counts, integrity checks, and responsive dashboard or map behavior.",
+      "dependencies": ["feat-002"],
+      "status": "in-progress",
+      "evidence": "Agricultural inspection conversion reports zero malformed numeric, row-consistency, and pass-rate-discrepancy counts; focused automated coverage remains a next improvement."
+    },
+    {
+      "id": "feat-004",
+      "name": "Dataset provenance documentation",
+      "description": "Keep each public-data module's source URL, update date, refresh time, coverage, and interpretation limits available in the UI and project documentation.",
+      "dependencies": ["feat-002"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "feat-005",
+      "name": "Session handoff and cleanup",
+      "description": "Record evidence, risks, and the next focused step after every substantive change.",
+      "dependencies": ["feat-003", "feat-004"],
+      "status": "not-started",
+      "evidence": ""
+    }
+  ]
+}
