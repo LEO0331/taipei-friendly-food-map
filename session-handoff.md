@@ -13,6 +13,7 @@
 - Added `doc/CONSULTANT_DASHBOARD_REVIEW.md` with customer-facing product, operational, and data-governance advice.
 - Implemented responsive grouped navigation; the unfinished Traditional Markets destination is no longer exposed.
 - Fixed stale GitHub Pages PWA shell caching with a v10 cache, network-first navigation, and immediate service-worker activation.
+- Split the README into English (`README.md`) and Traditional Chinese (`README-zh.md`) documentation with reciprocal language links.
 
 ## Verification Evidence
 
@@ -25,6 +26,7 @@
 ## Files Changed
 
 - `AGENTS.md`, `feature_list.json`, `progress.md`, `session-handoff.md`, `init.sh`, `init.ps1`
+- `README.md`, `README-zh.md`
 
 ## Decisions and Risks
 
@@ -32,6 +34,7 @@
 - Generated public data must be reproduced through its script instead of manually edited.
 - Next risk to address: add focused tests for the agricultural-inspection converter and weighted aggregation.
 - Release blockers identified: incomplete Traditional Markets tab and the aggregate refresh workflow omits supermarket/traditional-market datasets.
+- README language split verification passed on 2026-08-19: `npm.cmd run build`, `npm.cmd test` (8 tests), and `git diff --check`.
 
 ## Next Session Startup
 

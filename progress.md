@@ -2,7 +2,7 @@
 
 ## Current State
 
-**Last Updated:** 2026-08-18
+**Last Updated:** 2026-08-19
 **Active Feature:** feat-003 — Data integrity and UI verification
 
 ## What's Done
@@ -12,6 +12,7 @@
 - Added `doc/CONSULTANT_DASHBOARD_REVIEW.md`, a customer-oriented review with data insights, release risks, and a 90-day roadmap.
 - Replaced the all-page tab strip with responsive grouped navigation and removed the unfinished Traditional Markets destination.
 - Fixed the stale PWA app-shell behavior that could leave GitHub Pages visitors on a blank screen after deployment.
+- Split the project documentation into English (`README.md`) and Traditional Chinese (`README-zh.md`) versions with reciprocal language links.
 
 ## In Progress
 
@@ -37,6 +38,7 @@
 
 - `npm.cmd run build` — passed on 2026-08-18.
 - `npm.cmd test` — 8 tests passed on 2026-08-18.
+- README language split — `npm.cmd run build`, `npm.cmd test` (8 passing), and `git diff --check` passed on 2026-08-19.
 - Responsive navigation — visual QA passed at 390 px and 1440 px on 2026-08-18.
 - PWA cache fix — `npm.cmd run build` and `npm.cmd test` passed after the v10 service-worker change on 2026-08-18.
 - Agricultural inspection conversion — 28 records, ROC 108–114; zero reported malformed numeric, row-consistency, and pass-rate discrepancies.
