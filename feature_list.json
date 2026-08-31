@@ -22,7 +22,7 @@
       "description": "For each module, validate field normalization, record counts, integrity checks, and responsive dashboard or map behavior.",
       "dependencies": ["feat-002"],
       "status": "in-progress",
-      "evidence": "Agricultural inspection conversion reports zero malformed numeric, row-consistency, and pass-rate-discrepancy counts; focused automated coverage remains a next improvement."
+      "evidence": "Agricultural inspection conversion reports zero malformed numeric, row-consistency, and pass-rate-discrepancy counts; focused automated coverage remains a next improvement. 2026-08-31: completed project-wide Chinese UI audit, localized shared controls, temporary-vendor map/directory/export copy, organic-farm pagination/export/quality labels, Wi-Fi labels, filter accessibility text, and commercial-district field descriptions; TypeScript lint and prior build/tests passed."
     },
     {
       "id": "feat-004",

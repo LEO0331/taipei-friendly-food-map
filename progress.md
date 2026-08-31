@@ -2,7 +2,7 @@
 
 ## Current State
 
-**Last Updated:** 2026-08-19
+**Last Updated:** 2026-08-31
 **Active Feature:** feat-003 — Data integrity and UI verification
 
 ## What's Done
@@ -13,6 +13,11 @@
 - Replaced the all-page tab strip with responsive grouped navigation and removed the unfinished Traditional Markets destination.
 - Fixed the stale PWA app-shell behavior that could leave GitHub Pages visitors on a blank screen after deployment.
 - Split the project documentation into English (`README.md`) and Traditional Chinese (`README-zh.md`) versions with reciprocal language links.
+- Removed the customer-visible map attribution/API-key-style badge from the primary and commercial-district dashboard maps.
+- Audited Chinese-mode UI copy across all dashboard modules and corrected shared Wi-Fi labels, filter accessibility copy, and Chinese commercial-district field descriptions.
+- Localized the shared language-toggle label, store-card map action, and directory load-more action through the translation table.
+- Localized temporary-vendor map/directory/export copy and organic-farm pagination, export headers, area labels, and quality metrics for Chinese mode.
+- Audited project-wide filtering paths; added organic-farm filter-change pagination reset so narrowed results cannot leave the directory on an empty stale page.
 
 ## In Progress
 
@@ -38,6 +43,11 @@
 
 - `npm.cmd run build` — passed on 2026-08-18.
 - `npm.cmd test` — 8 tests passed on 2026-08-18.
+- Map attribution removal — `npm.cmd run build`, `npm.cmd test` (8 passing), and `git diff --check` passed on 2026-08-31.
+- Chinese-localization audit — `npm.cmd run build`, `npm.cmd test` (8 passing), and `git diff --check` passed on 2026-08-31.
+- Remaining boundary: source-only values and legacy module-local export/popup strings require bilingual data fields or a focused follow-up refactor.
+- `npm.cmd run lint` (TypeScript) and `git diff --check` passed after the remaining audit fixes; the final elevated build/test retry was unavailable because the desktop usage limit was reached.
+- Filtering audit: all module filters include their state in memo dependencies; map/directory filters use the same filtered record set, and filter changes reset pagination where pagination exists.
 - README language split — `npm.cmd run build`, `npm.cmd test` (8 passing), and `git diff --check` passed on 2026-08-19.
 - Responsive navigation — visual QA passed at 390 px and 1440 px on 2026-08-18.
 - PWA cache fix — `npm.cmd run build` and `npm.cmd test` passed after the v10 service-worker change on 2026-08-18.

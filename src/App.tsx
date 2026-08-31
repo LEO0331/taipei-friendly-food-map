@@ -190,7 +190,7 @@ export default function App() {
           <h1>{t('appTitle')}</h1>
           <p>{t('appSubtitle')}</p>
         </div>
-        <LanguageToggle language={language} onChange={setLanguage} />
+        <LanguageToggle language={language} onChange={setLanguage} label={t('language')} />
       </header>
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />

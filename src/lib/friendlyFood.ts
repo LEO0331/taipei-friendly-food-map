@@ -82,7 +82,7 @@ export const tagLabel = (tag: FriendlyServiceTag, language: Language): string =>
     vegetarian_friendly: '素食友善',
     friendly_bathroom: '友善廁所',
     fair_trade_friendly: '公平貿易友善',
-    free_wifi: 'Free Wi-Fi',
+    free_wifi: '免費 Wi‑Fi',
     bicycle_friendly: '自行車友善',
     parent_child_friendly: '親子友善',
     muslim_friendly: '穆斯林友善',

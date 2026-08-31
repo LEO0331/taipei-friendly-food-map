@@ -174,7 +174,7 @@ export function CommercialDistrictModule({ summary, language, t }: Props) {
       <div className="commercial-layout">
         <section className="commercial-map-panel">
           <h3>{t('commercialDistrictDistribution')}</h3>
-          <MapContainer center={[25.0478, 121.5319]} zoom={11} className="commercial-map" scrollWheelZoom={false}>
+          <MapContainer center={[25.0478, 121.5319]} zoom={11} className="commercial-map" scrollWheelZoom={false} attributionControl={false}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
               url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"

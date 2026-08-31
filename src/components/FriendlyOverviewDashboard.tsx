@@ -36,7 +36,7 @@ export function FriendlyOverviewDashboard({ summary, language, t }: Props) {
     [language === 'zh' ? '素食友善數' : 'Vegetarian-friendly count', summary.vegetarianFriendlyCount],
     [language === 'zh' ? '無障礙友善數' : 'Accessibility-friendly count', summary.accessibilityFriendlyCount],
     [language === 'zh' ? '穆斯林友善數' : 'Muslim-friendly count', summary.muslimFriendlyCount],
-    ['Free Wi-Fi', summary.freeWifiCount],
+    [language === 'zh' ? '免費 Wi‑Fi 友善數' : 'Free Wi-Fi count', summary.freeWifiCount],
     [language === 'zh' ? '友善餐館匹配數' : 'Matched friendly restaurant count', summary.matchedFriendlyRestaurantCount],
     [t('waterRefillStoreCount'), summary.waterRefillStoreCount],
     [t('waterRefillStoresWithCoordinates'), summary.waterRefillStoresWithCoordinates],

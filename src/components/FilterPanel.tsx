@@ -19,7 +19,7 @@ export function FilterPanel({ filters, language, t, onChange }: Props) {
   };
 
   return (
-    <section className="filter-panel" aria-label="Filters">
+    <section className="filter-panel" aria-label={t('filters')}>
       <label className="search-field">
         <span>{language === 'zh' ? '搜尋' : 'Search'}</span>
         <input

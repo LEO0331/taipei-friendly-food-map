@@ -80,7 +80,7 @@ export function StoreCard({ item, distance, language, t, onFocusMap }: Props) {
       )}
       <div className="card-actions">
         {item.coordinateStatus === 'valid' && (
-          <button onClick={() => onFocusMap?.(item)}>{language === 'zh' ? '在地圖查看' : 'View on map'}</button>
+              <button onClick={() => onFocusMap?.(item)}>{t('viewOnMap')}</button>
         )}
         <a href={googleMapsUrl({ latitude: item.latitude, longitude: item.longitude, address })} target="_blank" rel="noreferrer">
           {t('openGoogleMaps')}

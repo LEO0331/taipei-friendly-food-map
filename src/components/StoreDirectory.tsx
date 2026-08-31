@@ -42,7 +42,7 @@ export function StoreDirectory({ items, distances, language, t, onFocusMap }: Pr
           ))}
           {visibleCount < items.length && (
             <button className="load-more-button" onClick={() => setVisibleCount((count) => count + 120)}>
-              {language === 'zh' ? '載入更多' : 'Load more'}
+              {t('loadMore')}
             </button>
           )}
         </>
