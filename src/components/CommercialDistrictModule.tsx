@@ -144,7 +144,18 @@ export function CommercialDistrictModule({ summary, language, t }: Props) {
     });
   }, [category, district, foodOnly, leisureOnly, mrt, query, records, shoppingOnly, tag]);
 
-  const mapRows = summary?.byDistrict ?? [];
+  const mapRows = useMemo(() => {
+    const grouped = new Map<string, { district: string; commercialDistrictCount: number; foodRelatedCount: number; shoppingRelatedCount: number; leisureRelatedCount: number }>();
+    filtered.forEach((record) => {
+      const current = grouped.get(record.district) ?? { district: record.district, commercialDistrictCount: 0, foodRelatedCount: 0, shoppingRelatedCount: 0, leisureRelatedCount: 0 };
+      current.commercialDistrictCount += 1;
+      if (record.foodRelated) current.foodRelatedCount += 1;
+      if (record.shoppingRelated) current.shoppingRelatedCount += 1;
+      if (record.leisureRelated) current.leisureRelatedCount += 1;
+      grouped.set(record.district, current);
+    });
+    return [...grouped.values()].sort((left, right) => right.commercialDistrictCount - left.commercialDistrictCount || left.district.localeCompare(right.district, 'zh-Hant'));
+  }, [filtered]);
 
   return (
     <section className="commercial-module">

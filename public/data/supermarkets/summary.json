@@ -1,9 +1,55 @@
 {
   "totalRecords": 37,
   "validLocationCount": 37,
-  "districtCount": 0,
+  "districtCount": 11,
   "addressCount": 37,
   "descriptionCount": 37,
   "missingValidCoordinates": 0,
-  "byDistrict": []
+  "topDistrict": "文山區",
+  "byDistrict": [
+    {
+      "district": "文山區",
+      "count": 5
+    },
+    {
+      "district": "士林區",
+      "count": 4
+    },
+    {
+      "district": "信義區",
+      "count": 4
+    },
+    {
+      "district": "內湖區",
+      "count": 4
+    },
+    {
+      "district": "大安區",
+      "count": 4
+    },
+    {
+      "district": "松山區",
+      "count": 3
+    },
+    {
+      "district": "中正區",
+      "count": 3
+    },
+    {
+      "district": "北投區",
+      "count": 3
+    },
+    {
+      "district": "中山區",
+      "count": 3
+    },
+    {
+      "district": "南港區",
+      "count": 2
+    },
+    {
+      "district": "萬華區",
+      "count": 2
+    }
+  ]
 }

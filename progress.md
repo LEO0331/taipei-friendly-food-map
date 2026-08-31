@@ -18,6 +18,9 @@
 - Localized the shared language-toggle label, store-card map action, and directory load-more action through the translation table.
 - Localized temporary-vendor map/directory/export copy and organic-farm pagination, export headers, area labels, and quality metrics for Chinese mode.
 - Audited project-wide filtering paths; added organic-farm filter-change pagination reset so narrowed results cannot leave the directory on an empty stale page.
+- Synchronized the commercial-district distribution map with the directory's active filters; district bubbles now aggregate only matching records.
+- Fixed organic-farm data-quality labels for all generated summary keys and hardened the activity chart data normalization to prevent crashes when opening 農場活動.
+- Fixed supermarket mojibake by decoding the official raw CSV as Big5 and regenerated `public/data/supermarkets/records.json` and `summary.json`; output now contains 37 readable records across 11 districts.
 
 ## In Progress
 
@@ -48,6 +51,9 @@
 - Remaining boundary: source-only values and legacy module-local export/popup strings require bilingual data fields or a focused follow-up refactor.
 - `npm.cmd run lint` (TypeScript) and `git diff --check` passed after the remaining audit fixes; the final elevated build/test retry was unavailable because the desktop usage limit was reached.
 - Filtering audit: all module filters include their state in memo dependencies; map/directory filters use the same filtered record set, and filter changes reset pagination where pagination exists.
+- Commercial-district map sync — TypeScript lint and `git diff --check` passed on 2026-08-31.
+- Organic-farm quality/activity fix — TypeScript lint and `git diff --check` passed on 2026-08-31.
+- Supermarket encoding fix — replacement-character scan found none; TypeScript lint and `git diff --check` passed on 2026-08-31.
 - README language split — `npm.cmd run build`, `npm.cmd test` (8 passing), and `git diff --check` passed on 2026-08-19.
 - Responsive navigation — visual QA passed at 390 px and 1440 px on 2026-08-18.
 - PWA cache fix — `npm.cmd run build` and `npm.cmd test` passed after the v10 service-worker change on 2026-08-18.

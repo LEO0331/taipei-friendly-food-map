@@ -19,6 +19,9 @@
 - Shared language-toggle, map-action, and load-more labels now use the translation table in both locales.
 - Temporary-vendor and organic-farm modules now localize Chinese map labels, table/export headers, pagination, area buckets, and quality metrics.
 - Audited project-wide filtering and reset organic-farm pagination on every filter change; all filter state is included in the corresponding derived-result dependencies.
+- Synchronized the commercial-district distribution map with the adjacent directory filters; bubble counts now derive from matching records.
+- Fixed organic-farm quality metrics to map every generated key to Chinese labels and hardened the 農場活動 chart against malformed tuple data.
+- Fixed supermarket mojibake by changing the converter to Big5 decoding and regenerated the published supermarket records and summary.
 
 ## Verification Evidence
 
@@ -48,6 +51,9 @@
 - Source-only values and legacy module-local export/popup strings remain intentionally preserved pending a bilingual data contract or focused follow-up refactor.
 - Final verification: `npm.cmd run lint` and `git diff --check` passed; elevated build/test was blocked by the desktop usage limit after earlier build/tests had passed.
 - Filtering verification: static dependency audit plus TypeScript lint passed; runtime test command remained blocked by the local process-spawn/usage-limit environment.
+- Commercial map sync verification: TypeScript lint and `git diff --check` passed.
+- Organic-farm fix verification: TypeScript lint and `git diff --check` passed.
+- Supermarket verification: no U+FFFD replacement characters remain; output contains 37 records across 11 districts; TypeScript lint and `git diff --check` passed.
 
 ## Next Session Startup
 
