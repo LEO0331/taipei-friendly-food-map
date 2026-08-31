@@ -2,7 +2,7 @@
 
 [繁體中文](README-zh.md)
 
-A mobile-first web app for exploring Taipei friendly stores, water-refill locations, restaurant-business registrations, food-traceability products, commercial-district introductions, green stores, food-hygiene grading records, inspection records, organic farms, and temporary vendor markets. It uses Vite, React, TypeScript, Leaflet, OpenStreetMap/CARTO tiles, and static JSON served from `public/data`.
+A mobile-first web app for exploring Taipei friendly stores, water-refill locations, restaurant-business registrations, food-traceability products, commercial-district introductions, green stores, food-hygiene grading records, inspection records, organic farms, and temporary vendor markets. It uses Vite, React, TypeScript, Leaflet, OpenStreetMap tiles, and static JSON served from `public/data`.
 
 ## Purpose
 

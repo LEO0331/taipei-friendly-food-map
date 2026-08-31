@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-以行動裝置優先設計的網站，用於探索台北市友善店家、飲水店家、餐館業登記資料、食材登錄產品、商圈介紹、綠色商店、餐飲衛生分級評核紀錄、食品抽驗紀錄、有機農場與臨時攤販集中場。專案使用 Vite、React、TypeScript、Leaflet、OpenStreetMap/CARTO 圖磚，以及由 `public/data` 提供的靜態 JSON。
+以行動裝置優先設計的網站，用於探索台北市友善店家、飲水店家、餐館業登記資料、食材登錄產品、商圈介紹、綠色商店、餐飲衛生分級評核紀錄、食品抽驗紀錄、有機農場與臨時攤販集中場。專案使用 Vite、React、TypeScript、Leaflet、OpenStreetMap 圖磚，以及由 `public/data` 提供的靜態 JSON。
 
 ## 目的
 

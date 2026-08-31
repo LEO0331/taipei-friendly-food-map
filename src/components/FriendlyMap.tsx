@@ -170,10 +170,10 @@ function renderPopupHtml(
 export function FriendlyMap({ items, language, t, userLocation, focusedItem }: Props) {
   return (
     <section className="map-panel">
-      <MapContainer center={[25.0478, 121.5319]} zoom={12} className="leaflet-map" scrollWheelZoom attributionControl={false}>
+      <MapContainer center={[25.0478, 121.5319]} zoom={12} className="leaflet-map" scrollWheelZoom>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <ClusteredMarkers items={items} language={language} t={t} />
         {userLocation && (
