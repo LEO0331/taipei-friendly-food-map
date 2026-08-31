@@ -21,6 +21,7 @@
 - Audited project-wide filtering and reset organic-farm pagination on every filter change; all filter state is included in the corresponding derived-result dependencies.
 - Synchronized the commercial-district distribution map with the adjacent directory filters; bubble counts now derive from matching records.
 - Fixed organic-farm quality metrics to map every generated key to Chinese labels and hardened the 農場活動 chart against malformed tuple data.
+- Removed the problematic 農場活動 subtab from the organic-farm module at the user's request.
 - Fixed supermarket mojibake by changing the converter to Big5 decoding and regenerated the published supermarket records and summary.
 
 ## Verification Evidence
@@ -53,6 +54,7 @@
 - Filtering verification: static dependency audit plus TypeScript lint passed; runtime test command remained blocked by the local process-spawn/usage-limit environment.
 - Commercial map sync verification: TypeScript lint and `git diff --check` passed.
 - Organic-farm fix verification: TypeScript lint and `git diff --check` passed.
+- Organic-farm tab removal verification: TypeScript lint and `git diff --check` passed.
 - Supermarket verification: no U+FFFD replacement characters remain; output contains 37 records across 11 districts; TypeScript lint and `git diff --check` passed.
 
 ## Next Session Startup
