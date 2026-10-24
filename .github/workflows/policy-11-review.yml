@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -23,4 +25,4 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /taipei-friendly-food-map/
-      - run: git diff --check
+      - run: git diff --check origin/main...HEAD
