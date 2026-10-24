@@ -1,4 +1,4 @@
-const CACHE_NAME = 'taipei-friendly-food-map-v10';
+const CACHE_NAME = 'taipei-friendly-food-map-v11';
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const withBase = (path) => `${BASE_PATH}${path}`;
 const APP_SHELL = [

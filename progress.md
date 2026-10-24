@@ -2,8 +2,8 @@
 
 ## Current State
 
-**Last Updated:** 2026-08-31
-**Active Feature:** feat-003 — Data integrity and UI verification
+**Last Updated:** 2026-10-24
+**Active Feature:** feat-011 — Policy 11 food hygiene documentary evidence review
 
 ## What's Done
 
@@ -64,3 +64,16 @@
 ## Notes for Next Session
 
 Run `powershell -ExecutionPolicy Bypass -File .\init.ps1`, then continue only the active feature in `feature_list.json` unless the user changes priority.
+
+## Policy 11 — 2026-10-24
+
+- Implemented the user-requested evidence-supported MVP on `codex/food-hygiene-evidence-policy-11` in `.worktrees/policy-11`; feat-003 is deferred for this priority.
+- Acquired five official CSVs and three catalogue HTML response bodies; sealed original byte hashes, dates, resource inventories and three unchanged historical project JSON editions separately.
+- Reproducible content-addressed snapshot: 22,645 rows (673 published failed sample rows / 672 distinct documentary keys; 1,686 passing grading rows; 20,286 registrations). Failed sampling dates: 2022-01-04 through 2024-11-20. 600 candidate event groups are not verified unique events; batch and unique sample counts remain unknown.
+- Added deterministic Mode A tiers, 5/10/all capacities, two strategies, six sensitivity scenarios and provenance-rich safe CSV/JSON. Mode B reports 35 unvalidated candidates and zero admitted associations; Mode C remains unavailable.
+- Added a lazy bilingual responsive dashboard within existing Food & Products navigation; existing modules/data contracts preserved. PWA cache moved to v11 without precaching policy evidence.
+- Verification: baseline init build + 8 tests passed; final source reproduction, lint, production build, 20 tests and diff check passed. Tamper tests reject altered original bytes and snapshot output. All 15 evidence file Git blobs preserve exact source bytes. Production browser exercised both languages, capacities, pagination reset, CSV download and identity gates; desktop 1440px/mobile 390px screenshots retained.
+- Findings, source limitations, export format and verification are in `doc/POLICY_11_SOURCE_AUDIT.md` and `doc/POLICY_11_VERIFICATION.md`.
+- Remaining evidence limits: no comparable inspection denominator; missing historical original CSVs/timestamps; no independent establishment validation. Approximately 17 MB snapshot loads only on demand; all-capacity CSV approximately 31 MB. Existing app bundle >500 kB warning remains.
+- Delivery: exactly one review PR to main; do not automatically merge. Portfolio Case Study 011 must wait for actual merged source evidence.
+- Policy 11 delivered as review PR #4: https://github.com/LEO0331/taipei-friendly-food-map/pull/4; base main, specified branch, no automatic merge. GitHub verification workflow started.

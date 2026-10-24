@@ -9,6 +9,7 @@ export type TabKey =
   | 'greenStores'
   | 'hygieneGrading'
   | 'failedInspections'
+  | 'policy11'
   | 'agriculturalInspections'
   | 'organicFarms'
   | 'temporaryVendorMarkets'
@@ -33,6 +34,7 @@ const tabs: Tab[] = [
   { key: 'traceability', label: 'foodTraceability', group: 'foodProducts' },
   { key: 'hygieneGrading', label: 'restaurantHygieneGradingRecords', group: 'foodProducts' },
   { key: 'failedInspections', label: 'failedFoodInspectionRecords', group: 'foodProducts' },
+  { key: 'policy11', label: 'foodHygieneEvidence', group: 'foodProducts' },
   { key: 'agriculturalInspections', label: 'agriculturalProductInspections', group: 'foodProducts' },
   { key: 'commercialDistricts', label: 'commercialDistricts', group: 'facilities' },
   { key: 'greenStores', label: 'greenStoreDirectory', group: 'facilities' },

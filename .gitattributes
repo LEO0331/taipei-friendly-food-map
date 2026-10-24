@@ -1,0 +1,7 @@
+# Policy 11 hashes authenticate exact retained bytes on Windows and Linux.
+# Never normalize these source bodies, retained editions or generated snapshots.
+public/data/policy-11/** -text linguist-generated=true
+# Preserve whitespace present in third-party original responses; never trim them.
+public/data/policy-11/evidence/** -whitespace
+# Retained project JSON also preserves its historical CRLF bytes.
+public/data/policy-11/retained/** whitespace=cr-at-eol

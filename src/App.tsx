@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
@@ -31,6 +31,8 @@ import type {
   RestaurantBusiness,
   WaterRefillStore,
 } from './types';
+
+const Policy11Module = lazy(() => import('./components/Policy11Module'));
 
 const initialFilters: FilterState = {
   layers: {
@@ -195,8 +197,8 @@ export default function App() {
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />
 
-      <section className={activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' || activeTab === 'agriculturalInspections' || activeTab === 'organicFarms' || activeTab === 'supermarkets' || activeTab === 'temporaryVendorMarkets' ? 'workspace full-width' : 'workspace'}>
-        {activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && activeTab !== 'agriculturalInspections' && activeTab !== 'organicFarms' && activeTab !== 'supermarkets' && activeTab !== 'temporaryVendorMarkets' && (
+      <section className={activeTab === 'policy11' || activeTab === 'notes' || activeTab === 'traceability' || activeTab === 'commercialDistricts' || activeTab === 'greenStores' || activeTab === 'hygieneGrading' || activeTab === 'failedInspections' || activeTab === 'agriculturalInspections' || activeTab === 'organicFarms' || activeTab === 'supermarkets' || activeTab === 'temporaryVendorMarkets' ? 'workspace full-width' : 'workspace'}>
+        {activeTab !== 'policy11' && activeTab !== 'notes' && activeTab !== 'traceability' && activeTab !== 'commercialDistricts' && activeTab !== 'greenStores' && activeTab !== 'hygieneGrading' && activeTab !== 'failedInspections' && activeTab !== 'agriculturalInspections' && activeTab !== 'organicFarms' && activeTab !== 'supermarkets' && activeTab !== 'temporaryVendorMarkets' && (
           <aside className="controls">
             <button className="nearby-button" onClick={() => showNearby()}>
               {t('showNearbyFriendlyStores')}
@@ -251,6 +253,11 @@ export default function App() {
           {activeTab === 'supermarkets' && <SupermarketsModule language={language} />}
           {activeTab === 'temporaryVendorMarkets' && <TemporaryVendorMarketsModule language={language} />}
           {activeTab === 'notes' && <DataNotes language={language} t={t} />}
+          {activeTab === 'policy11' && (
+            <Suspense fallback={<p role="status">{t('loading')}</p>}>
+              <Policy11Module language={language} />
+            </Suspense>
+          )}
         </div>
       </section>
     </main>
