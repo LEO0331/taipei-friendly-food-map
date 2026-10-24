@@ -1,0 +1,90 @@
+[
+  {
+    "id": "failed-113",
+    "url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=3fc106cb-c8aa-4f74-8dbc-3272c7ffcae0",
+    "file": "failed-113.csv",
+    "retrievedAt": "2026-10-24T02:40:47.508Z",
+    "byteLength": 73050,
+    "sha256": "e0441def7ae06c65c75b21a2d40129fca8891a9152858e4b93a6b50f33a20465",
+    "contentType": "text/csv;charset=UTF-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:45 GMT"
+  },
+  {
+    "id": "failed-112",
+    "url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=bb347e3d-626a-46e5-bb96-9061e8d08c26",
+    "file": "failed-112.csv",
+    "retrievedAt": "2026-10-24T02:40:47.920Z",
+    "byteLength": 66166,
+    "sha256": "a27addae0386ed05ee28c898e0178230e7c77acbde63cde92660520481e07a95",
+    "contentType": "text/csv;charset=UTF-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:46 GMT"
+  },
+  {
+    "id": "failed-111",
+    "url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=bc24a40f-5687-4338-8f9a-449de248ab93",
+    "file": "failed-111.csv",
+    "retrievedAt": "2026-10-24T02:40:48.211Z",
+    "byteLength": 39069,
+    "sha256": "2f0dcfb68e45872d11f6e027c2e0ff7fbed68a2c6657ba1c7f5ae3de6a972da2",
+    "contentType": "text/csv;charset=UTF-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:46 GMT"
+  },
+  {
+    "id": "grading",
+    "url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=c5646d80-9118-4439-b924-075f96371d75",
+    "file": "grading.csv",
+    "retrievedAt": "2026-10-24T02:40:49.058Z",
+    "byteLength": 169383,
+    "sha256": "2d1e1cc7c9535204a708304efc00a666fafc09a0c32a41a814e7256a50bcaf25",
+    "contentType": "text/csv;charset=UTF-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:46 GMT"
+  },
+  {
+    "id": "registry",
+    "url": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=e94a712a-be5b-4d8b-89c9-30a5ee21f25d",
+    "file": "registry.csv",
+    "retrievedAt": "2026-10-24T02:40:52.034Z",
+    "byteLength": 1956190,
+    "sha256": "19e248533854a0ff407fb19ca354b9bb44291ef7c720ac0c3ae30449d252aafe",
+    "contentType": "text/csv;charset=UTF-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:47 GMT"
+  },
+  {
+    "id": "failed-catalogue",
+    "url": "https://data.taipei/dataset/detail?id=09a917a0-0fb5-47e1-957c-5f1268fba517",
+    "file": "failed-catalogue.html",
+    "retrievedAt": "2026-10-24T02:40:52.246Z",
+    "byteLength": 89251,
+    "sha256": "0670e98c5f5dc886017f362e42a6789bb2f27ad1f9797dcbb3b11528a58ad2b3",
+    "contentType": "text/html;charset=utf-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:50 GMT"
+  },
+  {
+    "id": "grading-catalogue",
+    "url": "https://data.taipei/dataset/detail?id=59579c19-a561-4564-8c0f-545bfb32c0f6",
+    "file": "grading-catalogue.html",
+    "retrievedAt": "2026-10-24T02:40:52.445Z",
+    "byteLength": 83989,
+    "sha256": "b5883a9a35830b975d8f6258bba1f77615d0e041fd4ebdeab3526cbbaac7a8c5",
+    "contentType": "text/html;charset=utf-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:51 GMT"
+  },
+  {
+    "id": "registry-catalogue",
+    "url": "https://data.taipei/dataset/detail?id=178abc4e-fe32-4fc9-af3a-7baf1c15082c",
+    "file": "registry-catalogue.html",
+    "retrievedAt": "2026-10-24T02:40:52.637Z",
+    "byteLength": 83932,
+    "sha256": "c13648ce79f63cd99960af86da94cf453a492cfa9378d4cee7790eeffba01f6b",
+    "contentType": "text/html;charset=utf-8",
+    "httpLastModified": null,
+    "httpDate": "Sat, 24 Oct 2026 02:40:51 GMT"
+  }
+]

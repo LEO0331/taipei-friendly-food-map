@@ -1,0 +1,29 @@
+[
+  {
+    "sourceId": "failed",
+    "path": "retained/failed.json",
+    "sha256": "955ce047cc495f4e018ab85a1692dabadd49fa00beda56e91906c8ce1ee2e853",
+    "byteLength": 1016021,
+    "origin": "retained-project-json",
+    "originalBytesAvailable": false,
+    "originalRetrievalAt": null
+  },
+  {
+    "sourceId": "grading",
+    "path": "retained/grading.json",
+    "sha256": "d9d42de117792b1b31f44ba678a3009f93b84ffc29ea6131395d4a801ba93a80",
+    "byteLength": 2054965,
+    "origin": "retained-project-json",
+    "originalBytesAvailable": false,
+    "originalRetrievalAt": null
+  },
+  {
+    "sourceId": "registry",
+    "path": "retained/registry.json",
+    "sha256": "d23b14a2ca1794f8d96976f9200cc8693e620e481224df2ecc8e5113db63ced3",
+    "byteLength": 9419875,
+    "origin": "retained-project-json",
+    "originalBytesAvailable": false,
+    "originalRetrievalAt": null
+  }
+]
