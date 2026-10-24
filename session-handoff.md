@@ -2,7 +2,7 @@
 
 ## Current objective and delivery
 
-Policy 11 evidence-supported documentary review MVP is implemented on `codex/food-hygiene-evidence-policy-11`, based on main at `0d208e2`. The implementation checkout is `.worktrees/policy-11`. Open exactly one review PR to `LEO0331/taipei-friendly-food-map/main`; do not merge automatically. Portfolio Case Study 011 is deferred until actual merged evidence exists.
+Policy 11 evidence-supported documentary review MVP is implemented on `codex/food-hygiene-evidence-policy-11`, based on main at `0d208e2`. The implementation checkout is `.worktrees/policy-11`. Review PR: https://github.com/LEO0331/taipei-friendly-food-map/pull/4 targets `main`; it is the single Policy 11 PR and remains unmerged. Do not merge automatically. Portfolio Case Study 011 is deferred until actual merged evidence exists.
 
 ## Implemented
 

@@ -76,3 +76,4 @@ Run `powershell -ExecutionPolicy Bypass -File .\init.ps1`, then continue only th
 - Findings, source limitations, export format and verification are in `doc/POLICY_11_SOURCE_AUDIT.md` and `doc/POLICY_11_VERIFICATION.md`.
 - Remaining evidence limits: no comparable inspection denominator; missing historical original CSVs/timestamps; no independent establishment validation. Approximately 17 MB snapshot loads only on demand; all-capacity CSV approximately 31 MB. Existing app bundle >500 kB warning remains.
 - Delivery: exactly one review PR to main; do not automatically merge. Portfolio Case Study 011 must wait for actual merged source evidence.
+- Policy 11 delivered as review PR #4: https://github.com/LEO0331/taipei-friendly-food-map/pull/4; base main, specified branch, no automatic merge. GitHub verification workflow started.
