@@ -73,6 +73,19 @@ The Traditional Chinese friendly-store file is the primary source. The English r
 
 Restaurant-business records may match friendly stores through close coordinates and similar names, or normalized addresses and similar names. An unmatched record is shown as `friendly-store listing not found`, not as unfriendly. Water-refill matches are conservative candidates based on normalized names, addresses, districts, and close coordinates; they are not confirmation of the same business.
 
+## Policy 11: food hygiene evidence review
+
+The **Food hygiene evidence review** page under Food & Products asks which published records need further documentary verification within a limited review capacity. Mode A selects real record IDs using documented tiers, capacities of 5 / 10 / all, and evidence-first or administratively balanced strategies, with sensitivity comparisons and CSV/JSON exports. Mode B admits only independently documented establishment associations; unresolved candidates remain excluded. Mode C (current food-safety risk and business hazard ranking) is unavailable.
+
+Official response bytes, acquisition metadata and retained project editions are isolated in `public/data/policy-11/`. Original historical CSVs absent from the repository cannot be reconstructed from transformed JSON. Catalogue, resource, retrieval and inspection dates are separate. Failed-only records cannot supply a citywide failure rate, and absence from the grading passing list does not mean failure. Existing module contracts are unchanged.
+
+```sh
+npm run policy11:verify  # offline hashes and exact snapshot reproduction; no writes
+npm run policy11:build   # reproduce from retained evidence; no network
+```
+
+See [the source audit](doc/POLICY_11_SOURCE_AUDIT.md) for editions, fields, statistical units, concrete findings and limitations. `policy11:fetch` intentionally refuses to overwrite the sealed acquisition; acquire a new edition in a separate directory and explicitly review it before publishing. Portfolio Case Study 011 must cite actual merged evidence after review.
+
 ## Local development
 
 ```sh

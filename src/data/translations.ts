@@ -2,6 +2,7 @@ import type { Language } from '../types';
 
 export const translations = {
   zh: {
+    foodHygieneEvidence: '食安資料證據覆核',
     exploreTaipei: '探索台北',
     foodAndProducts: '食品與農產品',
     storesAndFacilities: '店家與設施',
@@ -161,6 +162,7 @@ export const translations = {
     commercialDistrictSearchPlaceholder: '搜尋商圈、行政區、捷運站、商圈類型或說明',
   },
   en: {
+    foodHygieneEvidence: 'Food hygiene evidence review',
     exploreTaipei: 'Explore Taipei',
     foodAndProducts: 'Food & Products',
     storesAndFacilities: 'Stores & Facilities',

@@ -36,7 +36,10 @@
     "data:fetch": "npm run fetch:data && npm run data:fetch:water-refill && npm run data:fetch:food-traceability && npm run data:fetch:commercial-districts && npm run data:fetch:green-stores && npm run data:fetch:restaurant-hygiene-grading && npm run data:fetch:failed-food-inspections && npm run data:fetch:agricultural-inspections && npm run data:fetch:organic-farms && npm run data:fetch:temporary-vendor-markets",
     "convert:data": "npm run convert:friendly && npm run convert:restaurants && npm run data:convert:water-refill && npm run build:summaries && npm run data:convert:food-traceability && npm run data:convert:commercial-districts && npm run data:convert:green-stores && npm run data:convert:restaurant-hygiene-grading && npm run data:convert:failed-food-inspections && npm run data:convert:agricultural-inspections && npm run data:convert:organic-farms && npm run data:convert:temporary-vendor-markets",
     "lint": "tsc --noEmit",
-    "test": "tsx --test src/**/*.test.ts"
+    "test": "tsx --test src/**/*.test.ts",
+    "policy11:fetch": "node scripts/fetchPolicy11Evidence.mjs",
+    "policy11:build": "tsx scripts/buildPolicy11Evidence.ts",
+    "policy11:verify": "tsx scripts/buildPolicy11Evidence.ts --check"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

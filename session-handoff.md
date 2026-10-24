@@ -1,64 +1,35 @@
 # Session Handoff
 
-## Current Objective
+## Current objective and delivery
 
-- Goal: Maintain and extend the Taipei Friendly Food Map with reliable, source-backed public-data modules.
-- Current status: Harness established; Agricultural Product Inspections dashboard is integrated and verified.
-- Branch / commit: Current working tree; no commit created by this harness task.
+Policy 11 evidence-supported documentary review MVP is implemented on `codex/food-hygiene-evidence-policy-11`, based on main at `0d208e2`. The implementation checkout is `.worktrees/policy-11`. Open exactly one review PR to `LEO0331/taipei-friendly-food-map/main`; do not merge automatically. Portfolio Case Study 011 is deferred until actual merged evidence exists.
 
-## Completed This Session
+## Implemented
 
-- Created a project-specific agent harness and persistent state artifacts.
-- Verified `npm.cmd run build` and `npm.cmd test` on 2026-08-18.
-- Added `doc/CONSULTANT_DASHBOARD_REVIEW.md` with customer-facing product, operational, and data-governance advice.
-- Implemented responsive grouped navigation; the unfinished Traditional Markets destination is no longer exposed.
-- Fixed stale GitHub Pages PWA shell caching with a v10 cache, network-first navigation, and immediate service-worker activation.
-- Split the README into English (`README.md`) and Traditional Chinese (`README-zh.md`) documentation with reciprocal language links.
-- Removed the customer-visible map attribution/API-key-style badge from the primary and commercial-district dashboard maps.
-- Completed a Chinese-mode UI localization audit. Shared Wi-Fi labels, the filter accessibility label, and commercial-district field descriptions are now Chinese.
-- Shared language-toggle, map-action, and load-more labels now use the translation table in both locales.
-- Temporary-vendor and organic-farm modules now localize Chinese map labels, table/export headers, pagination, area buckets, and quality metrics.
-- Audited project-wide filtering and reset organic-farm pagination on every filter change; all filter state is included in the corresponding derived-result dependencies.
-- Synchronized the commercial-district distribution map with the adjacent directory filters; bubble counts now derive from matching records.
-- Fixed organic-farm quality metrics to map every generated key to Chinese labels and hardened the 農場活動 chart against malformed tuple data.
-- Removed the problematic 農場活動 subtab from the organic-farm module at the user's request.
-- Fixed supermarket mojibake by changing the converter to Big5 decoding and regenerated the published supermarket records and summary.
+- Exact official CSV and catalogue HTML acquisition, byte hashes/timestamps, complete resource inventory, unchanged retained project JSON editions, and content-addressed immutable snapshot with offline reproduction.
+- Snapshot `policy-11-1916319270a865f57805f618267c58be38e7b2f39b8ef6af2f8dfd0ac40ecefd`: 22,645 records. Failed cohort 673 published rows / 672 distinct keys; dates 2022-01-04–2024-11-20; 600 candidate event groups. Grading 1,686 passing rows; registry 20,286 rows.
+- Deterministic Mode A tiers, capacities 5/10/all, evidence-first/balanced source queues within tiers, actual IDs, sensitivity and CSV/JSON exports.
+- Mode B conservative identity engine and coverage/exclusions: 35 unvalidated candidates, zero independently validated associations. Mode C unavailable.
+- Lazy English/Traditional Chinese dashboard, responsive controls, provenance/limitations, v11 PWA shell. Existing source contracts and public-data JSON remain unchanged.
+- Audit/verification docs and PR validation workflow. No new dependencies.
 
-## Verification Evidence
+## Verification evidence — 24 October 2026
 
-| Check | Command | Result | Notes |
-|---|---|---|---|
-| Production build | `npm.cmd run build` | Pass | Type check and Vite build passed. |
-| Automated tests | `npm.cmd test` | Pass | 8 tests passed. |
-| Harness audit | `validate-harness.mjs` | Pass | 100/100 structural score. |
-| Map attribution removal | `npm.cmd run build`, `npm.cmd test`, `git diff --check` | Pass | Production build completed and all 8 tests passed on 2026-08-31. |
-| Chinese localization audit | `npm.cmd run build`, `npm.cmd test`, `git diff --check` | Pass | Production build completed and all 8 tests passed on 2026-08-31. |
+- Baseline `powershell -ExecutionPolicy Bypass -File .\init.ps1`: build + original 8 tests passed.
+- `npm.cmd run policy11:verify`: exact immutable reproduction and original/retained hashes pass offline.
+- `npm.cmd test`: 20 pass, including added-schema drift, raw-byte/snapshot tamper rejection, ambiguous joins, source namespaces, capacities, sensitivity, CSV injection and all 22,645 CSV IDs.
+- `npm.cmd run lint`, `npm.cmd run build`, `git diff --check`: pass.
+- All 15 evidence files preserve exact bytes in staged Git blobs; `.gitattributes` disables text normalization and collapses generated evidence in GitHub review.
+- Production preview verified both languages, 5/10/all, balanced strategy, pagination reset, actual CSV download with one BOM, and Mode B/C gates.
+- Desktop 1440px / mobile 390px screenshots: `doc/policy-11/`. Mobile document does not overflow its viewport.
 
-## Files Changed
+## Risks and boundaries
 
-- `AGENTS.md`, `feature_list.json`, `progress.md`, `session-handoff.md`, `init.sh`, `init.ps1`
-- `README.md`, `README-zh.md`
-- `src/components/FriendlyMap.tsx`, `src/components/CommercialDistrictModule.tsx`
-- `src/components/FilterPanel.tsx`, `src/components/FriendlyOverviewDashboard.tsx`, `src/data/translations.ts`, `src/lib/friendlyFood.ts`
-- `src/components/OrganicFarmsModule.tsx`, `src/components/TemporaryVendorMarketsModule.tsx`
+Historical raw CSV bytes/retrieval timestamps are unavailable. Failed-only data has no comparable denominator. Published names/addresses cannot independently validate an establishment. Mode B remains closed until authoritative independent evidence is retained and reviewed. Mode C cannot infer current risk. The lazy snapshot is ~17 MB and all-capacity CSV ~31 MB; original app bundle >500 kB warning remains. See `doc/POLICY_11_SOURCE_AUDIT.md` and `doc/POLICY_11_VERIFICATION.md`.
 
-## Decisions and Risks
+## Next startup
 
-- Geographic and aggregate statistical public data must remain distinct UI concepts.
-- Generated public data must be reproduced through its script instead of manually edited.
-- Next risk to address: add focused tests for the agricultural-inspection converter and weighted aggregation.
-- Release blockers identified: incomplete Traditional Markets tab and the aggregate refresh workflow omits supermarket/traditional-market datasets.
-- README language split verification passed on 2026-08-19: `npm.cmd run build`, `npm.cmd test` (8 tests), and `git diff --check`.
-- Source-only values and legacy module-local export/popup strings remain intentionally preserved pending a bilingual data contract or focused follow-up refactor.
-- Final verification: `npm.cmd run lint` and `git diff --check` passed; elevated build/test was blocked by the desktop usage limit after earlier build/tests had passed.
-- Filtering verification: static dependency audit plus TypeScript lint passed; runtime test command remained blocked by the local process-spawn/usage-limit environment.
-- Commercial map sync verification: TypeScript lint and `git diff --check` passed.
-- Organic-farm fix verification: TypeScript lint and `git diff --check` passed.
-- Organic-farm tab removal verification: TypeScript lint and `git diff --check` passed.
-- Supermarket verification: no U+FFFD replacement characters remain; output contains 37 records across 11 districts; TypeScript lint and `git diff --check` passed.
-
-## Next Session Startup
-
-1. Read `AGENTS.md`, `feature_list.json`, `progress.md`, and this handoff.
-2. Run `powershell -ExecutionPolicy Bypass -File .\init.ps1` (or `./init.sh` in Bash).
-3. Implement only feat-003 unless the user changes scope.
+1. Use this implementation worktree; read AGENTS.md, feature_list.json, progress.md and this handoff.
+2. Run `npm.cmd ci` if needed, then `npm.cmd run policy11:verify`, `npm.cmd run lint`, `npm.cmd test`, `npm.cmd run build`, `git diff --check`.
+3. Review the single Policy 11 PR and CI. Do not merge automatically. Any Case Study 011 must reference the eventual merged commit and its actual evidence.
+4. Resume deferred feat-003 agricultural-inspection tests only after this review scope is explicitly complete.

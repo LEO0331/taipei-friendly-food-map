@@ -12,7 +12,9 @@
       "id": "feat-002",
       "name": "Public-data module delivery",
       "description": "Add one scoped Taipei public-data module at a time, with a fetch/conversion pipeline, generated data, and a UI that matches the dataset's geographic or statistical nature.",
-      "dependencies": ["feat-001"],
+      "dependencies": [
+        "feat-001"
+      ],
       "status": "completed",
       "evidence": "2026-08-18: Agricultural Product Inspections dashboard added with 28 source records for ROC years 108–114."
     },
@@ -20,15 +22,19 @@
       "id": "feat-003",
       "name": "Data integrity and UI verification",
       "description": "For each module, validate field normalization, record counts, integrity checks, and responsive dashboard or map behavior.",
-      "dependencies": ["feat-002"],
-      "status": "in-progress",
+      "dependencies": [
+        "feat-002"
+      ],
+      "status": "deferred",
       "evidence": "Agricultural inspection conversion reports zero malformed numeric, row-consistency, and pass-rate-discrepancy counts; focused automated coverage remains a next improvement. 2026-08-31: completed project-wide Chinese UI audit, localized shared controls, temporary-vendor map/directory/export copy, organic-farm pagination/export/quality labels, Wi-Fi labels, filter accessibility text, and commercial-district field descriptions; TypeScript lint and prior build/tests passed."
     },
     {
       "id": "feat-004",
       "name": "Dataset provenance documentation",
       "description": "Keep each public-data module's source URL, update date, refresh time, coverage, and interpretation limits available in the UI and project documentation.",
-      "dependencies": ["feat-002"],
+      "dependencies": [
+        "feat-002"
+      ],
       "status": "not-started",
       "evidence": ""
     },
@@ -36,7 +42,10 @@
       "id": "feat-005",
       "name": "Session handoff and cleanup",
       "description": "Record evidence, risks, and the next focused step after every substantive change.",
-      "dependencies": ["feat-003", "feat-004"],
+      "dependencies": [
+        "feat-003",
+        "feat-004"
+      ],
       "status": "not-started",
       "evidence": ""
     },
@@ -44,7 +53,9 @@
       "id": "feat-006",
       "name": "Responsive grouped navigation",
       "description": "Replace the all-destination horizontal tab strip with contextual category navigation that remains understandable on mobile and desktop.",
-      "dependencies": ["feat-001"],
+      "dependencies": [
+        "feat-001"
+      ],
       "status": "completed",
       "evidence": "2026-08-18: Implemented four primary categories with contextual child tabs, removed the unfinished Traditional Markets destination, and visually checked 390 px and 1440 px layouts."
     },
@@ -52,9 +63,21 @@
       "id": "feat-007",
       "name": "Deployment-safe PWA shell updates",
       "description": "Prevent stale cached HTML from referencing removed hashed assets after a GitHub Pages deployment.",
-      "dependencies": ["feat-001"],
+      "dependencies": [
+        "feat-001"
+      ],
       "status": "completed",
       "evidence": "2026-08-18: Service worker cache bumped to v10, navigation changed to network-first with offline fallback, and new workers now skip waiting and claim clients."
+    },
+    {
+      "id": "feat-011",
+      "name": "Policy 11 food hygiene documentary evidence review",
+      "description": "Official-source feasibility audit, conservative identity reconciliation, bilingual documentary review decisions and immutable reproducible evidence snapshots without current hazard ranking.",
+      "dependencies": [
+        "feat-001"
+      ],
+      "status": "completed",
+      "evidence": "2026-10-24: official immutable evidence audit and bilingual documentary review MVP implemented; policy11:verify, lint, build, 20 tests and diff check pass; responsive production-browser controls and CSV verified. Mode B/C evidence gates remain closed. See doc/POLICY_11_VERIFICATION.md."
     }
   ]
 }
