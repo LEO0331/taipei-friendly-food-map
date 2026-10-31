@@ -1,6 +1,6 @@
 # Civic Explorer verification — 31 October 2026
 
-Optional navigation on isolated branch `codex/civic-explorer`, based on `main` at `ebed7962b8ced05afea285865f95f2bb7e991f1e` (merged Policy 11). Deliver as one Draft PR, without automatic merge.
+Optional navigation on isolated branch `codex/civic-explorer`, based on `main` at `ebed7962b8ced05afea285865f95f2bb7e991f1e` (merged Policy 11). Delivered as [Draft PR #5](https://github.com/LEO0331/taipei-friendly-food-map/pull/5), without automatic merge.
 
 ## Architecture and scope
 

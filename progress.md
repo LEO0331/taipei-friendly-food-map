@@ -88,3 +88,5 @@ Run `powershell -ExecutionPolicy Bypass -File .\init.ps1`, then continue only th
 - 1440px/390px/320px, both locales, native keyboard/focus containment/return, list fallback and reduced motion verified. Independent review fixes category announcement timing and narrow English header overflow; no remaining actionable findings.
 - Main JS +3,208 B (+1,303 B gzip); main CSS +1,441 B (+367 B gzip). Optional JS+CSS 6,822 B / 2,518 B gzip. Existing >500kB main-bundle warning remains.
 - Detailed architecture/mapping, screenshots, raw evidence, reproducible commands, limits and readiness: `doc/civic-explorer/README.md`. Deliver one Draft PR; do not merge automatically. Deferred feat-003 tests remain outside this scope.
+
+- Draft PR created: https://github.com/LEO0331/taipei-friendly-food-map/pull/5 — open, draft, unmerged; branch `codex/civic-explorer` targets `main`.

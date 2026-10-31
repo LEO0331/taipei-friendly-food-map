@@ -4,6 +4,8 @@
 
 Optional Civic Explorer implementation is complete on `codex/civic-explorer`, based on main `ebed7962b8ced05afea285865f95f2bb7e991f1e` (including merged Policy 11 PR #4). Worktree: `C:\Users\LeoLi\Desktop\taipei-friendly-food-map-wt\civic-explorer`. Deliver exactly one Draft PR titled **feat: integrate Civic Explorer into Friendly Food Map** targeting main. Do not merge automatically.
 
+Single Draft PR: https://github.com/LEO0331/taipei-friendly-food-map/pull/5 (open, draft, unmerged).
+
 ## Implemented
 
 - Single typed navigation catalogue for MainTabs and the separate four-group Explorer adapter; all 14 IDs/defaults/labels preserved.
