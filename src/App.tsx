@@ -17,6 +17,7 @@ import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboar
 import { FoodTraceabilityModule } from './components/FoodTraceabilityModule';
 import { LanguageToggle } from './components/LanguageToggle';
 import { MainTabs, type TabKey } from './components/MainTabs';
+import { ExplorerLauncher } from './components/ExplorerLauncher';
 import { StoreDirectory } from './components/StoreDirectory';
 import { loadFriendlyFoodData, type AppData } from './data/loadData';
 import { translations, type TranslationKey } from './data/translations';
@@ -192,7 +193,10 @@ export default function App() {
           <h1>{t('appTitle')}</h1>
           <p>{t('appSubtitle')}</p>
         </div>
-        <LanguageToggle language={language} onChange={setLanguage} label={t('language')} />
+        <div className="app-header-actions">
+          <ExplorerLauncher activeTab={activeTab} t={t} onChange={setActiveTab} />
+          <LanguageToggle language={language} onChange={setLanguage} label={t('language')} />
+        </div>
       </header>
 
       <MainTabs activeTab={activeTab} t={t} onChange={setActiveTab} />

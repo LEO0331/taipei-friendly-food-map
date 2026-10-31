@@ -1,0 +1,11 @@
+.app-header-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.civic-launch { min-height: 44px; border: 1px solid #66816e; border-radius: 999px; padding: .65rem 1rem; color: #234c3b; background: #fffdf8; cursor: pointer; white-space: nowrap; }
+.civic-dialog { width: min(1120px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow: auto; border: 1px solid #c5d2c7; border-radius: 20px; padding: clamp(16px, 3vw, 32px); color: #203b30; background: #f7f5ef; box-shadow: 0 30px 100px #102a2566; }
+.civic-dialog::backdrop { background: #112d27b3; }
+.civic-dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.civic-dialog-header p { margin: 0 0 .4rem; color: #58635e; letter-spacing: .1em; font-size: .75rem; }
+.civic-dialog-header h2 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.5rem); }
+.civic-dialog-header button { min-height: 44px; padding: .5rem .75rem; border-radius: 8px; border: 1px solid #7a8e80; background: #fffdf8; color: #203b30; cursor: pointer; flex-shrink: 0; }
+.civic-launch:focus-visible, .civic-dialog button:focus-visible, .civic-dialog input:focus-visible, .civic-dialog h3:focus-visible { outline: 3px solid #a54b29; outline-offset: 3px; }
+@media (max-width: 600px) { .app-header-actions { flex-direction: column; align-items: flex-end; } .civic-dialog { width: calc(100% - 16px); max-height: calc(100dvh - 16px); border-radius: 12px; } }
+@media (max-width: 380px) { .civic-dialog-header { flex-direction: column-reverse; gap: 12px; } .civic-dialog-header button { align-self: flex-end; } }
