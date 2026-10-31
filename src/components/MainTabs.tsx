@@ -1,48 +1,8 @@
 import type { TranslationKey } from '../data/translations';
+import { navigationGroups as groups, navigationTabs as tabs, type TabKey } from '../data/navigation';
+export type { TabKey, NavigationGroup } from '../data/navigation';
 
-export type TabKey =
-  | 'map'
-  | 'directory'
-  | 'overview'
-  | 'traceability'
-  | 'commercialDistricts'
-  | 'greenStores'
-  | 'hygieneGrading'
-  | 'failedInspections'
-  | 'policy11'
-  | 'agriculturalInspections'
-  | 'organicFarms'
-  | 'temporaryVendorMarkets'
-  | 'supermarkets'
-  | 'notes';
-
-type NavigationGroup = 'explore' | 'foodProducts' | 'facilities' | 'about';
-type Tab = { key: TabKey; label: TranslationKey; group: NavigationGroup };
 type Props = { activeTab: TabKey; t: (key: TranslationKey) => string; onChange: (tab: TabKey) => void };
-
-const groups: Array<{ key: NavigationGroup; label: TranslationKey }> = [
-  { key: 'explore', label: 'exploreTaipei' },
-  { key: 'foodProducts', label: 'foodAndProducts' },
-  { key: 'facilities', label: 'storesAndFacilities' },
-  { key: 'about', label: 'aboutThisData' },
-];
-
-const tabs: Tab[] = [
-  { key: 'map', label: 'friendlyMap', group: 'explore' },
-  { key: 'directory', label: 'storeDirectory', group: 'explore' },
-  { key: 'overview', label: 'friendlyOverview', group: 'explore' },
-  { key: 'traceability', label: 'foodTraceability', group: 'foodProducts' },
-  { key: 'hygieneGrading', label: 'restaurantHygieneGradingRecords', group: 'foodProducts' },
-  { key: 'failedInspections', label: 'failedFoodInspectionRecords', group: 'foodProducts' },
-  { key: 'policy11', label: 'foodHygieneEvidence', group: 'foodProducts' },
-  { key: 'agriculturalInspections', label: 'agriculturalProductInspections', group: 'foodProducts' },
-  { key: 'commercialDistricts', label: 'commercialDistricts', group: 'facilities' },
-  { key: 'greenStores', label: 'greenStoreDirectory', group: 'facilities' },
-  { key: 'organicFarms', label: 'organicFarms', group: 'facilities' },
-  { key: 'temporaryVendorMarkets', label: 'temporaryVendorMarkets', group: 'facilities' },
-  { key: 'supermarkets', label: 'supermarkets', group: 'facilities' },
-  { key: 'notes', label: 'dataNotes', group: 'about' },
-];
 
 export function MainTabs({ activeTab, t, onChange }: Props) {
   const activeGroup = tabs.find((tab) => tab.key === activeTab)?.group ?? 'explore';
