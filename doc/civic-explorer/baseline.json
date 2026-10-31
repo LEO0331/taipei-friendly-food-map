@@ -1,0 +1,76 @@
+{
+  "commit": "ebed7962b8ced05afea285865f95f2bb7e991f1e",
+  "assets": [
+    {
+      "name": "index-DLaxKhSX.js",
+      "bytes": 523939,
+      "gzip": 149559
+    },
+    {
+      "name": "index-O57f3KiE.css",
+      "bytes": 32795,
+      "gzip": 10428
+    },
+    {
+      "name": "Policy11Module-BfX8vUX-.js",
+      "bytes": 36480,
+      "gzip": 12665
+    },
+    {
+      "name": "Policy11Module-D0E5szfh.css",
+      "bytes": 2942,
+      "gzip": 1031
+    }
+  ],
+  "requests": [
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/assets/index-DLaxKhSX.js",
+    "http://127.0.0.1:4173/assets/index-O57f3KiE.css",
+    "http://127.0.0.1:4173/data/friendly-stores.json",
+    "http://127.0.0.1:4173/data/water-refill-stores.json",
+    "http://127.0.0.1:4173/data/restaurant-businesses.json",
+    "http://127.0.0.1:4173/data/friendly-food-summary.json",
+    "http://127.0.0.1:4173/data/food-traceability/summary.json",
+    "http://127.0.0.1:4173/data/commercial-district-introduction-summary.json",
+    "http://127.0.0.1:4173/data/green-store-directory/summary.json",
+    "http://127.0.0.1:4173/data/restaurant-hygiene-grading-records/summary.json",
+    "http://127.0.0.1:4173/data/failed-food-inspection-records/summary.json",
+    "http://127.0.0.1:4173/data/organic-farms/summary.json",
+    "http://127.0.0.1:4173/data/traditional-markets/summary.json",
+    "http://127.0.0.1:4173/data/agricultural-product-inspections/summary.json",
+    "https://c.tile.openstreetmap.org/12/3430/1753.png",
+    "https://b.tile.openstreetmap.org/12/3430/1752.png",
+    "https://b.tile.openstreetmap.org/12/3429/1753.png",
+    "https://a.tile.openstreetmap.org/12/3431/1753.png",
+    "https://a.tile.openstreetmap.org/12/3430/1754.png",
+    "https://a.tile.openstreetmap.org/12/3429/1752.png",
+    "https://c.tile.openstreetmap.org/12/3431/1752.png",
+    "https://c.tile.openstreetmap.org/12/3429/1754.png",
+    "https://b.tile.openstreetmap.org/12/3431/1754.png",
+    "https://a.tile.openstreetmap.org/12/3430/1751.png",
+    "https://a.tile.openstreetmap.org/12/3428/1753.png",
+    "https://b.tile.openstreetmap.org/12/3432/1753.png",
+    "https://b.tile.openstreetmap.org/12/3430/1755.png",
+    "https://c.tile.openstreetmap.org/12/3429/1751.png",
+    "https://b.tile.openstreetmap.org/12/3431/1751.png",
+    "https://c.tile.openstreetmap.org/12/3428/1752.png",
+    "https://a.tile.openstreetmap.org/12/3432/1752.png",
+    "https://b.tile.openstreetmap.org/12/3428/1754.png",
+    "https://c.tile.openstreetmap.org/12/3432/1754.png",
+    "https://a.tile.openstreetmap.org/12/3429/1755.png",
+    "https://c.tile.openstreetmap.org/12/3431/1755.png",
+    "https://b.tile.openstreetmap.org/12/3428/1751.png",
+    "https://c.tile.openstreetmap.org/12/3432/1751.png",
+    "https://c.tile.openstreetmap.org/12/3428/1755.png",
+    "https://a.tile.openstreetmap.org/12/3432/1755.png"
+  ],
+  "checks": {
+    "build": "pass",
+    "unitTests": 20,
+    "typecheck": "pass",
+    "policy11Integrity": "pass",
+    "existingBrowserSuite": "none configured",
+    "auditVulnerabilities": 0
+  },
+  "tilePolicy": "External tile images stubbed for deterministic offline screenshots; actual map/markers/data retained."
+}

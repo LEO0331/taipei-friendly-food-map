@@ -2,8 +2,8 @@
 
 ## Current State
 
-**Last Updated:** 2026-10-24
-**Active Feature:** feat-011 — Policy 11 food hygiene documentary evidence review
+**Last Updated:** 2026-10-31
+**Active Feature:** feat-012 — Optional four-hub Civic Explorer (implementation complete; Draft PR review)
 
 ## What's Done
 
@@ -77,3 +77,14 @@ Run `powershell -ExecutionPolicy Bypass -File .\init.ps1`, then continue only th
 - Remaining evidence limits: no comparable inspection denominator; missing historical original CSVs/timestamps; no independent establishment validation. Approximately 17 MB snapshot loads only on demand; all-capacity CSV approximately 31 MB. Existing app bundle >500 kB warning remains.
 - Delivery: exactly one review PR to main; do not automatically merge. Portfolio Case Study 011 must wait for actual merged source evidence.
 - Policy 11 delivered as review PR #4: https://github.com/LEO0331/taipei-friendly-food-map/pull/4; base main, specified branch, no automatic merge. GitHub verification workflow started.
+
+## Civic Explorer — 31 October 2026
+
+- Isolated `codex/civic-explorer` worktree based on current main `ebed796`, including merged Policy 11.
+- Shared typed catalogue retains four groups, all 14 tabs/defaults/labels; optional native dialog launcher owns open state and lazy-loads the separate four-group adapter and MIT-attributed generic HexHub.
+- Baseline: init.ps1 build + 20 tests, TypeScript and Policy 11 integrity passed. Final: lint/build, 23 unit tests, Policy 11 immutable 22,645-record reproduction, 11 production-browser assertion groups, source-boundary check, Pages subpath smoke, zero-vulnerability audit and diff check passed.
+- Filters/layers/district/keyword/service tags/user-location success and denial survive; map/marker nodes, selected-store popup and settled viewport remain unchanged with zero removed markers. First open only fetches optional JS/CSS; reopening has zero requests and no geolocation call.
+- 316 original translation values, all datasets/converters/matching rules/module implementations/privacy/export/PWA/dependencies remain unchanged. No reference repo modifications.
+- 1440px/390px/320px, both locales, native keyboard/focus containment/return, list fallback and reduced motion verified. Independent review fixes category announcement timing and narrow English header overflow; no remaining actionable findings.
+- Main JS +3,208 B (+1,303 B gzip); main CSS +1,441 B (+367 B gzip). Optional JS+CSS 6,822 B / 2,518 B gzip. Existing >500kB main-bundle warning remains.
+- Detailed architecture/mapping, screenshots, raw evidence, reproducible commands, limits and readiness: `doc/civic-explorer/README.md`. Deliver one Draft PR; do not merge automatically. Deferred feat-003 tests remain outside this scope.
