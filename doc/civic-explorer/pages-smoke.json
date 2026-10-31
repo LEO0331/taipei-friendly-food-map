@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "base": "/taipei-friendly-food-map/",
+  "checks": [
+    "map loads by default",
+    "optional Explorer JS/CSS resolve beneath Pages base",
+    "Policy 11 navigation and lazy module render",
+    "no browser page errors"
+  ],
+  "lazyRequests": [
+    "http://127.0.0.1:4175/taipei-friendly-food-map/assets/CivicExplorer-BT7AulvY.js",
+    "http://127.0.0.1:4175/taipei-friendly-food-map/assets/CivicExplorer-HzGlp5Dr.css"
+  ]
+}

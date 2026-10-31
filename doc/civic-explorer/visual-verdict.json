@@ -1,0 +1,14 @@
+{
+  "score": 95,
+  "verdict": "pass",
+  "category_match": true,
+  "differences": [
+    "Four host groups use the existing green/cream palette and established SVG depth geometry.",
+    "Below 380px the header stacks, preserving the close target and full title."
+  ],
+  "suggestions": [],
+  "reasoning": "Final 1440px desktop, 390px mobile and 320px English screenshots retain the reference island geometry, readable labels and unclipped controls. Keyboard and reduced-motion assertions pass.",
+  "next_actions": [
+    "Create one Draft PR; leave unmerged."
+  ]
+}

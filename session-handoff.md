@@ -1,35 +1,31 @@
 # Session Handoff
 
-## Current objective and delivery
+## Current delivery
 
-Policy 11 evidence-supported documentary review MVP is implemented on `codex/food-hygiene-evidence-policy-11`, based on main at `0d208e2`. The implementation checkout is `.worktrees/policy-11`. Review PR: https://github.com/LEO0331/taipei-friendly-food-map/pull/4 targets `main`; it is the single Policy 11 PR and remains unmerged. Do not merge automatically. Portfolio Case Study 011 is deferred until actual merged evidence exists.
+Optional Civic Explorer implementation is complete on `codex/civic-explorer`, based on main `ebed7962b8ced05afea285865f95f2bb7e991f1e` (including merged Policy 11 PR #4). Worktree: `C:\Users\LeoLi\Desktop\taipei-friendly-food-map-wt\civic-explorer`. Deliver exactly one Draft PR titled **feat: integrate Civic Explorer into Friendly Food Map** targeting main. Do not merge automatically.
+
+Single Draft PR: https://github.com/LEO0331/taipei-friendly-food-map/pull/5 (open, draft, unmerged).
 
 ## Implemented
 
-- Exact official CSV and catalogue HTML acquisition, byte hashes/timestamps, complete resource inventory, unchanged retained project JSON editions, and content-addressed immutable snapshot with offline reproduction.
-- Snapshot `policy-11-1916319270a865f57805f618267c58be38e7b2f39b8ef6af2f8dfd0ac40ecefd`: 22,645 records. Failed cohort 673 published rows / 672 distinct keys; dates 2022-01-04–2024-11-20; 600 candidate event groups. Grading 1,686 passing rows; registry 20,286 rows.
-- Deterministic Mode A tiers, capacities 5/10/all, evidence-first/balanced source queues within tiers, actual IDs, sensitivity and CSV/JSON exports.
-- Mode B conservative identity engine and coverage/exclusions: 35 unvalidated candidates, zero independently validated associations. Mode C unavailable.
-- Lazy English/Traditional Chinese dashboard, responsive controls, provenance/limitations, v11 PWA shell. Existing source contracts and public-data JSON remain unchanged.
-- Audit/verification docs and PR validation workflow. No new dependencies.
+- Single typed navigation catalogue for MainTabs and the separate four-group Explorer adapter; all 14 IDs/defaults/labels preserved.
+- Generic MIT-attributed layered SVG hexagons, bilingual search, keyboard/native dialog controls, HTML list fallback, responsive focus states and reduced motion.
+- Optional lazy adapter; dialog-local open state leaves the current map/module instance mounted and preserves filters/layers/location/focused item without data refresh. Loading failures remain contained.
+- No new dataset, analysis, dependency, matching/source/privacy/export change. All 316 original translations and original module/data/conversion code verified unchanged.
 
-## Verification evidence — 24 October 2026
+## Verification — 31 October 2026
 
-- Baseline `powershell -ExecutionPolicy Bypass -File .\init.ps1`: build + original 8 tests passed.
-- `npm.cmd run policy11:verify`: exact immutable reproduction and original/retained hashes pass offline.
-- `npm.cmd test`: 20 pass, including added-schema drift, raw-byte/snapshot tamper rejection, ambiguous joins, source namespaces, capacities, sensitivity, CSV injection and all 22,645 CSV IDs.
-- `npm.cmd run lint`, `npm.cmd run build`, `git diff --check`: pass.
-- All 15 evidence files preserve exact bytes in staged Git blobs; `.gitattributes` disables text normalization and collapses generated evidence in GitHub review.
-- Production preview verified both languages, 5/10/all, balanced strategy, pagination reset, actual CSV download with one BOM, and Mode B/C gates.
-- Desktop 1440px / mobile 390px screenshots: `doc/policy-11/`. Mobile document does not overflow its viewport.
+Baseline init.ps1 passed build + 20 tests. Final `npm.cmd run lint`, `npm.cmd test` (23 passing), `npm.cmd run build`, `npm.cmd run policy11:verify` (same 22,645-record snapshot), `node scripts/verifyCivicBoundaries.mjs`, `npm.cmd audit` (zero vulnerabilities) and `git diff --check` passed. Production browser script passes 11 scenario groups covering all tab links, labels/search, initial lazy requests, native keyboard/focus, filters and successful/denied location, exact map/marker/popup/viewport preservation, 320px/390px targets and reduced motion, plus chunk-failure recovery. Pages-subpath smoke passed. Independent read-only review has no remaining actionable findings.
 
-## Risks and boundaries
+Main JS grows 3,208 bytes / 1,303 gzip; shell CSS grows 1,441 / 367 gzip. Optional Explorer JS+CSS is 6,822 / 2,518 gzip. Full evidence and screenshots: `doc/civic-explorer/README.md`.
 
-Historical raw CSV bytes/retrieval timestamps are unavailable. Failed-only data has no comparable denominator. Published names/addresses cannot independently validate an establishment. Mode B remains closed until authoritative independent evidence is retained and reviewed. Mode C cannot infer current risk. The lazy snapshot is ~17 MB and all-capacity CSV ~31 MB; original app bundle >500 kB warning remains. See `doc/POLICY_11_SOURCE_AUDIT.md` and `doc/POLICY_11_VERIFICATION.md`.
+## Next session
 
-## Next startup
+1. Use the isolated worktree; read AGENTS.md, feature_list.json, progress.md and `doc/civic-explorer/README.md`.
+2. Run the verification commands above. For browser checks start `npm.cmd run preview -- --host 127.0.0.1 --port 4173`, set PLAYWRIGHT_MODULE to an existing Playwright package if necessary, then run `node scripts/verifyCivicExplorer.mjs`. No dependency installation beyond locked npm ci is required.
+3. Review the single Draft PR and its CI; keep it unmerged. No deployment was performed.
+4. Deferred agricultural-inspection tests are a separate future feature; do not broaden this PR.
 
-1. Use this implementation worktree; read AGENTS.md, feature_list.json, progress.md and this handoff.
-2. Run `npm.cmd ci` if needed, then `npm.cmd run policy11:verify`, `npm.cmd run lint`, `npm.cmd test`, `npm.cmd run build`, `git diff --check`.
-3. Review the single Policy 11 PR and CI. Do not merge automatically. Any Case Study 011 must reference the eventual merged commit and its actual evidence.
-4. Resume deferred feat-003 agricultural-inspection tests only after this review scope is explicitly complete.
+## Known limits
+
+Browser tests stub geolocation and external tile images and block service workers. Actual device permissions, external tile availability, offline PWA behavior, non-Chromium browsers and screen-reader sessions were not tested. Existing >500kB main chunk warning remains. Long mobile catalogues scroll. Explorer-only query/category/view reset on closing; failed chunk retry may require reload, while existing tabs remain usable.

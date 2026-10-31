@@ -78,6 +78,17 @@
       ],
       "status": "completed",
       "evidence": "2026-10-24: official immutable evidence audit and bilingual documentary review MVP implemented; policy11:verify, lint, build, 20 tests and diff check pass; responsive production-browser controls and CSV verified. Mode B/C evidence gates remain closed. See doc/POLICY_11_VERIFICATION.md."
+    },
+    {
+      "id": "feat-012",
+      "name": "Optional four-hub Civic Explorer",
+      "description": "Lazy navigation overlay sharing the existing typed tab catalogue while preserving map, filter, location and documentary evidence behavior.",
+      "dependencies": [
+        "feat-006",
+        "feat-011"
+      ],
+      "status": "completed",
+      "evidence": "2026-10-31: isolated codex/civic-explorer branch; four hubs/all 14 original tabs; lint/build, 23 unit tests, 11 browser scenario groups, source boundaries (316 original translations), Policy 11 reproduction, Pages smoke, zero-vulnerability audit and diff check passed. See doc/civic-explorer/README.md. Delivery is one Draft PR; no automatic merge. Single Draft PR: https://github.com/LEO0331/taipei-friendly-food-map/pull/5"
     }
   ]
 }

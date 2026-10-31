@@ -1,0 +1,26 @@
+{
+  "base": "ebed7962b8ced05afea285865f95f2bb7e991f1e",
+  "status": "pass",
+  "originalTranslationsUnchanged": 316,
+  "unchangedPaths": [
+    "public/data",
+    "data",
+    "src/data/loadData.ts",
+    "src/lib/friendlyFood.ts",
+    "src/lib/policy11.ts",
+    "src/components/FriendlyMap.tsx",
+    "src/components/FilterPanel.tsx",
+    "src/components/StoreDirectory.tsx",
+    "src/components/StoreCard.tsx",
+    "src/components/DataNotes.tsx",
+    "src/components/Policy11Module.tsx",
+    "src/components/DisclaimerNotice.tsx",
+    "package.json",
+    "package-lock.json",
+    "public/sw.js"
+  ],
+  "existingModuleImplementationsUnchanged": true,
+  "existingDataScriptsUnchanged": true,
+  "dependenciesUnchanged": true,
+  "referenceRepositories": "read only"
+}
