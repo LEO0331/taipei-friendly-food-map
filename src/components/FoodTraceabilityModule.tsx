@@ -56,9 +56,13 @@ export function FoodTraceabilityModule({ summary, language, t }: Props) {
     if (!selectedProduct) return;
     const item = searchIndex.find((entry) => entry.productKey === selectedProduct);
     if (!item) return;
+    let active = true;
     loadJson<TaipeiFoodTraceabilityProductDetail[]>(dataPath(`product-details/${item.detailChunkId}`), []).then(
-      (products) => setDetail(products.find((product) => product.productKey === selectedProduct)),
+      (products) => {
+        if (active) setDetail(products.find((product) => product.productKey === selectedProduct));
+      },
     );
+    return () => { active = false; };
   }, [searchIndex, selectedProduct]);
 
   const options = useMemo(
