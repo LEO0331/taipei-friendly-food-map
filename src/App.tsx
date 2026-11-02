@@ -3,18 +3,8 @@ import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 import { DataNotes } from './components/DataNotes';
-import { CommercialDistrictModule } from './components/CommercialDistrictModule';
-import { GreenStoreDirectoryModule } from './components/GreenStoreDirectoryModule';
-import { RestaurantHygieneGradingModule } from './components/RestaurantHygieneGradingModule';
-import { FailedFoodInspectionModule } from './components/FailedFoodInspectionModule';
-import { AgriculturalProductInspectionsModule } from './components/AgriculturalProductInspectionsModule';
-import { OrganicFarmsModule } from './components/OrganicFarmsModule';
-import { SupermarketsModule } from './components/SupermarketsModule';
-import { TemporaryVendorMarketsModule } from './components/TemporaryVendorMarketsModule';
 import { FilterPanel } from './components/FilterPanel';
 import { FriendlyMap } from './components/FriendlyMap';
-import { FriendlyOverviewDashboard } from './components/FriendlyOverviewDashboard';
-import { FoodTraceabilityModule } from './components/FoodTraceabilityModule';
 import { LanguageToggle } from './components/LanguageToggle';
 import { MainTabs, type TabKey } from './components/MainTabs';
 import { ExplorerLauncher } from './components/ExplorerLauncher';
@@ -33,6 +23,16 @@ import type {
   WaterRefillStore,
 } from './types';
 
+const CommercialDistrictModule = lazy(() => import('./components/CommercialDistrictModule').then(module => ({ default: module.CommercialDistrictModule })));
+const GreenStoreDirectoryModule = lazy(() => import('./components/GreenStoreDirectoryModule').then(module => ({ default: module.GreenStoreDirectoryModule })));
+const RestaurantHygieneGradingModule = lazy(() => import('./components/RestaurantHygieneGradingModule').then(module => ({ default: module.RestaurantHygieneGradingModule })));
+const FailedFoodInspectionModule = lazy(() => import('./components/FailedFoodInspectionModule').then(module => ({ default: module.FailedFoodInspectionModule })));
+const AgriculturalProductInspectionsModule = lazy(() => import('./components/AgriculturalProductInspectionsModule').then(module => ({ default: module.AgriculturalProductInspectionsModule })));
+const OrganicFarmsModule = lazy(() => import('./components/OrganicFarmsModule').then(module => ({ default: module.OrganicFarmsModule })));
+const SupermarketsModule = lazy(() => import('./components/SupermarketsModule').then(module => ({ default: module.SupermarketsModule })));
+const TemporaryVendorMarketsModule = lazy(() => import('./components/TemporaryVendorMarketsModule').then(module => ({ default: module.TemporaryVendorMarketsModule })));
+const FriendlyOverviewDashboard = lazy(() => import('./components/FriendlyOverviewDashboard').then(module => ({ default: module.FriendlyOverviewDashboard })));
+const FoodTraceabilityModule = lazy(() => import('./components/FoodTraceabilityModule').then(module => ({ default: module.FoodTraceabilityModule })));
 const Policy11Module = lazy(() => import('./components/Policy11Module'));
 
 const initialFilters: FilterState = {
@@ -217,6 +217,7 @@ export default function App() {
         )}
 
         <div className="content">
+          <Suspense fallback={<p role="status">{t('loading')}</p>}>
           {activeTab === 'map' && (
             <FriendlyMap
               items={filteredItems}
@@ -262,6 +263,7 @@ export default function App() {
               <Policy11Module language={language} />
             </Suspense>
           )}
+          </Suspense>
         </div>
       </section>
     </main>

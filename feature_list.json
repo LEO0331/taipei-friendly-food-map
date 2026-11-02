@@ -1,6 +1,14 @@
 {
   "features": [
     {
+      "id": "maintenance-release-followup",
+      "name": "Refresh release documentation and defer secondary dashboard code",
+      "description": "Keep the default map eager, split secondary dashboards and precache compiled assets for offline navigation; correct current workflow and handoff references.",
+      "dependencies": ["fix-audit-product-selection"],
+      "status": "completed",
+      "evidence": "2026-11-03: based on main ef93725 with PR6 merged. Initial root-path JS including preload falls from 527189 to 437082 bytes (17.09%); all emitted chunks below 500kB. Build, lint, 23 tests, Policy11 reproduction, zero-vulnerability audit, prior selection regression, 11 Explorer browser groups and new deferred/offline checks pass at root and Pages base. Data, dependencies and module implementations unchanged."
+    },
+    {
       "id": "fix-audit-product-selection",
       "name": "Keep product details aligned with the latest selection",
       "description": "Ignore stale product-detail responses after a different product is selected or the module unmounts.",

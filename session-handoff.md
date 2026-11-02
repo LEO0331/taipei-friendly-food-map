@@ -1,39 +1,24 @@
 # Session Handoff
 
-## Audit correction — 2026-11-02
+## Current delivery — 2026-11-03
 
-- Review `codex/audit-food-detail-selection`, based on main `65f84ee32a6503b989c038746269daa67b436a76`.
-- Fixed verified P2 stale product-detail response race with effect cleanup only; actual published product A no longer replaces last-selected B after responses complete out of order.
-- `init.ps1` (production build + 23 tests), lint, Policy 11 deterministic evidence reproduction, zero-vulnerability dependency audit, diff checks, the focused `verifyFoodTraceabilitySelection.mjs` browser regression and existing 11 Explorer browser groups pass.
-- Source data/dependencies unchanged. Existing P3 bundle/documentation/absent optional-summary issues deferred. Use an installed Playwright package through `PLAYWRIGHT_MODULE`; run the regression against production preview (default port 4173; override `CIVIC_BASE_URL` as needed).
-- Prepare exactly one Draft PR for this isolated correction; do not merge or deploy. Older delivery notes below describe earlier work and may contain historical PR state.
+- Branch: `codex/food-release-followup` in `D:/Practice/audit-worktrees/food-release-followup`, based on refreshed main `ef9372583a804abcc87e10b090550d38213d2fb5`.
+- Git history confirms Civic Explorer PR #5 and the product-selection race correction PR #6 are merged. Earlier instructions to create or keep those PRs open are historical and no longer current.
+- This follow-up corrects README workflow references in both languages and defers ten secondary dashboards while keeping the default map eager. No dependency, dataset, analytical or layout redesign changes.
+- The build inserts emitted JavaScript/CSS asset paths into service-worker v12's shell cache so splitting does not remove offline access to previously available tabs. Product-detail JSON and Policy 11 evidence remain on demand as before.
+- Delivery is [Draft PR #7](https://github.com/LEO0331/taipei-friendly-food-map/pull/7), targeting main from `codex/food-release-followup`. It is open, draft and unmerged. Review this existing PR; do not create a duplicate, automatically merge or deploy it.
 
-## Current delivery
+## Verification
 
-Optional Civic Explorer implementation is complete on `codex/civic-explorer`, based on main `ebed7962b8ced05afea285865f95f2bb7e991f1e` (including merged Policy 11 PR #4). Worktree: `C:\Users\LeoLi\Desktop\taipei-friendly-food-map-wt\civic-explorer`. Deliver exactly one Draft PR titled **feat: integrate Civic Explorer into Friendly Food Map** targeting main. Do not merge automatically.
+- Run `powershell -ExecutionPolicy Bypass -File ./init.ps1`, `npm.cmd run lint`, `npm.cmd run policy11:verify`, `npm.cmd audit`, and `git diff --check`.
+- Browser scripts use an existing Playwright installation through `PLAYWRIGHT_MODULE` and production preview through `CIVIC_BASE_URL` (default `http://127.0.0.1:4173`). Run `node scripts/verifyCivicExplorer.mjs`, `node scripts/verifyFoodTraceabilitySelection.mjs`, and `node scripts/verifyDeferredDashboards.mjs`.
+- The deferred-dashboard check asserts no secondary module JS on initial map rendering, all ten module destinations load, and installed-service-worker offline navigation works for tabs whose records were already precached.
+- Current measurements and actual final results are recorded in `progress.md`. External audit logs are under `D:/Practice/audit-results/publish-followup/taipei-friendly-food-map`.
+- Final root and Pages-path runs passed all 23 unit tests, build/lint, Policy 11 reproduction, zero-vulnerability audit, selection regression, 11 Explorer groups and the deferred/offline script. Initial root-path JS including preload is 437,082 bytes versus 527,189 before (17.09% lower); all chunks remain below 500kB.
 
-Single Draft PR: https://github.com/LEO0331/taipei-friendly-food-map/pull/5 (open, draft, unmerged).
+## Boundaries and remaining work
 
-## Implemented
-
-- Single typed navigation catalogue for MainTabs and the separate four-group Explorer adapter; all 14 IDs/defaults/labels preserved.
-- Generic MIT-attributed layered SVG hexagons, bilingual search, keyboard/native dialog controls, HTML list fallback, responsive focus states and reduced motion.
-- Optional lazy adapter; dialog-local open state leaves the current map/module instance mounted and preserves filters/layers/location/focused item without data refresh. Loading failures remain contained.
-- No new dataset, analysis, dependency, matching/source/privacy/export change. All 316 original translations and original module/data/conversion code verified unchanged.
-
-## Verification — 31 October 2026
-
-Baseline init.ps1 passed build + 20 tests. Final `npm.cmd run lint`, `npm.cmd test` (23 passing), `npm.cmd run build`, `npm.cmd run policy11:verify` (same 22,645-record snapshot), `node scripts/verifyCivicBoundaries.mjs`, `npm.cmd audit` (zero vulnerabilities) and `git diff --check` passed. Production browser script passes 11 scenario groups covering all tab links, labels/search, initial lazy requests, native keyboard/focus, filters and successful/denied location, exact map/marker/popup/viewport preservation, 320px/390px targets and reduced motion, plus chunk-failure recovery. Pages-subpath smoke passed. Independent read-only review has no remaining actionable findings.
-
-Main JS grows 3,208 bytes / 1,303 gzip; shell CSS grows 1,441 / 367 gzip. Optional Explorer JS+CSS is 6,822 / 2,518 gzip. Full evidence and screenshots: `doc/civic-explorer/README.md`.
-
-## Next session
-
-1. Use the isolated worktree; read AGENTS.md, feature_list.json, progress.md and `doc/civic-explorer/README.md`.
-2. Run the verification commands above. For browser checks start `npm.cmd run preview -- --host 127.0.0.1 --port 4173`, set PLAYWRIGHT_MODULE to an existing Playwright package if necessary, then run `node scripts/verifyCivicExplorer.mjs`. No dependency installation beyond locked npm ci is required.
-3. Review the single Draft PR and its CI; keep it unmerged. No deployment was performed.
-4. Deferred agricultural-inspection tests are a separate future feature; do not broaden this PR.
-
-## Known limits
-
-Browser tests stub geolocation and external tile images and block service workers. Actual device permissions, external tile availability, offline PWA behavior, non-Chromium browsers and screen-reader sessions were not tested. Existing >500kB main chunk warning remains. Long mobile catalogues scroll. Explorer-only query/category/view reset on closing; failed chunk retry may require reload, while existing tabs remain usable.
+- Preserve exact public-data bytes, conservative matching and geographic/statistical boundaries. Keep raw-source and generated-data refreshes separate from this delivery.
+- Agricultural-converter focused tests, dataset freshness/provenance work and the unused absent traditional-market summary request remain separate tasks.
+- Actual device geolocation permissions, external tile availability, screen-reader sessions and non-Chromium browsers remain unverified. The Explorer suite blocks service workers and stubs geolocation/tiles; the deferred-dashboard suite separately exercises the real service worker with external tiles excluded.
+- First-time service-worker installation still downloads shell assets for offline use; code splitting reduces initial map JavaScript execution/loading dependencies, not the total offline-install payload.

@@ -97,9 +97,9 @@ npm run preview
 
 ## 部署與 PWA
 
-建置輸出為 `dist/` 中的靜態網站，可部署於任何靜態主機。`.github/workflows/ci.yml` 的 GitHub Actions 會在推送或向 `main` 提出 Pull Request 時安裝相依套件、檢查 TypeScript 並執行建置。
+建置輸出為 `dist/` 中的靜態網站，可部署於任何靜態主機。`.github/workflows/policy-11-review.yml` 會在向 `main` 提出 Pull Request 時執行型別檢查、證據重現、測試與 Pages 路徑建置；`.github/workflows/deploy.yml` 會在推送至 `main` 或手動觸發時先測試與建置，再部署至 GitHub Pages。
 
-PWA 包含 Web App Manifest、SVG 圖示預留檔、行動裝置 viewport 設定，以及會快取應用程式殼層和小型產生 JSON 的 Service Worker。產品細節分塊採需要時載入，不會預先快取。
+PWA 包含 Web App Manifest、SVG 圖示預留檔、行動裝置 viewport 設定，以及會快取應用程式殼層和小型產生 JSON 的 Service Worker。預設地圖維持首次載入，次要儀表板改為獨立 JavaScript 分塊；正式建置會將所有 JavaScript／CSS 納入殼層快取，讓安裝完成後的離線分頁導覽仍可使用。產品細節資料分塊採需要時載入，不會預先快取。
 
 ## 免責聲明
 

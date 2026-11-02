@@ -97,9 +97,9 @@ npm run preview
 
 ## Deployment and PWA
 
-The build outputs a static site in `dist/` that can be hosted on any static host. `.github/workflows/ci.yml` installs dependencies, checks TypeScript, and builds on pushes and pull requests to `main`.
+The build outputs a static site in `dist/` that can be hosted on any static host. `.github/workflows/policy-11-review.yml` verifies lint, evidence reproduction, tests and a Pages-path build for pull requests to `main`. `.github/workflows/deploy.yml` runs tests and builds before deploying pushes to `main` or manual runs to GitHub Pages.
 
-The PWA includes a manifest, SVG icon placeholders, mobile viewport metadata, and a small service worker that caches the app shell and small generated JSON files. Product-detail chunks load on demand rather than being precached.
+The PWA includes a manifest, SVG icon placeholders, mobile viewport metadata, and a small service worker that caches the app shell and small generated JSON files. Secondary dashboards load as separate JavaScript chunks while the default map remains in the initial bundle. The production build includes all emitted JavaScript/CSS in the service worker's shell cache so deferred tabs remain available after installation when offline. Product-detail data chunks load on demand rather than being precached.
 
 ## Disclaimer
 
