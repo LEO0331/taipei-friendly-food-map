@@ -6,7 +6,7 @@
 - Git history confirms Civic Explorer PR #5 and the product-selection race correction PR #6 are merged. Earlier instructions to create or keep those PRs open are historical and no longer current.
 - This follow-up corrects README workflow references in both languages and defers ten secondary dashboards while keeping the default map eager. No dependency, dataset, analytical or layout redesign changes.
 - The build inserts emitted JavaScript/CSS asset paths into service-worker v12's shell cache so splitting does not remove offline access to previously available tabs. Product-detail JSON and Policy 11 evidence remain on demand as before.
-- Deliver one new Draft PR targeting main; do not automatically merge or deploy this follow-up.
+- Delivery is [Draft PR #7](https://github.com/LEO0331/taipei-friendly-food-map/pull/7), targeting main from `codex/food-release-followup`. It is open, draft and unmerged. Review this existing PR; do not create a duplicate, automatically merge or deploy it.
 
 ## Verification
 
