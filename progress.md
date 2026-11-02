@@ -1,5 +1,16 @@
 # Session Progress Log
 
+## Release documentation and bundle follow-up — 2026-11-03
+
+- Refreshed main `ef9372583a804abcc87e10b090550d38213d2fb5` confirms PR #6 merged; PR #5 is also in main history. Original checkout remains clean on its original local main. This delivery uses isolated `codex/food-release-followup`.
+- Corrected both README workflow references to the actual review and deployment workflows. Replaced stale current handoff instructions with this delivery and the merged prior state.
+- Deferred ten secondary dashboard modules through React lazy loading and one localized Suspense fallback; the initial map, controls and existing module implementations remain unchanged. No dependencies or data changed.
+- Root-path production initial JS, including the shared React preload: **527,189 → 437,082 bytes**, down **90,107 bytes / 17.09%**. Consistent Node gzip measurement: **150,889 → 130,189 bytes**. Main chunk is 429,014 bytes; all emitted chunks are below 500kB and the previous Vite warning is gone. Pages-path assets vary slightly with their longer URLs and also remain below 500kB.
+- Service-worker v12 precaches the build's emitted JavaScript/CSS so code splitting preserves offline access to previously cached tabs. Cache matching ignores server Vary headers only for exact own-origin immutable build assets; a production-preview CORS Vary mismatch was reproduced and corrected. Installation still downloads the shell code; these numbers measure initial page JS dependencies/execution, not total offline-install traffic.
+- Actual verification: baseline init and final build; lint; 23 tests; Policy 11 immutable 22,645-record reproduction; npm audit (zero vulnerabilities); diff checks. Production browser checks pass at both `/` and `/taipei-friendly-food-map/`: prior product-selection race regression, all 11 existing Explorer groups, all ten deferred dashboards, no module JS in initial map requests, actual worker installation and offline reload followed by seven unvisited tabs whose records were already precached. Preview must use the same BASE_PATH as its build; the initial Pages runner mismatch was a verification setup failure, resolved before final checks.
+- Remaining limits: real geolocation permissions, external tiles, non-Chromium browsers and screen readers remain outside deterministic checks. Uncached product-detail JSON and Policy 11 snapshots still need a prior online fetch, as before. Agricultural/supermarket record precache expansion and unused traditional-market summary cleanup are outside this delivery.
+- Deliver one new Draft PR; no automatic merge or deployment. External evidence: `D:/Practice/audit-results/publish-followup/taipei-friendly-food-map`.
+
 ## Seven-repository audit correction — 2026-11-02
 
 - Verified P2 defect on main `65f84ee32a6503b989c038746269daa67b436a76`: selecting product A then B while A's detail response is delayed lets A replace B's visible detail. Reproduced using the first two published products and controlled response ordering.
@@ -11,8 +22,8 @@
 
 ## Current State
 
-**Last Updated:** 2026-10-31
-**Active Feature:** feat-012 — Optional four-hub Civic Explorer (implementation complete; Draft PR review)
+**Last Updated:** 2026-11-03
+**Active Feature:** maintenance-release-followup — documentation and deferred dashboards (verification complete; new Draft PR delivery)
 
 ## What's Done
 

@@ -1,7 +1,10 @@
-const CACHE_NAME = 'taipei-friendly-food-map-v11';
+const CACHE_NAME = 'taipei-friendly-food-map-v12';
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const withBase = (path) => `${BASE_PATH}${path}`;
+// The production build fills this list so deferred tabs also work offline.
+const BUILD_ASSETS = [];
 const APP_SHELL = [
+  ...BUILD_ASSETS.map(withBase),
   withBase('index.html'),
   withBase('manifest.webmanifest'),
   withBase('data/friendly-stores.json'),
@@ -77,8 +80,11 @@ self.addEventListener('fetch', (event) => {
     );
     return;
   }
+  const isBuildAsset = requestUrl.origin === self.location.origin &&
+    BUILD_ASSETS.some(path => requestUrl.pathname === withBase(path));
   event.respondWith(
-    caches.match(event.request).then((cached) => {
+    // Compiled files are immutable; server CORS Vary headers do not change their bytes.
+    caches.match(event.request, { ignoreVary: isBuildAsset }).then((cached) => {
       if (cached) return cached;
       return fetch(event.request).then((response) => {
         if (response.ok && requestUrl.origin === self.location.origin) {
