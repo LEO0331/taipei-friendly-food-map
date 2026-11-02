@@ -1,6 +1,14 @@
 {
   "features": [
     {
+      "id": "fix-audit-product-selection",
+      "name": "Keep product details aligned with the latest selection",
+      "description": "Ignore stale product-detail responses after a different product is selected or the module unmounts.",
+      "dependencies": ["feat-001"],
+      "status": "completed",
+      "evidence": "2026-11-02: reproduced delayed A response replacing selected B on current main; cleanup guard prevents stale update. Production browser regression passes with real published products; 23 tests, lint, build, Policy 11 reproduction and existing 11 browser groups pass. No dataset or dependency changes."
+    },
+    {
       "id": "feat-001",
       "name": "Harness and baseline verification",
       "description": "Maintain a restartable agent harness and confirm the TypeScript build and automated tests pass.",

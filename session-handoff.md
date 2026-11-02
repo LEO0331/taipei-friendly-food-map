@@ -1,5 +1,13 @@
 # Session Handoff
 
+## Audit correction — 2026-11-02
+
+- Review `codex/audit-food-detail-selection`, based on main `65f84ee32a6503b989c038746269daa67b436a76`.
+- Fixed verified P2 stale product-detail response race with effect cleanup only; actual published product A no longer replaces last-selected B after responses complete out of order.
+- `init.ps1` (production build + 23 tests), lint, Policy 11 deterministic evidence reproduction, zero-vulnerability dependency audit, diff checks, the focused `verifyFoodTraceabilitySelection.mjs` browser regression and existing 11 Explorer browser groups pass.
+- Source data/dependencies unchanged. Existing P3 bundle/documentation/absent optional-summary issues deferred. Use an installed Playwright package through `PLAYWRIGHT_MODULE`; run the regression against production preview (default port 4173; override `CIVIC_BASE_URL` as needed).
+- Prepare exactly one Draft PR for this isolated correction; do not merge or deploy. Older delivery notes below describe earlier work and may contain historical PR state.
+
 ## Current delivery
 
 Optional Civic Explorer implementation is complete on `codex/civic-explorer`, based on main `ebed7962b8ced05afea285865f95f2bb7e991f1e` (including merged Policy 11 PR #4). Worktree: `C:\Users\LeoLi\Desktop\taipei-friendly-food-map-wt\civic-explorer`. Deliver exactly one Draft PR titled **feat: integrate Civic Explorer into Friendly Food Map** targeting main. Do not merge automatically.

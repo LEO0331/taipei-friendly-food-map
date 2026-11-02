@@ -1,5 +1,14 @@
 # Session Progress Log
 
+## Seven-repository audit correction — 2026-11-02
+
+- Verified P2 defect on main `65f84ee32a6503b989c038746269daa67b436a76`: selecting product A then B while A's detail response is delayed lets A replace B's visible detail. Reproduced using the first two published products and controlled response ordering.
+- Added effect cleanup in `FoodTraceabilityModule.tsx` so a superseded request cannot update detail state. Added `scripts/verifyFoodTraceabilitySelection.mjs` as a production-browser regression; no data, analytical, matching, dependency or navigation changes.
+- Verification: locked `npm ci`; `init.ps1` production build and 23 tests; `npm run lint`; `npm run policy11:verify` (same 22,645 records); `npm audit` (zero vulnerabilities); `git diff --check`; new response-order regression and existing 11 Civic Explorer browser groups all pass. Browser checks cover Chinese/English navigation, 320/390px layouts, keyboard/focus, location success/denial and map preservation.
+- To rerun the regression, start `npm run preview -- --host 127.0.0.1 --port 4173` after building, set `PLAYWRIGHT_MODULE` to an existing Playwright installation when necessary, then run `node scripts/verifyFoodTraceabilitySelection.mjs`. `CIVIC_BASE_URL` can select a different preview origin. No new dependency is required.
+- Deferred P3: existing main bundle exceeds 500kB; README names a historical `ci.yml` rather than current deployment/review workflows; startup still requests the absent optional traditional-market summary. Offline PWA, real device permissions, external tiles and non-Chromium browsers remain outside deterministic checks.
+- Delivery: isolated `codex/audit-food-detail-selection` branch from refreshed origin/main; one Draft PR targeting main. No merge or deployment.
+
 ## Current State
 
 **Last Updated:** 2026-10-31
