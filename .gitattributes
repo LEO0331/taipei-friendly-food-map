@@ -5,3 +5,6 @@ public/data/policy-11/** -text linguist-generated=true
 public/data/policy-11/evidence/** -whitespace
 # Retained project JSON also preserves its historical CRLF bytes.
 public/data/policy-11/retained/** whitespace=cr-at-eol
+# Generated distribution notices retain the installed license text bytes.
+public/THIRD_PARTY_NOTICES.txt -text whitespace=cr-at-eol
+public/third-party-licenses.json text eol=lf

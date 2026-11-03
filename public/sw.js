@@ -1,4 +1,5 @@
-const CACHE_NAME = 'taipei-friendly-food-map-v12';
+const CACHE_NAME = 'taipei-friendly-food-map-v13';
+const OWN_CACHE_NAME = /^taipei-friendly-food-map-v\d+$/;
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const withBase = (path) => `${BASE_PATH}${path}`;
 // The production build fills this list so deferred tabs also work offline.
@@ -7,6 +8,8 @@ const APP_SHELL = [
   ...BUILD_ASSETS.map(withBase),
   withBase('index.html'),
   withBase('manifest.webmanifest'),
+  withBase('THIRD_PARTY_NOTICES.txt'),
+  withBase('third-party-licenses.json'),
   withBase('data/friendly-stores.json'),
   withBase('data/water-refill-stores.json'),
   withBase('data/restaurant-businesses.json'),
@@ -44,7 +47,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(keys.filter((key) => OWN_CACHE_NAME.test(key) && key !== CACHE_NAME).map((key) => caches.delete(key))))
       .then(() => self.clients.claim()),
   );
 });

@@ -1,6 +1,14 @@
 {
   "features": [
     {
+      "id": "fix-worker-cache-and-notices",
+      "name": "Preserve other applications' caches and distribute runtime notices",
+      "description": "Restrict worker activation cleanup to this application's numbered legacy caches; include exact locked runtime license texts, inventory and copied geometry notice in the online/offline build.",
+      "dependencies": ["maintenance-release-followup"],
+      "status": "completed",
+      "evidence": "2026-11-03: baseline activation deleted foreign caches; v13 now preserves their payloads. Actual-worker VM and browser retention/offline checks pass. Seven runtime packages' installed license bytes/hashes and copied LeoChen MIT notice are served through Data Notes and precached. Root/Pages builds, 25 tests, lint, Policy11 reproduction, zero-advisory audit, product-selection regression and 11 Explorer groups pass. No dependency, lockfile, source-data or analytical changes. Commit/push delivery only; no new PR, merge or deployment."
+    },
+    {
       "id": "maintenance-release-followup",
       "name": "Refresh release documentation and defer secondary dashboard code",
       "description": "Keep the default map eager, split secondary dashboards and precache compiled assets for offline navigation; correct current workflow and handoff references.",

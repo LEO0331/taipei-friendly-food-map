@@ -1,24 +1,22 @@
 # Session Handoff
 
-## Current delivery — 2026-11-03
+## Current correction — 2026-11-03
 
-- Branch: `codex/food-release-followup` in `D:/Practice/audit-worktrees/food-release-followup`, based on refreshed main `ef9372583a804abcc87e10b090550d38213d2fb5`.
-- Git history confirms Civic Explorer PR #5 and the product-selection race correction PR #6 are merged. Earlier instructions to create or keep those PRs open are historical and no longer current.
-- This follow-up corrects README workflow references in both languages and defers ten secondary dashboards while keeping the default map eager. No dependency, dataset, analytical or layout redesign changes.
-- The build inserts emitted JavaScript/CSS asset paths into service-worker v12's shell cache so splitting does not remove offline access to previously available tabs. Product-detail JSON and Policy 11 evidence remain on demand as before.
-- Delivery is [Draft PR #7](https://github.com/LEO0331/taipei-friendly-food-map/pull/7), targeting main from `codex/food-release-followup`. It is open, draft and unmerged. Review this existing PR; do not create a duplicate, automatically merge or deploy it.
+- Branch: `codex/food-cache-notice-fixes`, worktree `D:/Practice/audit-worktrees/food-cache-notice-fixes`, based on current main `62996406738c21ee34ee3841472eafc73848b8ac`.
+- PRs #6 and #7 are already merged. This correction is a separate commit/push delivery. No new PR, merge or deployment is requested or performed.
+- Verified P1 worker cleanup is fixed: v13 removes only this application's numbered legacy caches and preserves all foreign caches, including same-prefix non-versioned names. Actual-worker VM and browser sentinel-payload regressions cover the boundary.
+- Distribution notices are generated before build from all seven locked installed runtime packages and copied Explorer MIT geometry attribution. `public/THIRD_PARTY_NOTICES.txt` retains full installed license texts; `public/third-party-licenses.json` records versions, filenames, byte counts and hashes. Data Notes links to the notices and both files are available in the installed offline shell.
+- Hippocratic-2.1, BSD-2-Clause and MIT are recorded as installed. Providing original notices is not a legal compliance certification.
 
-## Verification
+## Completed verification
 
-- Run `powershell -ExecutionPolicy Bypass -File ./init.ps1`, `npm.cmd run lint`, `npm.cmd run policy11:verify`, `npm.cmd audit`, and `git diff --check`.
-- Browser scripts use an existing Playwright installation through `PLAYWRIGHT_MODULE` and production preview through `CIVIC_BASE_URL` (default `http://127.0.0.1:4173`). Run `node scripts/verifyCivicExplorer.mjs`, `node scripts/verifyFoodTraceabilitySelection.mjs`, and `node scripts/verifyDeferredDashboards.mjs`.
-- The deferred-dashboard check asserts no secondary module JS on initial map rendering, all ten module destinations load, and installed-service-worker offline navigation works for tabs whose records were already precached.
-- Current measurements and actual final results are recorded in `progress.md`. External audit logs are under `D:/Practice/audit-results/publish-followup/taipei-friendly-food-map`.
-- Final root and Pages-path runs passed all 23 unit tests, build/lint, Policy 11 reproduction, zero-vulnerability audit, selection regression, 11 Explorer groups and the deferred/offline script. Initial root-path JS including preload is 437,082 bytes versus 527,189 before (17.09% lower); all chunks remain below 500kB.
+- Baseline `init.ps1`; final root and Pages-path production builds; 25 tests; lint; unchanged Policy 11 snapshot reproduction; zero-vulnerability advisory audit; notice `--check`; exact public/dist notice bytes; unchanged dependencies/lock/data/analysis; diff checks.
+- Both root and Pages browser runs pass the product-selection race, ten deferred dashboards, seven offline data tabs, foreign cache payload retention during actual activation, offline notice/inventory retrieval, and all 11 Explorer groups including bilingual/keyboard/focus/mobile/map-preservation behavior.
+- Evidence and final branch/commit report: `D:/Practice/audit-results/closure-fixes/taipei-friendly-food-map`.
 
-## Boundaries and remaining work
+## Reproduction and boundaries
 
-- Preserve exact public-data bytes, conservative matching and geographic/statistical boundaries. Keep raw-source and generated-data refreshes separate from this delivery.
-- Agricultural-converter focused tests, dataset freshness/provenance work and the unused absent traditional-market summary request remain separate tasks.
-- Actual device geolocation permissions, external tile availability, screen-reader sessions and non-Chromium browsers remain unverified. The Explorer suite blocks service workers and stubs geolocation/tiles; the deferred-dashboard suite separately exercises the real service worker with external tiles excluded.
-- First-time service-worker installation still downloads shell assets for offline use; code splitting reduces initial map JavaScript execution/loading dependencies, not the total offline-install payload.
+- Run `powershell -ExecutionPolicy Bypass -File ./init.ps1`, `npm.cmd run lint`, `npm.cmd run policy11:verify`, `npm.cmd audit`, `node scripts/buildThirdPartyNotices.mjs --check`, and `git diff --check`.
+- Browser scripts: `verifyFoodTraceabilitySelection.mjs`, `verifyDeferredDashboards.mjs`, and `verifyCivicExplorer.mjs`. Set `PLAYWRIGHT_MODULE` to an existing installation and `CIVIC_BASE_URL` to production preview. Match preview `BASE_PATH` to its build for Pages-path verification.
+- Keep source data, analytical boundaries, matching and dependency changes separate. The user is considering central documentation in portfolio; that is handled separately from this repository correction.
+- Real device permissions, external tiles, other browser engines and screen readers remain outside deterministic checks. Product-detail JSON and Policy 11 snapshots still require prior online retrieval for offline use, as before.

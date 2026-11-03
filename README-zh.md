@@ -101,6 +101,8 @@ npm run preview
 
 PWA 包含 Web App Manifest、SVG 圖示預留檔、行動裝置 viewport 設定，以及會快取應用程式殼層和小型產生 JSON 的 Service Worker。預設地圖維持首次載入，次要儀表板改為獨立 JavaScript 分塊；正式建置會將所有 JavaScript／CSS 納入殼層快取，讓安裝完成後的離線分頁導覽仍可使用。產品細節資料分塊採需要時載入，不會預先快取。
 
+Service Worker 啟用時只會移除此應用程式的舊版編號快取，保留相同網域上其他應用程式的快取。每次建置前，`scripts/buildThirdPartyNotices.mjs` 會依鎖定且實際安裝的執行期套件授權原文及 Explorer 幾何程式碼的 MIT 聲明，產生 `public/THIRD_PARTY_NOTICES.txt` 與 `public/third-party-licenses.json`；資料說明頁提供連結，兩個檔案也納入建置及離線快取。清單記錄套件版本、授權識別碼、原始授權檔名與位元組雜湊，包含 Hippocratic-2.1、BSD-2-Clause 與 MIT 原文；提供聲明不等同法律合規認證。可執行 `node scripts/buildThirdPartyNotices.mjs --check` 比對已提交聲明與實際安裝套件。
+
 ## 免責聲明
 
 本網站呈現台北市開放資料。資料集覆蓋範圍的比較不代表所有餐廳、市占率、即時飲水供應、實際友善服務覆蓋、即時產品銷售狀態、精確商圈邊界、餐廳排名、食品安全認證、檢驗結果、回收資訊，或過敏、營養、飲食與產品推薦資訊。

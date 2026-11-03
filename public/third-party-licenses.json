@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "name": "@react-leaflet/core",
+      "version": "3.0.0",
+      "license": "Hippocratic-2.1",
+      "path": "node_modules/@react-leaflet/core",
+      "notices": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "4a015e547e1c8c0faeadec6ce957a4f697e2f20b19c8987d6c5047518e0de5bf",
+          "bytes": 8405
+        }
+      ]
+    },
+    {
+      "name": "leaflet",
+      "version": "1.9.4",
+      "license": "BSD-2-Clause",
+      "path": "node_modules/leaflet",
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb",
+          "bytes": 1395
+        }
+      ]
+    },
+    {
+      "name": "leaflet.markercluster",
+      "version": "1.5.3",
+      "license": "MIT",
+      "path": "node_modules/leaflet.markercluster",
+      "notices": [
+        {
+          "file": "MIT-LICENCE.txt",
+          "sha256": "3133dacd38250bd1f524d8166cc60a016a382522e062fce143691c65bf5e4b3d",
+          "bytes": 1052
+        }
+      ]
+    },
+    {
+      "name": "react",
+      "version": "19.2.7",
+      "license": "MIT",
+      "path": "node_modules/react",
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+          "bytes": 1088
+        }
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.7",
+      "license": "MIT",
+      "path": "node_modules/react-dom",
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+          "bytes": 1088
+        }
+      ]
+    },
+    {
+      "name": "react-leaflet",
+      "version": "5.0.0",
+      "license": "Hippocratic-2.1",
+      "path": "node_modules/react-leaflet",
+      "notices": [
+        {
+          "file": "LICENSE.md",
+          "sha256": "388d14009789fb9a4faeb142550a75ee6d4a33e25a4cd5acafb9c2b7106c2e91",
+          "bytes": 9582
+        }
+      ]
+    },
+    {
+      "name": "scheduler",
+      "version": "0.27.0",
+      "license": "MIT",
+      "path": "node_modules/scheduler",
+      "notices": [
+        {
+          "file": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+          "bytes": 1088
+        }
+      ]
+    }
+  ],
+  "copiedGeometry": {
+    "path": "src/components/explorer/HexHub.tsx",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2026 LeoChen",
+    "textSha256": "b2ea059658868789f2e1e7c6f6053186c2cbd12f221a60740916bc598de4325f"
+  }
+}
