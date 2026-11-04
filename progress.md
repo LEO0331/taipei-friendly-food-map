@@ -1,5 +1,15 @@
 # Session Progress Log
 
+## Worker cache isolation and runtime distribution notices — 2026-11-03
+
+- Baseline: current main `62996406738c21ee34ee3841472eafc73848b8ac` includes merged PRs #6 and #7. Original checkout remains clean on its existing local main; corrections use isolated `codex/food-cache-notice-fixes`.
+- Verified P1: the actual v12 worker's activation handler deleted crash/safety/portfolio/unrelated caches in a VM reproduction. Worker v13 now deletes only this application's matching numbered legacy cache names. The regression runs the actual worker; a production browser also seeds foreign sentinel payloads and confirms they survive activation while own v11/v12 caches are removed.
+- Corrected P2 distribution-notice gap: prebuild generates `THIRD_PARTY_NOTICES.txt` and `third-party-licenses.json` from all seven locked installed runtime packages. Original license text bytes, package versions, declared identifiers, filenames and hashes are retained, including both Hippocratic-2.1 packages, Leaflet BSD-2-Clause and MIT packages; copied Explorer geometry retains its complete LeoChen MIT notice. Data Notes has a bilingual link and both notice files are in the worker shell cache. This supplies notices without certifying legal compliance.
+- Actual completed checks: baseline init; final root and Pages-path builds; 25 tests (23 existing plus actual worker cleanup and exact license/inventory coverage); lint; Policy 11 immutable 22,645-record reproduction; `npm audit` (zero vulnerabilities); notice generation `--check`; emitted/public notice byte comparison; dependency equality and lock/source-data integrity; diff checks. Existing product-selection regression, all ten deferred modules, seven offline tabs and all 11 Explorer browser groups pass at root and Pages paths. Actual browser activation preserves foreign payloads; notices and seven-package inventory are fetchable offline after reload.
+- The generator initially rejected markercluster's `MIT-LICENCE.txt` filename; license discovery now includes that installed file and final checks pass. No missing notice is silently skipped.
+- Scope: no new dependency, lockfile, raw/generated data, matching, analytical, geometry or product-detail implementation change. Current request authorizes commit and push only; no new PR, merge or deployment. External evidence: `D:/Practice/audit-results/closure-fixes/taipei-friendly-food-map`.
+- Limits retained: real OS permission prompts, external tile-provider availability, non-Chromium engines and screen readers are not certified. Existing on-demand evidence/product data offline limits remain unchanged.
+
 ## Release documentation and bundle follow-up — 2026-11-03
 
 - Refreshed main `ef9372583a804abcc87e10b090550d38213d2fb5` confirms PR #6 merged; PR #5 is also in main history. Original checkout remains clean on its original local main. This delivery uses isolated `codex/food-release-followup`.
@@ -23,7 +33,7 @@
 ## Current State
 
 **Last Updated:** 2026-11-03
-**Active Feature:** maintenance-release-followup — documentation and deferred dashboards (verification complete; new Draft PR delivery)
+**Active Feature:** fix-worker-cache-and-notices — cache isolation and distribution notices (verification complete; commit/push delivery)
 
 ## What's Done
 

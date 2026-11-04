@@ -11,6 +11,7 @@ export function DataNotes({ language, t }: Props) {
   return (
     <section className="data-notes">
       <h2>{t('dataNotes')}</h2>
+      <p><a href={`${import.meta.env.BASE_URL}THIRD_PARTY_NOTICES.txt`} target="_blank" rel="noopener noreferrer">{language === 'zh' ? '第三方授權聲明' : 'Third-party license notices'}</a></p>
       <DisclaimerNotice>{t('dataDisclaimer')}</DisclaimerNotice>
       <div className="notes-list">
         <article>
